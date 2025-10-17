@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Instagram, Mail, Store } from "lucide-react";
+import { Copy, Facebook, Instagram, Mail, Store } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -20,29 +20,27 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
+import { useToast } from "@/hooks/use-toast";
+import { Separator } from "@/components/ui/separator";
 
 const socialLinks = [
   {
     name: "Instagram",
-    href: "#",
+    href: "https://instagram.com/alquima.mizu",
     icon: <Instagram className="h-6 w-6" />,
   },
   {
     name: "Facebook",
-    href: "#",
+    href: "https://facebook.com/hinokami.sstore",
     icon: <Facebook className="h-6 w-6" />,
   },
-  {
-    name: "WhatsApp",
-    href: "#",
-    icon: <WhatsappIcon className="h-6 w-6" />,
-  },
-  {
-    name: "Email",
-    href: "mailto:hello@alquima.art",
-    icon: <Mail className="h-6 w-6" />,
-  },
 ];
+
+const contactInfo = {
+  whatsappUrl: "https://wa.me/573157513325",
+  whatsappNumber: "+57 315 7513325",
+  emailAddress: "alq.mizu@gmail.com",
+};
 
 const grimoireCards = [
     { id: "grimoire-1", title: "Minifiguras", imageId: "minifiguras" },
@@ -55,6 +53,7 @@ const grimoireCards = [
 
 export default function Home() {
   const { theme } = useTheme();
+  const { toast } = useToast();
   const avatarImage = PlaceHolderImages.find(img => img.id === 'avatar');
 
   const AlquimaLogo = theme === 'dark' 
@@ -64,6 +63,15 @@ export default function Home() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
+
+  const copyToClipboard = (text: string, type: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      toast({
+        title: `${type} copiado`,
+        description: `${text} ha sido copiado a tu portapapeles.`,
+      });
+    });
+  };
 
   return (
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
@@ -91,7 +99,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">△▽△ GRIMORIO ▽△▽</h3>
+            <h3 className="text-xl font-bold text-primary">▽△▽△▽△ GRIMORIO ▽△▽△▽△</h3>
             
             <Carousel
               plugins={[plugin.current]}
@@ -133,7 +141,7 @@ export default function Home() {
             </Carousel>
             
             <Button asChild className="h-14 w-full text-base font-semibold shadow-md transition-transform duration-200 ease-in-out hover:scale-[1.03] focus:scale-[1.03]" size="lg" variant="outline">
-                <Link href="https://web.facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
                     <Store className="mr-2 h-5 w-5"/>
                     Marketplace
                 </Link>
@@ -142,7 +150,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="p-8">
+      <footer className="p-8 space-y-8">
         <div className="flex justify-center space-x-6">
           {socialLinks.map((link) => (
             <Link
@@ -157,9 +165,40 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        
+        <Separator />
+        
+        <div className="w-full max-w-md mx-auto space-y-4 text-center">
+            <div className="space-y-2">
+                 <div className="flex items-center justify-center gap-2">
+                    <WhatsappIcon className="h-5 w-5 text-green-500" />
+                    <span className="text-sm font-medium">{contactInfo.whatsappNumber}</span>
+                    <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => copyToClipboard(contactInfo.whatsappNumber, 'Número')}>
+                        <Copy className="h-4 w-4" />
+                    </Button>
+                 </div>
+                 <Button asChild size="sm" variant="link">
+                    <Link href={contactInfo.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                        Iniciar Chat
+                    </Link>
+                 </Button>
+            </div>
+             <div className="space-y-2">
+                 <div className="flex items-center justify-center gap-2">
+                    <Mail className="h-5 w-5 text-primary" />
+                    <span className="text-sm font-medium">{contactInfo.emailAddress}</span>
+                     <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => copyToClipboard(contactInfo.emailAddress, 'Correo')}>
+                        <Copy className="h-4 w-4" />
+                    </Button>
+                 </div>
+                 <Button asChild size="sm" variant="link">
+                    <a href={`mailto:${contactInfo.emailAddress}`}>
+                        Enviar Correo
+                    </a>
+                 </Button>
+            </div>
+        </div>
       </footer>
     </div>
   );
 }
-
-    
