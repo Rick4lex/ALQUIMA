@@ -46,8 +46,8 @@ export default function Home() {
     <div className="flex min-h-dvh flex-col bg-background font-body text-foreground">
       <header className="sticky top-0 z-10 flex items-center justify-between p-4 bg-background/80 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2" aria-label="Home">
-          <AlquimaLogo className="h-8 w-8 text-primary" />
-          <h1 className="text-xl font-bold font-headline tracking-wider">ALQUIMA 水</h1>
+          <div className="text-4xl font-black text-primary">水</div>
+          <Image src="https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png" alt="ALQUIMA" width={120} height={30} className="object-contain" />
         </Link>
         <ThemeToggle />
       </header>
@@ -62,8 +62,8 @@ export default function Home() {
               <AvatarFallback>AM</AvatarFallback>
             </Avatar>
             <div className="flex flex-col">
-              <h2 className="text-2xl font-bold font-headline">@alquima_mizu</h2>
-              <p className="text-sm text-muted-foreground">Art & Collectibles inspired by mysticism.</p>
+              <h2 className="text-2xl font-bold font-headline">@alquima.mizu</h2>
+              <p className="text-sm text-muted-foreground">Creatividad hecha colección.</p>
             </div>
           </div>
 
