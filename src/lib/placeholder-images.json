@@ -5,6 +5,36 @@
       "description": "Alquima Mizu artist avatar",
       "imageUrl": "https://picsum.photos/seed/alquima-avatar/200/200",
       "imageHint": "mystical illustration"
+    },
+    {
+      "id": "minifiguras",
+      "description": "Preview for Minifiguras",
+      "imageUrl": "https://picsum.photos/seed/minifiguras-card/600/400",
+      "imageHint": "custom miniatures"
+    },
+    {
+      "id": "dibujos",
+      "description": "Preview for Dibujos",
+      "imageUrl": "https://picsum.photos/seed/dibujos-card/600/400",
+      "imageHint": "fantasy drawings"
+    },
+    {
+      "id": "stickers",
+      "description": "Preview for Stickers",
+      "imageUrl": "https://picsum.photos/seed/stickers-card/600/400",
+      "imageHint": "anime stickers"
+    },
+    {
+      "id": "tatuajes",
+      "description": "Preview for Tatuajes",
+      "imageUrl": "https://picsum.photos/seed/tatuajes-card/600/400",
+      "imageHint": "tattoo designs"
+    },
+    {
+      "id": "accesorios",
+      "description": "Preview for Accesorios",
+      "imageUrl": "https://picsum.photos/seed/accesorios-card/600/400",
+      "imageHint": "mystical accessories"
     }
   ]
 }
