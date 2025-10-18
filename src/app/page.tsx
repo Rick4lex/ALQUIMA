@@ -7,7 +7,6 @@ import { Copy, Facebook, Instagram, Mail, Store } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useTheme } from "@/components/theme-provider";
 import { Card, CardContent } from "@/components/ui/card";
@@ -54,7 +53,7 @@ const grimoireCards = [
 export default function Home() {
   const { theme } = useTheme();
   const { toast } = useToast();
-  const avatarImage = PlaceHolderImages.find(img => img.id === 'avatar');
+  const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
 
   const AlquimaLogo = theme === 'dark' 
     ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png'
@@ -86,12 +85,18 @@ export default function Home() {
       <main className="flex flex-1 flex-col items-center justify-center p-4 text-center">
         <div className="w-full max-w-md space-y-8">
           <div className="flex flex-col items-center space-y-4">
-            <Avatar className="h-28 w-28 border-4 border-primary/20 shadow-lg">
-              {avatarImage && (
-                 <AvatarImage src={avatarImage.imageUrl} alt={avatarImage.description} />
-              )}
-              <AvatarFallback>AM</AvatarFallback>
-            </Avatar>
+            {bannerImage && (
+              <div className="w-full overflow-hidden rounded-lg border-4 border-primary/20 shadow-lg">
+                <Image 
+                  src={bannerImage.imageUrl} 
+                  alt={bannerImage.description}
+                  width={720}
+                  height={240}
+                  data-ai-hint={bannerImage.imageHint}
+                  className="aspect-[3/1] object-cover"
+                />
+              </div>
+            )}
             <div className="flex flex-col">
               <h2 className="text-2xl font-bold">@alquima.mizu</h2>
               <p className="text-sm text-muted-foreground">Creatividad hecha colección.</p>
@@ -143,7 +148,7 @@ export default function Home() {
             <h3 className="text-xl font-bold text-primary">▽△▽</h3>
             
             <Button asChild className="h-14 w-full text-base font-semibold shadow-md transition-transform duration-200 ease-in-out hover:scale-[1.03] focus:scale-[1.03]" size="lg" variant="outline">
-                <Link href="https://facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://web.facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
                     <Store className="mr-2 h-5 w-5"/>
                     Marketplace
                 </Link>

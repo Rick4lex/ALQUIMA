@@ -1,39 +1,39 @@
 {
   "placeholderImages": [
     {
-      "id": "avatar",
-      "description": "Alquima Mizu artist avatar",
-      "imageUrl": "https://picsum.photos/seed/alquima-avatar/200/200",
-      "imageHint": "mystical illustration"
+      "id": "banner",
+      "description": "Alquima Mizu banner",
+      "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760765692/Gemini_Generated_Image_i39fpmi39fpmi39f_ebqf3h.jpg",
+      "imageHint": "mystical banner"
     },
     {
       "id": "minifiguras",
       "description": "Preview for Minifiguras",
-      "imageUrl": "https://picsum.photos/seed/minifiguras-card/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1718454985990-23f8f96ffd44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjdXN0b20lMjBtaW5pYXR1cmVzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "custom miniatures"
     },
     {
       "id": "dibujos",
       "description": "Preview for Dibujos",
-      "imageUrl": "https://picsum.photos/seed/dibujos-card/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1712686421453-444a1e1ebe5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYW50YXN5JTIwZHJhd2luZ3N8ZW58MHx8fHwxNzYwNzY1ODIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fantasy drawings"
     },
     {
       "id": "stickers",
       "description": "Preview for Stickers",
-      "imageUrl": "https://picsum.photos/seed/stickers-card/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "anime stickers"
     },
     {
       "id": "tatuajes",
       "description": "Preview for Tatuajes",
-      "imageUrl": "https://picsum.photos/seed/tatuajes-card/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1566878823917-b40eaa39f91d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YXR0b28lMjBkZXNpZ25zfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tattoo designs"
     },
     {
       "id": "accesorios",
       "description": "Preview for Accesorios",
-      "imageUrl": "https://picsum.photos/seed/accesorios-card/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1700389604768-9e82421b3d84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxteXN0aWNhbCUyMGFjY2Vzc29yaWVzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "mystical accessories"
     }
   ]
