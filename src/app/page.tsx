@@ -17,7 +17,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Separator } from "@/components/ui/separator";
@@ -36,10 +35,6 @@ export default function Home() {
   const AlquimaLogo = theme === 'dark' 
     ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png'
     : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png';
-
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  );
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -90,10 +85,7 @@ export default function Home() {
             <h3 className="text-xl font-bold text-primary">▽△▽△▽△ GRIMORIO ▽△▽△▽△</h3>
             
             <Carousel
-              plugins={[plugin.current]}
               className="w-full"
-              onMouseEnter={plugin.current.stop}
-              onMouseLeave={plugin.current.reset}
               opts={{
                 loop: true,
               }}
@@ -124,8 +116,8 @@ export default function Home() {
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex"/>
+              <CarouselPrevious />
+              <CarouselNext />
             </Carousel>
 
             <h3 className="text-xl font-bold text-primary">▽△▽</h3>
