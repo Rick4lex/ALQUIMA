@@ -144,7 +144,7 @@ export default function Home() {
             <h3 className="text-xl font-bold text-primary">▽△▽</h3>
             
             <Button asChild className="h-14 w-full text-base font-semibold shadow-md transition-transform duration-200 ease-in-out hover:scale-[1.03] focus:scale-[1.03]" size="lg" variant="outline">
-                <Link href="https://web.facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
                     <Store className="mr-2 h-5 w-5"/>
                     Marketplace
                 </Link>
