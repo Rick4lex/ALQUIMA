@@ -139,6 +139,8 @@ export default function Home() {
               <CarouselPrevious className="hidden sm:flex" />
               <CarouselNext className="hidden sm:flex"/>
             </Carousel>
+
+            <h3 className="text-xl font-bold text-primary">▽△▽</h3>
             
             <Button asChild className="h-14 w-full text-base font-semibold shadow-md transition-transform duration-200 ease-in-out hover:scale-[1.03] focus:scale-[1.03]" size="lg" variant="outline">
                 <Link href="https://facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
@@ -168,7 +170,7 @@ export default function Home() {
         
         <Separator />
         
-        <div className="w-full max-w-md mx-auto space-y-4 text-center">
+        <div className="w-full max-w-2xl mx-auto flex flex-col md:flex-row justify-around items-center md:items-start space-y-8 md:space-y-0 text-center">
             <div className="space-y-2">
                  <div className="flex items-center justify-center gap-2">
                     <WhatsappIcon className="h-5 w-5 text-green-500" />
