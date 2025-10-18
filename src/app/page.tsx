@@ -21,34 +21,7 @@ import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Separator } from "@/components/ui/separator";
-
-const socialLinks = [
-  {
-    name: "Instagram",
-    href: "https://instagram.com/alquima.mizu",
-    icon: <Instagram className="h-6 w-6" />,
-  },
-  {
-    name: "Facebook",
-    href: "https://facebook.com/hinokami.sstore",
-    icon: <Facebook className="h-6 w-6" />,
-  },
-];
-
-const contactInfo = {
-  whatsappUrl: "https://wa.me/573157513325",
-  whatsappNumber: "+57 315 7513325",
-  emailAddress: "alq.mizu@gmail.com",
-};
-
-const grimoireCards = [
-    { id: "grimoire-1", title: "Minifiguras", imageId: "minifiguras" },
-    { id: "grimoire-2", title: "Dibujos", imageId: "dibujos" },
-    { id: "grimoire-3", title: "Stickers", imageId: "stickers" },
-    { id: "grimoire-4", title: "Tatuajes", imageId: "tatuajes" },
-    { id: "grimoire-5", title: "Accesorios", imageId: "accesorios" },
-];
-
+import { socialLinks, contactInfo, grimoireCards } from "@/lib/pagedata";
 
 export default function Home() {
   const { theme } = useTheme();
