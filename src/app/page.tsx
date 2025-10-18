@@ -3,8 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Copy, Facebook, Instagram, Mail, Store } from "lucide-react";
-import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
+import { Copy, Store } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -23,6 +22,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { socialLinks, contactInfo, grimoireCards } from "@/lib/pagedata";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -31,7 +31,7 @@ export default function Home() {
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
 
   const autoplayPlugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   React.useEffect(() => {
@@ -97,7 +97,7 @@ export default function Home() {
               }}
               plugins={[autoplayPlugin.current]}
             >
-              <CarouselContent className="[--slide-spacing:1rem] [--slide-size:100%]">
+              <CarouselContent>
                 {grimoireCards.map((card) => {
                   const cardImage = PlaceHolderImages.find(img => img.id === card.imageId);
                   if (!cardImage) return null;
@@ -121,21 +121,23 @@ export default function Home() {
                           </Card>
                         </DialogTrigger>
                         <DialogContent className="max-w-3xl p-0">
-                           <Image
-                              src={cardImage.imageUrl}
-                              alt={cardImage.description}
-                              width={1920}
-                              height={1080}
-                              className="w-full h-auto object-contain rounded-lg"
-                            />
+                           <ScrollArea className="max-h-[80vh]">
+                            <Image
+                                src={cardImage.imageUrl}
+                                alt={cardImage.description}
+                                width={1920}
+                                height={1080}
+                                className="w-full h-auto object-contain rounded-lg"
+                              />
+                           </ScrollArea>
                         </DialogContent>
                       </Dialog>
                     </CarouselItem>
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
+              <CarouselPrevious />
+              <CarouselNext />
             </Carousel>
 
             <h3 className="text-xl font-bold text-primary">▽△▽</h3>
@@ -171,7 +173,6 @@ export default function Home() {
         <div className="w-full max-w-2xl mx-auto flex flex-col md:flex-row justify-around items-center md:items-start space-y-8 md:space-y-0 text-center">
             <div className="space-y-2">
                  <div className="flex items-center justify-center gap-2">
-                    <WhatsappIcon className="h-5 w-5 text-green-500" />
                     <span className="text-sm font-medium">{contactInfo.whatsappNumber}</span>
                     <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => copyToClipboard(contactInfo.whatsappNumber, 'Número')}>
                         <Copy className="h-4 w-4" />
@@ -185,7 +186,6 @@ export default function Home() {
             </div>
              <div className="space-y-2">
                  <div className="flex items-center justify-center gap-2">
-                    <Mail className="h-5 w-5 text-primary" />
                     <span className="text-sm font-medium">{contactInfo.emailAddress}</span>
                      <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => copyToClipboard(contactInfo.emailAddress, 'Correo')}>
                         <Copy className="h-4 w-4" />
