@@ -17,16 +17,22 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { socialLinks, contactInfo, grimoireCards } from "@/lib/pagedata";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export default function Home() {
   const { theme } = useTheme();
   const { toast } = useToast();
   const [mounted, setMounted] = React.useState(false);
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
+
+  const autoplayPlugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
 
   React.useEffect(() => {
     setMounted(true);
@@ -89,35 +95,47 @@ export default function Home() {
               opts={{
                 loop: true,
               }}
+              plugins={[autoplayPlugin.current]}
             >
-              <CarouselContent>
+              <CarouselContent className="[--slide-spacing:1rem] [--slide-size:100%]">
                 {grimoireCards.map((card) => {
                   const cardImage = PlaceHolderImages.find(img => img.id === card.imageId);
+                  if (!cardImage) return null;
+
                   return (
                     <CarouselItem key={card.id}>
-                      <Card className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20">
-                        <CardContent className="relative flex aspect-video items-center justify-center p-0">
-                          {cardImage ? (
-                            <Image
+                       <Dialog>
+                        <DialogTrigger asChild>
+                          <Card className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20 cursor-pointer">
+                            <CardContent className="relative flex aspect-video items-center justify-center p-0">
+                              <Image
+                                src={cardImage.imageUrl}
+                                alt={cardImage.description}
+                                fill
+                                data-ai-hint={cardImage.imageHint}
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                              <h4 className="absolute bottom-4 text-2xl font-bold text-white z-10">{card.title}</h4>
+                            </CardContent>
+                          </Card>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-3xl p-0">
+                           <Image
                               src={cardImage.imageUrl}
                               alt={cardImage.description}
-                              fill
-                              data-ai-hint={cardImage.imageHint}
-                              className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              width={1920}
+                              height={1080}
+                              className="w-full h-auto object-contain rounded-lg"
                             />
-                          ) : (
-                             <div className="w-full h-full bg-secondary"></div>
-                          )}
-                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                           <h4 className="absolute bottom-4 text-2xl font-bold text-white z-10">{card.title}</h4>
-                        </CardContent>
-                      </Card>
+                        </DialogContent>
+                      </Dialog>
                     </CarouselItem>
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
             </Carousel>
 
             <h3 className="text-xl font-bold text-primary">▽△▽</h3>
