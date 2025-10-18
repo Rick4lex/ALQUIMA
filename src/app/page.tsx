@@ -82,21 +82,22 @@ export default function Home() {
         <ThemeToggle />
       </header>
       
-      <main className="flex flex-1 flex-col items-center justify-center p-4 text-center">
-        <div className="w-full max-w-md space-y-8">
-          <div className="flex flex-col items-center space-y-4">
-            {bannerImage && (
-              <div className="w-full overflow-hidden rounded-lg border-4 border-primary/20 shadow-lg">
-                <Image 
-                  src={bannerImage.imageUrl} 
-                  alt={bannerImage.description}
-                  width={720}
-                  height={240}
-                  data-ai-hint={bannerImage.imageHint}
-                  className="aspect-[3/1] object-cover"
-                />
-              </div>
-            )}
+      <main className="flex-1">
+        {bannerImage && (
+          <div className="w-full">
+            <Image 
+              src={bannerImage.imageUrl} 
+              alt={bannerImage.description}
+              width={1920}
+              height={640}
+              data-ai-hint={bannerImage.imageHint}
+              className="w-full aspect-[3/1] object-cover"
+            />
+          </div>
+        )}
+
+        <div className="container mx-auto max-w-md p-4 text-center">
+          <div className="flex flex-col items-center space-y-4 mb-8">
             <div className="flex flex-col">
               <h2 className="text-2xl font-bold">@alquima.mizu</h2>
               <p className="text-sm text-muted-foreground">Creatividad hecha colección.</p>
