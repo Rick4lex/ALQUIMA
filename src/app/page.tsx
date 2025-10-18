@@ -3,7 +3,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Copy, Store } from "lucide-react";
+import { Copy, Store, Mail } from "lucide-react";
+import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -136,8 +137,8 @@ export default function Home() {
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10" />
+              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10" />
             </Carousel>
 
             <h3 className="text-xl font-bold text-primary">▽△▽</h3>
@@ -173,6 +174,7 @@ export default function Home() {
         <div className="w-full max-w-2xl mx-auto flex flex-col md:flex-row justify-around items-center md:items-start space-y-8 md:space-y-0 text-center">
             <div className="space-y-2">
                  <div className="flex items-center justify-center gap-2">
+                    <WhatsappIcon className="h-5 w-5 text-green-500" />
                     <span className="text-sm font-medium">{contactInfo.whatsappNumber}</span>
                     <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => copyToClipboard(contactInfo.whatsappNumber, 'Número')}>
                         <Copy className="h-4 w-4" />
@@ -186,6 +188,7 @@ export default function Home() {
             </div>
              <div className="space-y-2">
                  <div className="flex items-center justify-center gap-2">
+                    <Mail className="h-5 w-5 text-primary" />
                     <span className="text-sm font-medium">{contactInfo.emailAddress}</span>
                      <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => copyToClipboard(contactInfo.emailAddress, 'Correo')}>
                         <Copy className="h-4 w-4" />
