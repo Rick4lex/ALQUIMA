@@ -26,7 +26,12 @@ import { socialLinks, contactInfo, grimoireCards } from "@/lib/pagedata";
 export default function Home() {
   const { theme } = useTheme();
   const { toast } = useToast();
+  const [mounted, setMounted] = React.useState(false);
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const AlquimaLogo = theme === 'dark' 
     ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png'
@@ -50,7 +55,11 @@ export default function Home() {
       <header className="sticky top-0 z-50 flex items-center justify-between p-4 bg-background/80 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2" aria-label="Home">
           <div className="text-4xl font-black text-primary">水</div>
-          <Image src={AlquimaLogo} alt="ALQUIMA" width={120} height={30} className="object-contain" priority />
+          {mounted ? (
+            <Image src={AlquimaLogo} alt="ALQUIMA" width={120} height={30} className="object-contain" priority />
+          ) : (
+            <div style={{ width: 120, height: 30 }} />
+          )}
         </Link>
         <ThemeToggle />
       </header>
