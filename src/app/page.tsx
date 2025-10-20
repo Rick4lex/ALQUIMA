@@ -166,8 +166,9 @@ export default function Home() {
               >
                 <CarouselContent>
                   {grimoireCategories.map((category) => {
-                    const cardImage = PlaceHolderImages.find(img => img.id === category.coverImageId);
-                    if (!cardImage) return null;
+                    const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
+                    if (categoryImages.length === 0) return null;
+                    const cardImage = categoryImages[Math.floor(Math.random() * categoryImages.length)];
 
                     return (
                       <CarouselItem key={category.id}>
