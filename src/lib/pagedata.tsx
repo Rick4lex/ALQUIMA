@@ -1,5 +1,5 @@
 
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Youtube } from "lucide-react";
 
 export const socialLinks = [
     {
@@ -12,6 +12,11 @@ export const socialLinks = [
       href: "https://facebook.com/hinokami.sstore",
       icon: <Facebook className="h-6 w-6" />,
     },
+    {
+        name: "Youtube",
+        href: "https://youtube.com",
+        icon: <Youtube className="h-6 w-6" />
+    }
   ];
   
   export const contactInfo = {
