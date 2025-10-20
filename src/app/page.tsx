@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Copy, Store, Mail } from "lucide-react";
+import { Copy, Store, Mail, Contact } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -58,9 +58,9 @@ export default function Home() {
         <Link href="/" className="flex items-center gap-2" aria-label="Home">
           <div className="text-4xl font-black text-primary">水</div>
           {mounted ? (
-            <Image src={AlquimaLogo} alt="ALQUIMA" width={120} height={30} className="object-contain" priority />
+            <Image src={AlquimaLogo} alt="ALQUIMA" width={120} height={40} className="object-contain" priority />
           ) : (
-            <div style={{ width: 120, height: 30 }} />
+            <div style={{ width: 120, height: 40 }} />
           )}
         </Link>
         <ThemeToggle />
@@ -171,7 +171,7 @@ export default function Home() {
         
         <Separator />
         
-        <div className="w-full max-w-2xl mx-auto flex flex-col md:flex-row justify-around items-center md:items-start space-y-8 md:space-y-0 text-center">
+        <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row justify-around items-center md:items-start space-y-8 md:space-y-0 text-center">
             <div className="space-y-2">
                  <div className="flex items-center justify-center gap-2">
                     <WhatsappIcon className="h-5 w-5 text-green-500" />
@@ -197,6 +197,17 @@ export default function Home() {
                  <Button asChild size="sm" variant="link">
                     <a href={`mailto:${contactInfo.emailAddress}`}>
                         Enviar Correo
+                    </a>
+                 </Button>
+            </div>
+            <div className="space-y-2">
+                 <div className="flex items-center justify-center gap-2">
+                    <Contact className="h-5 w-5 text-primary" />
+                    <span className="text-sm font-medium">Guardar Contacto</span>
+                 </div>
+                 <Button asChild size="sm" variant="link">
+                    <a href="/Alquima_Mizu.vcf" download>
+                        Descargar VCF
                     </a>
                  </Button>
             </div>
