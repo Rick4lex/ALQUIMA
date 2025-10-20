@@ -3,7 +3,9 @@ import data from './placeholder-images.json';
 export type ImagePlaceholder = {
   id: string;
   category?: string;
+  title?: string;
   description: string;
+  details?: string;
   imageUrl: string;
   imageHint: string;
 };

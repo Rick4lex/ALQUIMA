@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Copy, Store, Mail, Contact, ChevronLeft, ChevronRight } from "lucide-react";
+import { Copy, Store, Mail, Contact, ChevronLeft, ChevronRight, X, Info } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -22,11 +22,51 @@ import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { socialLinks, contactInfo, grimoireCategories } from "@/lib/pagedata";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { AlquimaLogo } from "@/components/icons/alquima-logo";
 
-function GalleryModal({ images, startIndex }: { images: ImagePlaceholder[], startIndex: number }) {
+function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder, onClose: () => void }) {
+  const whatsappInquiryUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, estoy interesado en el artefacto: ${image.title}`)}`;
+  const categoryName = grimoireCategories.find(cat => cat.id === image.category)?.title.toUpperCase();
+
+  return (
+    <div className="fixed inset-0 z-[60] bg-black/60 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="relative w-full max-w-sm rounded-lg overflow-hidden" onClick={(e) => e.stopPropagation()}>
+        <Image
+          src={image.imageUrl}
+          alt={image.description}
+          fill
+          className="object-cover filter brightness-50"
+        />
+        <div className="relative z-10 p-6 flex flex-col h-[70vh] max-h-[500px] justify-between bg-black/30 backdrop-blur-sm text-white">
+          <div>
+            <p className="text-right text-xs font-bold tracking-widest text-white/80 mb-4">CATEGORÍA: {categoryName}</p>
+            <h3 className="text-2xl font-bold">{image.title}</h3>
+            <Separator className="my-3 bg-white/50" />
+            <p className="text-sm">{image.details}</p>
+          </div>
+          <div className="space-y-4">
+            <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white font-bold">
+              <Link href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
+                <WhatsappIcon className="mr-2 h-5 w-5"/>
+                Consultar Artefacto
+              </Link>
+            </Button>
+            <AlquimaLogo className="h-8 w-auto mx-auto text-white/70" />
+          </div>
+        </div>
+         <Button onClick={onClose} variant="ghost" className="absolute bottom-4 right-4 z-20 text-white/80 hover:text-white">
+            Ver menos
+          </Button>
+      </div>
+    </div>
+  );
+}
+
+
+function GalleryModal({ images, startIndex, onClose, onOpenArtifact }: { images: ImagePlaceholder[], startIndex: number, onClose: () => void, onOpenArtifact: (image: ImagePlaceholder) => void }) {
   const [currentIndex, setCurrentIndex] = React.useState(startIndex);
 
   const goToPrevious = () => {
@@ -57,6 +97,13 @@ function GalleryModal({ images, startIndex }: { images: ImagePlaceholder[], star
             className="w-full h-auto object-contain rounded-lg"
           />
         </ScrollArea>
+
+        <DialogClose asChild>
+            <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-20" onClick={onClose}>
+                <X className="h-6 w-6" />
+            </Button>
+        </DialogClose>
+        
         {images.length > 1 && (
             <>
                 <Button 
@@ -77,6 +124,15 @@ function GalleryModal({ images, startIndex }: { images: ImagePlaceholder[], star
                 </Button>
             </>
         )}
+         <Button 
+              variant="outline"
+              size="sm" 
+              onClick={() => onOpenArtifact(currentImage)}
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background/50 hover:bg-background/75 z-10"
+          >
+              <Info className="mr-2 h-4 w-4" />
+              Ver Detalles
+          </Button>
       </div>
     </DialogContent>
   );
@@ -89,6 +145,9 @@ export default function Home() {
   const [mounted, setMounted] = React.useState(false);
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
   const [galleryState, setGalleryState] = React.useState<{ images: ImagePlaceholder[], startIndex: number, isOpen: boolean }>({ images: [], startIndex: 0, isOpen: false });
+  const [artifactSheetState, setArtifactSheetState] = React.useState<{ image: ImagePlaceholder | null, isOpen: boolean }>({ image: null, isOpen: false });
+  const [categoryCoverImages, setCategoryCoverImages] = React.useState<Record<string, ImagePlaceholder>>({});
+
 
   const autoplayPlugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
@@ -96,6 +155,17 @@ export default function Home() {
 
   React.useEffect(() => {
     setMounted(true);
+    
+    const covers: Record<string, ImagePlaceholder> = {};
+    grimoireCategories.forEach(category => {
+      const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
+      if (categoryImages.length > 0) {
+        const randomIndex = Math.floor(Math.random() * categoryImages.length);
+        covers[category.id] = categoryImages[randomIndex];
+      }
+    });
+    setCategoryCoverImages(covers);
+
   }, []);
 
   const AlquimaLogo = theme === 'dark' 
@@ -111,10 +181,19 @@ export default function Home() {
     });
   };
 
-  const openGallery = (category: string) => {
+  const openGallery = (category: string, startIndex: number = 0) => {
     const images = PlaceHolderImages.filter(img => img.category === category);
-    setGalleryState({ images, startIndex: 0, isOpen: true });
+    setGalleryState({ images, startIndex, isOpen: true });
   };
+  
+  const closeGallery = () => setGalleryState(s => ({ ...s, isOpen: false }));
+
+  const openArtifactSheet = (image: ImagePlaceholder) => {
+    setArtifactSheetState({ image, isOpen: true });
+    closeGallery();
+  };
+
+  const closeArtifactSheet = () => setArtifactSheetState({ image: null, isOpen: false });
 
 
   return (
@@ -156,7 +235,7 @@ export default function Home() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-primary">▽△▽△▽△ GRIMORIO ▽△▽△▽△</h3>
             
-            <Dialog open={galleryState.isOpen} onOpenChange={(isOpen) => setGalleryState(s => ({ ...s, isOpen }))}>
+            <Dialog open={galleryState.isOpen} onOpenChange={(isOpen) => !isOpen && closeGallery()}>
               <Carousel
                 className="w-full"
                 opts={{
@@ -166,9 +245,8 @@ export default function Home() {
               >
                 <CarouselContent>
                   {grimoireCategories.map((category) => {
-                    const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
-                    if (categoryImages.length === 0) return null;
-                    const cardImage = categoryImages[Math.floor(Math.random() * categoryImages.length)];
+                    const cardImage = categoryCoverImages[category.id];
+                    if (!cardImage) return null;
 
                     return (
                       <CarouselItem key={category.id}>
@@ -197,8 +275,12 @@ export default function Home() {
                 <CarouselPrevious className={cn("absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10")} />
                 <CarouselNext className={cn("absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10")} />
               </Carousel>
-              {galleryState.isOpen && <GalleryModal images={galleryState.images} startIndex={galleryState.startIndex} />}
+              {galleryState.isOpen && <GalleryModal images={galleryState.images} startIndex={galleryState.startIndex} onClose={closeGallery} onOpenArtifact={openArtifactSheet} />}
             </Dialog>
+
+            {artifactSheetState.isOpen && artifactSheetState.image && (
+              <ArtifactSheet image={artifactSheetState.image} onClose={closeArtifactSheet} />
+            )}
 
             <h3 className="text-xl font-bold text-primary">▽△▽</h3>
             
