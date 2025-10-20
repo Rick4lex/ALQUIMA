@@ -26,10 +26,10 @@ export const socialLinks = [
   };
   
   export const grimoireCategories = [
-      { id: "minifiguras", title: "Minifiguras" },
-      { id: "dibujos", title: "Dibujos" },
-      { id: "stickers", title: "Stickers" },
-      { id: "tatuajes", title: "Tatuajes" },
-      { id: "accesorios", title: "Accesorios" },
+      { id: "minifiguras", title: "Minifiguras", coverImageId: "minifiguras-1" },
+      { id: "dibujos", title: "Dibujos", coverImageId: "dibujos" },
+      { id: "stickers", title: "Stickers", coverImageId: "stickers" },
+      { id: "tatuajes", title: "Tatuajes", coverImageId: "tatuajes" },
+      { id: "accesorios", title: "Accesorios", coverImageId: "accesorios" },
   ];
   

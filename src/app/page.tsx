@@ -111,10 +111,9 @@ export default function Home() {
     });
   };
 
-  const openGallery = (category: string, imageId: string) => {
+  const openGallery = (category: string) => {
     const images = PlaceHolderImages.filter(img => img.category === category);
-    const startIndex = images.findIndex(img => img.id === imageId);
-    setGalleryState({ images, startIndex: Math.max(0, startIndex), isOpen: true });
+    setGalleryState({ images, startIndex: 0, isOpen: true });
   };
 
 
@@ -167,8 +166,7 @@ export default function Home() {
               >
                 <CarouselContent>
                   {grimoireCategories.map((category) => {
-                    const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
-                    const cardImage = categoryImages[0];
+                    const cardImage = PlaceHolderImages.find(img => img.id === category.coverImageId);
                     if (!cardImage) return null;
 
                     return (
@@ -176,7 +174,7 @@ export default function Home() {
                          <DialogTrigger asChild>
                            <Card 
                               className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20 cursor-pointer"
-                              onClick={() => openGallery(category.id, cardImage.id)}
+                              onClick={() => openGallery(category.id)}
                             >
                               <CardContent className="relative flex aspect-video items-center justify-center p-0">
                                 <Image
