@@ -3,11 +3,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Copy, Store, Mail, Contact } from "lucide-react";
+import { Copy, Store, Mail, Contact, ChevronLeft, ChevronRight } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-images";
 import { useTheme } from "@/components/theme-provider";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -21,15 +21,74 @@ import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Separator } from "@/components/ui/separator";
-import { socialLinks, contactInfo, grimoireCards } from "@/lib/pagedata";
+import { socialLinks, contactInfo, grimoireCategories } from "@/lib/pagedata";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
+
+function GalleryModal({ images, startIndex }: { images: ImagePlaceholder[], startIndex: number }) {
+  const [currentIndex, setCurrentIndex] = React.useState(startIndex);
+
+  const goToPrevious = () => {
+    const isFirstImage = currentIndex === 0;
+    const newIndex = isFirstImage ? images.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastImage = currentIndex === images.length - 1;
+    const newIndex = isLastImage ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+  
+  if (!images.length) return null;
+
+  const currentImage = images[currentIndex];
+
+  return (
+    <DialogContent className="max-w-5xl w-full p-0 bg-transparent border-0">
+      <div className="relative">
+        <ScrollArea className="max-h-[90vh] rounded-lg">
+          <Image
+            src={currentImage.imageUrl}
+            alt={currentImage.description}
+            width={1920}
+            height={1080}
+            className="w-full h-auto object-contain rounded-lg"
+          />
+        </ScrollArea>
+        {images.length > 1 && (
+            <>
+                <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    onClick={goToPrevious}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10"
+                >
+                    <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    onClick={goToNext}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10"
+                >
+                    <ChevronRight className="h-6 w-6" />
+                </Button>
+            </>
+        )}
+      </div>
+    </DialogContent>
+  );
+}
+
 
 export default function Home() {
   const { theme } = useTheme();
   const { toast } = useToast();
   const [mounted, setMounted] = React.useState(false);
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
+  const [galleryState, setGalleryState] = React.useState<{ images: ImagePlaceholder[], startIndex: number, isOpen: boolean }>({ images: [], startIndex: 0, isOpen: false });
 
   const autoplayPlugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
@@ -51,6 +110,13 @@ export default function Home() {
       });
     });
   };
+
+  const openGallery = (category: string, imageId: string) => {
+    const images = PlaceHolderImages.filter(img => img.category === category);
+    const startIndex = images.findIndex(img => img.id === imageId);
+    setGalleryState({ images, startIndex: Math.max(0, startIndex), isOpen: true });
+  };
+
 
   return (
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
@@ -91,55 +157,49 @@ export default function Home() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-primary">▽△▽△▽△ GRIMORIO ▽△▽△▽△</h3>
             
-            <Carousel
-              className="w-full"
-              opts={{
-                loop: true,
-              }}
-              plugins={[autoplayPlugin.current]}
-            >
-              <CarouselContent>
-                {grimoireCards.map((card) => {
-                  const cardImage = PlaceHolderImages.find(img => img.id === card.imageId);
-                  if (!cardImage) return null;
+            <Dialog open={galleryState.isOpen} onOpenChange={(isOpen) => setGalleryState(s => ({ ...s, isOpen }))}>
+              <Carousel
+                className="w-full"
+                opts={{
+                  loop: true,
+                }}
+                plugins={[autoplayPlugin.current]}
+              >
+                <CarouselContent>
+                  {grimoireCategories.map((category) => {
+                    const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
+                    const cardImage = categoryImages[0];
+                    if (!cardImage) return null;
 
-                  return (
-                    <CarouselItem key={card.id}>
-                       <Dialog>
-                        <DialogTrigger asChild>
-                          <Card className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20 cursor-pointer">
-                            <CardContent className="relative flex aspect-video items-center justify-center p-0">
-                              <Image
-                                src={cardImage.imageUrl}
-                                alt={cardImage.description}
-                                fill
-                                data-ai-hint={cardImage.imageHint}
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                              <h4 className="absolute bottom-4 text-2xl font-bold text-white z-10">{card.title}</h4>
-                            </CardContent>
-                          </Card>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-3xl p-0">
-                           <ScrollArea className="max-h-[80vh]">
-                            <Image
-                                src={cardImage.imageUrl}
-                                alt={cardImage.description}
-                                width={1920}
-                                height={1080}
-                                className="w-full h-auto object-contain rounded-lg"
-                              />
-                           </ScrollArea>
-                        </DialogContent>
-                      </Dialog>
-                    </CarouselItem>
-                  );
-                })}
-              </CarouselContent>
-              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10" />
-              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10" />
-            </Carousel>
+                    return (
+                      <CarouselItem key={category.id}>
+                         <DialogTrigger asChild>
+                           <Card 
+                              className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20 cursor-pointer"
+                              onClick={() => openGallery(category.id, cardImage.id)}
+                            >
+                              <CardContent className="relative flex aspect-video items-center justify-center p-0">
+                                <Image
+                                  src={cardImage.imageUrl}
+                                  alt={cardImage.description}
+                                  fill
+                                  data-ai-hint={cardImage.imageHint}
+                                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                <h4 className="absolute bottom-4 text-2xl font-bold text-white z-10">{category.title}</h4>
+                              </CardContent>
+                            </Card>
+                         </DialogTrigger>
+                      </CarouselItem>
+                    );
+                  })}
+                </CarouselContent>
+                <CarouselPrevious className={cn("absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10")} />
+                <CarouselNext className={cn("absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10")} />
+              </Carousel>
+              {galleryState.isOpen && <GalleryModal images={galleryState.images} startIndex={galleryState.startIndex} />}
+            </Dialog>
 
             <h3 className="text-xl font-bold text-primary">▽△▽</h3>
             

@@ -25,11 +25,11 @@ export const socialLinks = [
     emailAddress: "alq.mizu@gmail.com",
   };
   
-  export const grimoireCards = [
-      { id: "grimoire-1", title: "Minifiguras", imageId: "minifiguras" },
-      { id: "grimoire-2", title: "Dibujos", imageId: "dibujos" },
-      { id: "grimoire-3", title: "Stickers", imageId: "stickers" },
-      { id: "grimoire-4", title: "Tatuajes", imageId: "tatuajes" },
-      { id: "grimoire-5", title: "Accesorios", imageId: "accesorios" },
+  export const grimoireCategories = [
+      { id: "minifiguras", title: "Minifiguras" },
+      { id: "dibujos", title: "Dibujos" },
+      { id: "stickers", title: "Stickers" },
+      { id: "tatuajes", title: "Tatuajes" },
+      { id: "accesorios", title: "Accesorios" },
   ];
   
