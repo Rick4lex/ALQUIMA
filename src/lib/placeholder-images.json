@@ -9,18 +9,18 @@
     {
       "id": "minifiguras-1",
       "category": "minifiguras",
-      "title": "Tanjiro Kamado / Kimetsu No Yaiba",
+      "title": "Kikoru Shinomiya / Kaiju No. 8",
       "description": "Preview for Minifiguras 1",
-      "details": "Figuras De Construcción de 6cm. Detalles premium esculpidos por Banpresto.",
-      "imageUrl": "https://images.unsplash.com/photo-1718454985990-23f8f96ffd44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjdXN0b20lMjBtaW5pYXR1cmVzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png",
       "imageHint": "custom miniatures"
     },
     {
       "id": "minifiguras-2",
       "category": "minifiguras",
-      "title": "Personaje Custom 1",
+      "title": "Mini Figuras Bloques De Construcción Para Niños",
       "description": "Custom minifigure 2",
-      "details": "Descripción detallada de la minifigura custom 1.",
+      "details": "Bloques de construcción pequeños (compatible con Lego), Material: ABS",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg",
       "imageHint": "custom minifigure",
       "price": "10.000 c/und"
@@ -28,19 +28,28 @@
     {
       "id": "minifiguras-3",
       "category": "minifiguras",
-      "title": "Personaje Custom 2",
+      "title": "Tanjiro Kamado / Kimetsu No Yaiba",
       "description": "Custom minifigure 3",
-      "details": "Descripción detallada de la minifigura custom 2.",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg",
       "imageHint": "custom minifigure"
     },
     {
       "id": "dibujos",
       "category": "dibujos",
-      "title": "Ilustración Fantástica",
+      "title": "Anime Dibujos A Lapiz Y Madera",
       "description": "Preview for Dibujos",
-      "details": "Dibujo hecho a mano con técnicas mixtas sobre papel de alta calidad.",
-      "imageUrl": "https://images.unsplash.com/photo-1712686421453-444a1e1ebe5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYW50YXN5JTIwZHJhd2luZ3N8ZW58MHx8fHwxNzYwNzY1ODIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "details": "Dibujo hecho a mano con técnicas mixtas. Más artes en Ig dszo.art.",
+      "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1761019947/9e265f18-c4b5-40a4-84c0-c2a09d4f2df4.png",
+      "imageHint": "fantasy drawings"
+    },
+    {
+      "id": "dibujos-2",
+      "category": "dibujos",
+      "title": "Pinturas y Dibujos Anime",
+      "description": "Preview for Dibujos",
+      "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido.",
+      "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png",
       "imageHint": "fantasy drawings"
     },
     {
@@ -64,10 +73,10 @@
     {
       "id": "accesorios",
       "category": "accesorios",
-      "title": "Amuleto Rúnico",
+      "title": "Llaveros Dandandan, Shingeki no kyojin",
       "description": "Preview for Accesorios",
-      "details": "Accesorio artesanal con símbolos rúnicos grabados a mano.",
-      "imageUrl": "https://images.unsplash.com/photo-1700389604768-9e82421b3d84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxteXN0aWNhbCUyMGFjY2Vzc29yaWVzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "details": "regalo 🎁, Decoración Maletín 🎒.",
+      "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png",
       "imageHint": "mystical accessories"
     }
   ]

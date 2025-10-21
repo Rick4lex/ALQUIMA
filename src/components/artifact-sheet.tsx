@@ -61,7 +61,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
             <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white font-bold h-12 text-base">
               <Link href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
                 <WhatsappIcon className="mr-2 h-5 w-5"/>
-                Consultar Artefacto
+                Consultar
               </Link>
             </Button>
             <div className="flex justify-between items-center">
