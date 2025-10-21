@@ -168,9 +168,11 @@ export default function Home() {
 
   }, []);
 
-  const AlquimaLogo = theme === 'dark' 
-    ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png'
-    : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png';
+  const logoUrl = mounted
+    ? theme === 'dark'
+      ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png'
+      : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png'
+    : '';
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -190,7 +192,6 @@ export default function Home() {
 
   const openArtifactSheet = (image: ImagePlaceholder) => {
     setArtifactSheetState({ image, isOpen: true });
-    closeGallery();
   };
 
   const closeArtifactSheet = () => setArtifactSheetState({ image: null, isOpen: false });
@@ -201,8 +202,8 @@ export default function Home() {
       <header className="sticky top-0 z-50 flex items-center justify-between p-4 bg-background/80 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2" aria-label="Home">
           <div className="text-4xl font-black text-primary">水</div>
-          {mounted ? (
-            <Image src={AlquimaLogo} alt="ALQUIMA" width={120} height={40} className="object-contain" priority />
+          {mounted && logoUrl ? (
+            <Image src={logoUrl} alt="ALQUIMA" width={120} height={40} className="object-contain" priority />
           ) : (
             <div style={{ width: 120, height: 40 }} />
           )}
@@ -357,3 +358,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
