@@ -72,7 +72,7 @@ export function GalleryModal({
       <DialogContent className="max-w-5xl w-full p-0 bg-transparent border-0 flex items-center justify-center">
         <div className="relative w-full h-full">
           <ScrollArea className="h-[90vh] w-full rounded-lg">
-            <div className="flex items-center justify-center h-full w-full">
+            <div className="flex items-center justify-center h-full min-h-[90vh] w-full">
               <Image
                 src={currentImage.imageUrl}
                 alt={currentImage.description}
