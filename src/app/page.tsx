@@ -32,34 +32,38 @@ function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder, onClose: (
   const categoryName = grimoireCategories.find(cat => cat.id === image.category)?.title.toUpperCase();
 
   return (
-    <div className="fixed inset-0 z-[60] bg-black/60 flex items-center justify-center p-4" onClick={onClose}>
-      <div className="relative w-full max-w-sm rounded-lg overflow-hidden" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={onClose}>
+      <div className="relative w-full max-w-sm rounded-lg overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
         <Image
           src={image.imageUrl}
           alt={image.description}
           fill
           className="object-cover filter brightness-50"
         />
-        <div className="relative z-10 p-6 flex flex-col h-[70vh] max-h-[500px] justify-between bg-black/30 backdrop-blur-sm text-white">
+        <div className="relative z-10 p-6 flex flex-col h-[75vh] max-h-[600px] justify-between text-white">
+          <div className="text-right">
+            {categoryName && <p className="text-xs font-bold tracking-widest text-white/80 mb-4">{categoryName}</p>}
+          </div>
           <div>
-            <p className="text-right text-xs font-bold tracking-widest text-white/80 mb-4">CATEGORÍA: {categoryName}</p>
-            <h3 className="text-2xl font-bold">{image.title}</h3>
-            <Separator className="my-3 bg-white/50" />
-            <p className="text-sm">{image.details}</p>
+            <h3 className="text-3xl font-bold">{image.title}</h3>
+            <Separator className="my-4 bg-white/50" />
+            <p className="text-sm leading-relaxed">{image.details}</p>
           </div>
           <div className="space-y-4">
-            <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white font-bold">
+            <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white font-bold h-12 text-base">
               <Link href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
                 <WhatsappIcon className="mr-2 h-5 w-5"/>
                 Consultar Artefacto
               </Link>
             </Button>
-            <AlquimaLogo className="h-8 w-auto mx-auto text-white/70" />
+            <div className="flex justify-between items-center">
+                <Button onClick={onClose} variant="ghost" className="z-20 text-white/80 hover:text-white px-2">
+                    Ver menos
+                </Button>
+                <AlquimaLogo className="h-8 w-auto text-white/70" />
+            </div>
           </div>
         </div>
-         <Button onClick={onClose} variant="ghost" className="absolute bottom-4 right-4 z-20 text-white/80 hover:text-white">
-            Ver menos
-          </Button>
       </div>
     </div>
   );
@@ -167,6 +171,8 @@ export default function Home() {
     setCategoryCoverImages(covers);
 
   }, []);
+  
+  const allArtifacts = React.useMemo(() => PlaceHolderImages.filter(img => img.category), []);
 
   const logoUrl = mounted
     ? theme === 'dark'
@@ -182,9 +188,8 @@ export default function Home() {
       });
     });
   };
-
-  const openGallery = (category: string, startIndex: number = 0) => {
-    const images = PlaceHolderImages.filter(img => img.category === category);
+  
+  const openGallery = (images: ImagePlaceholder[], startIndex: number = 0) => {
     setGalleryState({ images, startIndex, isOpen: true });
   };
   
@@ -234,7 +239,34 @@ export default function Home() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">▽△▽△▽△ GRIMORIO ▽△▽△▽△</h3>
+             <Dialog>
+                <DialogTrigger asChild>
+                    <h3 className="text-xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity">▽△▽△▽△ GRIMORIO ▽△▽△▽△</h3>
+                </DialogTrigger>
+                <DialogContent className="max-w-7xl w-full p-4">
+                    <h2 className="text-2xl font-bold text-center mb-4">Grimorio Completo</h2>
+                    <ScrollArea className="h-[80vh]">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-1">
+                            {allArtifacts.map((image, index) => (
+                                <Card key={image.id} className="overflow-hidden cursor-pointer" onClick={() => { openGallery(allArtifacts, index); }}>
+                                    <CardContent className="p-0 relative aspect-square">
+                                        <Image
+                                            src={image.imageUrl}
+                                            alt={image.description}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-black/30" />
+                                        <div className="absolute bottom-0 left-0 p-2 text-white">
+                                            <h4 className="font-bold text-sm">{image.title}</h4>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </ScrollArea>
+                </DialogContent>
+            </Dialog>
             
             <Dialog open={galleryState.isOpen} onOpenChange={(isOpen) => !isOpen && closeGallery()}>
               <Carousel
@@ -247,28 +279,27 @@ export default function Home() {
                 <CarouselContent>
                   {grimoireCategories.map((category) => {
                     const cardImage = categoryCoverImages[category.id];
+                    const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
                     if (!cardImage) return null;
 
                     return (
                       <CarouselItem key={category.id}>
-                         <DialogTrigger asChild>
-                           <Card 
-                              className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20 cursor-pointer"
-                              onClick={() => openGallery(category.id)}
-                            >
-                              <CardContent className="relative flex aspect-video items-center justify-center p-0">
-                                <Image
-                                  src={cardImage.imageUrl}
-                                  alt={cardImage.description}
-                                  fill
-                                  data-ai-hint={cardImage.imageHint}
-                                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                <h4 className="absolute bottom-4 text-2xl font-bold text-white z-10">{category.title}</h4>
-                              </CardContent>
-                            </Card>
-                         </DialogTrigger>
+                         <Card 
+                            className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20 cursor-pointer"
+                            onClick={() => openGallery(categoryImages)}
+                          >
+                            <CardContent className="relative flex aspect-video items-center justify-center p-0">
+                              <Image
+                                src={cardImage.imageUrl}
+                                alt={cardImage.description}
+                                fill
+                                data-ai-hint={cardImage.imageHint}
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                              <h4 className="absolute bottom-4 text-2xl font-bold text-white z-10">{category.title}</h4>
+                            </CardContent>
+                          </Card>
                       </CarouselItem>
                     );
                   })}
