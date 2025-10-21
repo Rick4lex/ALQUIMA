@@ -43,7 +43,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
           fill
           className="object-cover filter brightness-50"
         />
-        <div className="relative z-10 p-6 flex flex-col h-[75vh] max-h-[600px] justify-between text-white">
+        <div className="relative z-10 p-6 flex flex-col h-[80vh] max-h-[600px] justify-between text-white">
           <div className="text-right">
             {categoryName && <p className="text-xs font-bold tracking-widest text-white/80 mb-4">{categoryName}</p>}
           </div>
@@ -53,6 +53,11 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
             <p className="text-sm leading-relaxed">{image.details}</p>
           </div>
           <div className="space-y-4">
+            {image.price && (
+                <div className="text-center mb-2">
+                    <p className="text-lg font-bold">{image.price}</p>
+                </div>
+            )}
             <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white font-bold h-12 text-base">
               <Link href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
                 <WhatsappIcon className="mr-2 h-5 w-5"/>

@@ -22,7 +22,8 @@
       "description": "Custom minifigure 2",
       "details": "Descripción detallada de la minifigura custom 1.",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg",
-      "imageHint": "custom minifigure"
+      "imageHint": "custom minifigure",
+      "price": "10.000 c/und"
     },
     {
       "id": "minifiguras-3",
