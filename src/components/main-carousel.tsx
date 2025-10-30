@@ -25,8 +25,10 @@ export function MainCarousel({ onCategoryClick }: { onCategoryClick: (images: Im
 
   React.useEffect(() => {
     const covers: Record<string, ImagePlaceholder> = {};
+    const availableImages = PlaceHolderImages.filter(img => img.available);
+    
     grimoireCategories.forEach(category => {
-      const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
+      const categoryImages = availableImages.filter(img => img.category === category.id);
       if (categoryImages.length > 0) {
         const randomIndex = Math.floor(Math.random() * categoryImages.length);
         covers[category.id] = categoryImages[randomIndex];
@@ -35,18 +37,20 @@ export function MainCarousel({ onCategoryClick }: { onCategoryClick: (images: Im
     setCategoryCoverImages(covers);
   }, []);
 
+  const availableCategories = grimoireCategories.filter(cat => Object.keys(categoryCoverImages).includes(cat.id));
+
   return (
     <Carousel
       className="w-full"
       opts={{
-        loop: true,
+        loop: availableCategories.length > 1,
       }}
       plugins={[autoplayPlugin.current]}
     >
       <CarouselContent>
-        {grimoireCategories.map((category) => {
+        {availableCategories.map((category) => {
           const cardImage = categoryCoverImages[category.id];
-          const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
+          const categoryImages = PlaceHolderImages.filter(img => img.category === category.id && img.available);
           if (!cardImage) return null;
 
           return (
@@ -71,8 +75,12 @@ export function MainCarousel({ onCategoryClick }: { onCategoryClick: (images: Im
           );
         })}
       </CarouselContent>
-      <CarouselPrevious className={cn("absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10")} />
-      <CarouselNext className={cn("absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10")} />
+      {availableCategories.length > 1 && (
+        <>
+          <CarouselPrevious className={cn("absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10")} />
+          <CarouselNext className={cn("absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10")} />
+        </>
+      )}
     </Carousel>
   );
 }
