@@ -25,7 +25,6 @@
       "details": "Bloques de construcción pequeños (compatible con Lego), Material: ABS",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg",
       "imageHint": "custom minifigure",
-      "price": "10.000 c/und",
       "available": true
     },
     {
@@ -37,7 +36,7 @@
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg",
       "imageHint": "custom minifigure",
       "price": "18.000 und",
-      "available": false
+      "available": true
     },
     {
       "id": "dibujos",
@@ -72,7 +71,7 @@
     {
       "id": "tatuajes-temporales",
       "category": "tatuajes-temporales",
-      "title": "Diseño de Tatuaje Místico",
+      "title": "Tatuajes Temporales",
       "description": "Preview for Tatuajes Temporales",
       "details": "Diseño de tatuaje temporal con tinta hipoalergénica.",
       "imageUrl": "https://images.unsplash.com/photo-1566878823917-b40eaa39f91d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YXR0b28lMjBkZXNpZ25zfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlibrb-4.1.0&q=80&w=1080",

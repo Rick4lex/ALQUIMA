@@ -10,6 +10,7 @@ import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { AlquimaLogo } from "@/components/icons/alquima-logo";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
 import { cn } from '@/lib/utils';
 
 export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onClose: () => void }) {
@@ -44,8 +45,8 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
           alt={image.description}
           fill
           className={cn(
-            "object-cover filter brightness-50",
-            !image.available && "tint-green"
+            "object-cover",
+            !image.available && "tint-green filter brightness-50"
           )}
         />
         <div className="relative z-10 p-6 flex flex-col h-[80vh] max-h-[600px] justify-between text-white">
@@ -55,8 +56,15 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
           <div>
             <h3 className="text-3xl font-bold">{image.title}</h3>
             <Separator className="my-4 bg-white/50" />
+            
+            {!image.available && (
+                <Badge variant="secondary" className="mb-4">
+                    Este artefacto ya encontró a su portador.
+                </Badge>
+            )}
+
             <p className="text-sm leading-relaxed">
-              {image.available ? image.details : "Este artefacto ya encontró a su portador."}
+              {image.details}
             </p>
           </div>
           <div className="space-y-4">
