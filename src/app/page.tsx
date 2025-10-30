@@ -74,10 +74,6 @@ export default function Home() {
     setModalStack(stack => stack.slice(0, stack.length - 1));
   };
   
-  const closeAllModals = () => {
-    setModalStack([]);
-  };
-
   const handleOpenArtifact = (image: ImagePlaceholder) => {
     openModal({ type: 'artifact', image });
   };
@@ -217,7 +213,7 @@ export default function Home() {
       {/* MODAL CONTROLLER */}
       <GrimoireGallery 
         isOpen={currentModal?.type === 'grimoire'}
-        onClose={closeAllModals}
+        onClose={closeModal}
         allArtifacts={allArtifacts}
         onImageClick={handleOpenGallery}
       />
