@@ -11,6 +11,13 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { useTheme } from "@/components/theme-provider";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 
 import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-images";
 import { socialLinks, contactInfo } from "@/lib/pagedata";
@@ -112,12 +119,21 @@ export default function Home() {
           </div>
 
           <div className="space-y-4">
-            <h3 
-              className="text-xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity"
-              onClick={() => openModal({ type: 'grimoire' })}
-            >
-              ▽△▽△▽△ GRIMORIO ▽△▽△▽△
-            </h3>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <h3
+                    className="text-xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity"
+                    onClick={() => openModal({ type: 'grimoire' })}
+                  >
+                    ▽△▽△▽△ GRIMORIO ▽△▽△▽△
+                  </h3>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Nexo Códice</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             
             <MainCarousel onCategoryClick={(images) => openModal({ type: 'gallery', images, startIndex: 0 })} />
 

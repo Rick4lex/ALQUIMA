@@ -23,7 +23,7 @@ export function GrimoireGallery({
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-7xl w-full p-4">
-        <h2 className="text-2xl font-bold text-center mb-4">Grimorio Completo</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">Códice Resguardado</h2>
         <ScrollArea className="h-[80vh]">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-1">
                 {allArtifacts.map((image, index) => (
