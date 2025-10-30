@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Store, Mail, Contact, Copy } from "lucide-react";
+import { Store, Mail, Contact } from "lucide-react";
 import * as React from "react";
 
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -22,6 +22,7 @@ import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-imag
 import { socialLinks, contactInfo } from "@/lib/pagedata";
 import { AlquimaLogo } from "@/components/icons/alquima-logo";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
+import { Copy } from 'lucide-react';
 
 import { GrimoireGallery } from "@/components/grimoire-gallery";
 import { MainCarousel } from "@/components/main-carousel";
@@ -29,7 +30,7 @@ import { GalleryModal } from "@/components/gallery-modal";
 import { ArtifactSheet } from "@/components/artifact-sheet";
 
 export type ModalState = {
-  type: 'grimoire' | 'gallery' | 'artifact' | null;
+  type: 'grimoire' | 'gallery' | 'artifact';
   images?: ImagePlaceholder[];
   startIndex?: number;
   image?: ImagePlaceholder;
@@ -39,11 +40,12 @@ export default function Home() {
   const { theme } = useTheme();
   const { toast } = useToast();
   const [mounted, setMounted] = React.useState(false);
-  const [modalState, setModalState] = React.useState<ModalState>({ type: null });
+  const [modalStack, setModalStack] = React.useState<ModalState[]>([]);
+
+  const currentModal = modalStack[modalStack.length - 1];
 
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
   const allArtifacts = React.useMemo(() => PlaceHolderImages.filter(img => img.category), []);
-  const availableArtifacts = React.useMemo(() => allArtifacts.filter(img => img.available), [allArtifacts]);
 
   React.useEffect(() => {
     setMounted(true);
@@ -63,35 +65,26 @@ export default function Home() {
       });
     });
   };
-
-  const openModal = (state: ModalState) => setModalState(state);
-  const closeModal = () => setModalState({ type: null });
-
-  const handleOpenArtifact = (image: ImagePlaceholder) => {
-    const currentGalleryImages = modalState.type === 'gallery' ? modalState.images : allArtifacts;
-    const currentGalleryIndex = modalState.type === 'gallery' ? modalState.startIndex : allArtifacts.findIndex(i => i.id === image.id);
-    
-    openModal({ 
-      type: 'artifact', 
-      image,
-      images: currentGalleryImages, // Keep track of the underlying gallery
-      startIndex: currentGalleryIndex
-    });
+  
+  const openModal = (state: ModalState) => {
+    setModalStack(stack => [...stack, state]);
   };
   
-  const handleCloseArtifact = () => {
-    // If there was a gallery underneath, return to it. Otherwise, close all.
-    if (modalState.images && modalState.images.length > 0) {
-      openModal({ type: 'gallery', images: modalState.images, startIndex: modalState.startIndex });
-    } else {
-      closeModal();
-    }
+  const closeModal = () => {
+    setModalStack(stack => stack.slice(0, stack.length - 1));
+  };
+  
+  const closeAllModals = () => {
+    setModalStack([]);
+  };
+
+  const handleOpenArtifact = (image: ImagePlaceholder) => {
+    openModal({ type: 'artifact', image });
   };
   
   const handleOpenGallery = (images: ImagePlaceholder[], startIndex: number) => {
     openModal({ type: 'gallery', images, startIndex });
   };
-
 
   return (
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
@@ -223,24 +216,24 @@ export default function Home() {
 
       {/* MODAL CONTROLLER */}
       <GrimoireGallery 
-        isOpen={modalState.type === 'grimoire'}
-        onClose={closeModal}
+        isOpen={currentModal?.type === 'grimoire'}
+        onClose={closeAllModals}
         allArtifacts={allArtifacts}
         onImageClick={handleOpenGallery}
       />
       
       <GalleryModal
-        isOpen={modalState.type === 'gallery'}
+        isOpen={currentModal?.type === 'gallery'}
         onClose={closeModal}
-        images={modalState.images || []}
-        startIndex={modalState.startIndex || 0}
+        images={currentModal?.type === 'gallery' ? currentModal.images || [] : []}
+        startIndex={currentModal?.type === 'gallery' ? currentModal.startIndex || 0 : 0}
         onOpenArtifact={handleOpenArtifact}
       />
 
-      {modalState.type === 'artifact' && modalState.image && (
+      {currentModal?.type === 'artifact' && currentModal.image && (
         <ArtifactSheet
-          image={modalState.image}
-          onClose={handleCloseArtifact}
+          image={currentModal.image}
+          onClose={closeModal}
         />
       )}
     </div>
