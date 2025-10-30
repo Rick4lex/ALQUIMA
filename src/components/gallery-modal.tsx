@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, X, Info } from "lucide-react";
 import type { ImagePlaceholder } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 export function GalleryModal({ 
@@ -70,6 +70,7 @@ export function GalleryModal({
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-5xl w-full p-0 bg-transparent border-0 flex items-center justify-center">
+        <DialogTitle className="sr-only">Image Gallery</DialogTitle>
         <div className="relative w-full h-full">
           <ScrollArea className="h-[90vh] w-full rounded-lg">
             <div className="flex items-center justify-center h-full min-h-[90vh] w-full">

@@ -4,7 +4,7 @@
 import * as React from 'react';
 import Image from "next/image";
 import type { ImagePlaceholder } from "@/lib/placeholder-images";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -39,6 +39,7 @@ export function GrimoireGallery({
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-7xl w-full p-4">
+        <DialogTitle className="sr-only">Códice Resguardado</DialogTitle>
         <h2 className="text-2xl font-bold text-center mb-2">Códice Resguardado</h2>
         <div className="flex items-center justify-center space-x-2 mb-4">
           <Switch 
