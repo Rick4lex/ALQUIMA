@@ -211,20 +211,24 @@ export default function Home() {
       </footer>
 
       {/* MODAL CONTROLLER */}
-      <GrimoireGallery 
-        isOpen={currentModal?.type === 'grimoire'}
-        onClose={closeModal}
-        allArtifacts={allArtifacts}
-        onImageClick={handleOpenGallery}
-      />
+      {currentModal?.type === 'grimoire' && (
+        <GrimoireGallery 
+          isOpen={true}
+          onClose={closeModal}
+          allArtifacts={allArtifacts}
+          onImageClick={handleOpenGallery}
+        />
+      )}
       
-      <GalleryModal
-        isOpen={currentModal?.type === 'gallery'}
-        onClose={closeModal}
-        images={currentModal?.type === 'gallery' ? currentModal.images || [] : []}
-        startIndex={currentModal?.type === 'gallery' ? currentModal.startIndex || 0 : 0}
-        onOpenArtifact={handleOpenArtifact}
-      />
+      {currentModal?.type === 'gallery' && (
+        <GalleryModal
+          isOpen={true}
+          onClose={closeModal}
+          images={currentModal.images || []}
+          startIndex={currentModal.startIndex || 0}
+          onOpenArtifact={handleOpenArtifact}
+        />
+      )}
 
       {currentModal?.type === 'artifact' && currentModal.image && (
         <ArtifactSheet
