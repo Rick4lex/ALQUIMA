@@ -14,7 +14,8 @@
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png",
       "imageHint": "custom miniatures",
-      "price": "12.000 und"
+      "price": "12.000 und",
+      "available": true
     },
     {
       "id": "minifiguras-2",
@@ -23,17 +24,20 @@
       "description": "Custom minifigure 2",
       "details": "Bloques de construcción pequeños (compatible con Lego), Material: ABS",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg",
-      "imageHint": "custom minifigure"
+      "imageHint": "custom minifigure",
+      "price": "10.000 c/und",
+      "available": true
     },
     {
       "id": "minifiguras-3",
       "category": "minifiguras",
       "title": "Tanjiro Kamado / Kimetsu No Yaiba",
       "description": "Custom minifigure 3",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
+      "details": "Este artefacto ya encontró a su portador.",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg",
       "imageHint": "custom minifigure",
-      "price": "18.000 und"
+      "price": "18.000 und",
+      "available": false
     },
     {
       "id": "dibujos",
@@ -42,16 +46,18 @@
       "description": "Preview for Dibujos",
       "details": "Dibujo hecho a mano con técnicas mixtas. Más artes en Ig dszo.art.",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1761019947/9e265f18-c4b5-40a4-84c0-c2a09d4f2df4.png",
-      "imageHint": "fantasy drawings"
+      "imageHint": "fantasy drawings",
+      "available": true
     },
     {
       "id": "dibujos-2",
       "category": "dibujos",
       "title": "Pinturas y Dibujos Anime",
       "description": "Preview for Dibujos",
-      "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido.",
+      "details": "Este artefacto ya encontró a su portador.",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png",
-      "imageHint": "fantasy drawings"
+      "imageHint": "fantasy drawings",
+      "available": false
     },
     {
       "id": "stickers",
@@ -60,7 +66,8 @@
       "description": "Preview for Stickers",
       "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
       "imageUrl": "https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "anime stickers"
+      "imageHint": "anime stickers",
+      "available": true
     },
     {
       "id": "tatuajes-temporales",
@@ -69,7 +76,8 @@
       "description": "Preview for Tatuajes Temporales",
       "details": "Diseño de tatuaje temporal con tinta hipoalergénica.",
       "imageUrl": "https://images.unsplash.com/photo-1566878823917-b40eaa39f91d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YXR0b28lMjBkZXNpZ25zfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlibrb-4.1.0&q=80&w=1080",
-      "imageHint": "tattoo designs"
+      "imageHint": "tattoo designs",
+      "available": true
     },
     {
       "id": "accesorios",
@@ -78,7 +86,8 @@
       "description": "Preview for Accesorios",
       "details": "regalo 🎁, Decoración Maletín 🎒.",
       "imageUrl": "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png",
-      "imageHint": "mystical accessories"
+      "imageHint": "mystical accessories",
+      "available": true
     }
   ]
 }

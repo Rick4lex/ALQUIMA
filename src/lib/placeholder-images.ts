@@ -9,6 +9,7 @@ export type ImagePlaceholder = {
   imageUrl: string;
   imageHint: string;
   price?: string;
+  available?: boolean;
 };
 
 export const PlaceHolderImages: ImagePlaceholder[] = data.placeholderImages;
