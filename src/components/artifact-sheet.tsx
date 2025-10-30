@@ -33,7 +33,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
 
   return (
     <div 
-      className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in-0"
+      className="fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in-8"
       onClick={onClose}
     >
       <div 
@@ -46,9 +46,12 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
           fill
           className={cn(
             "object-cover",
-            !image.available && "tint-green filter brightness-50"
+            !image.available && "tint-green"
           )}
         />
+        {!image.available && (
+          <div className="absolute inset-0 bg-black/60" />
+        )}
         <div className="relative z-10 p-6 flex flex-col h-[80vh] max-h-[600px] justify-between text-white">
           <div className="text-right">
             {categoryName && <p className="text-xs font-bold tracking-widest text-white/80 mb-4">{categoryName}</p>}
