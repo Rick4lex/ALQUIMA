@@ -49,9 +49,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
             !image.available && "tint-green"
           )}
         />
-        {!image.available && (
-          <div className="absolute inset-0 bg-black/60" />
-        )}
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 p-6 flex flex-col h-[80vh] max-h-[600px] justify-between text-white">
           <div className="text-right">
             {categoryName && <p className="text-xs font-bold tracking-widest text-white/80 mb-4">{categoryName}</p>}
