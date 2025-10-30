@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onClose: () => void }) {
-  const whatsappInquiryUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, estoy interesado en el artefacto: ${image.title}`)}`;
+  const whatsappInquiryUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, estoy interesado en: ${image.title}`)}`;
   const categoryName = grimoireCategories.find(cat => cat.id === image.category)?.title.toUpperCase();
 
   React.useEffect(() => {
