@@ -45,7 +45,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
           fill
           className={cn(
             "object-cover filter brightness-50",
-            !image.available && "grayscale"
+            !image.available && "tint-green"
           )}
         />
         <div className="relative z-10 p-6 flex flex-col h-[80vh] max-h-[600px] justify-between text-white">

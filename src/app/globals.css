@@ -86,3 +86,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .tint-green {
+    filter: grayscale(1) sepia(1) hue-rotate(65deg) saturate(6);
+  }
+}

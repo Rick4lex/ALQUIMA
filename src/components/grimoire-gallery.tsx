@@ -33,7 +33,6 @@ export function GrimoireGallery({
   }, [allArtifacts, showOnlyAvailable]);
 
   const handleImageClick = (artifact: ImagePlaceholder) => {
-    // We need to find the index within the *currently visible* list to pass to the gallery
     const listForGallery = showOnlyAvailable ? filteredArtifacts : allArtifacts;
     const startIndex = listForGallery.findIndex(a => a.id === artifact.id);
     onImageClick(listForGallery, startIndex);
@@ -68,7 +67,7 @@ export function GrimoireGallery({
                                 fill
                                 className={cn(
                                   "object-cover transition-transform duration-300 group-hover:scale-105",
-                                  !image.available && "filter grayscale"
+                                  !image.available && "filter tint-green"
                                 )}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
