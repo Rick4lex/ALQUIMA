@@ -18,7 +18,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-
 import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-images";
 import { socialLinks, contactInfo } from "@/lib/pagedata";
 import { AlquimaLogo } from "@/components/icons/alquima-logo";
@@ -29,14 +28,12 @@ import { MainCarousel } from "@/components/main-carousel";
 import { GalleryModal } from "@/components/gallery-modal";
 import { ArtifactSheet } from "@/components/artifact-sheet";
 
-
 export type ModalState = {
   type: 'grimoire' | 'gallery' | 'artifact' | null;
   images?: ImagePlaceholder[];
   startIndex?: number;
   image?: ImagePlaceholder;
 };
-
 
 export default function Home() {
   const { theme } = useTheme();
@@ -46,6 +43,7 @@ export default function Home() {
 
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
   const allArtifacts = React.useMemo(() => PlaceHolderImages.filter(img => img.category), []);
+  const availableArtifacts = React.useMemo(() => allArtifacts.filter(img => img.available), [allArtifacts]);
 
   React.useEffect(() => {
     setMounted(true);
@@ -70,17 +68,30 @@ export default function Home() {
   const closeModal = () => setModalState({ type: null });
 
   const handleOpenArtifact = (image: ImagePlaceholder) => {
-    openModal({ type: 'artifact', image });
+    const currentGalleryImages = modalState.type === 'gallery' ? modalState.images : allArtifacts;
+    const currentGalleryIndex = modalState.type === 'gallery' ? modalState.startIndex : allArtifacts.findIndex(i => i.id === image.id);
+    
+    openModal({ 
+      type: 'artifact', 
+      image,
+      images: currentGalleryImages, // Keep track of the underlying gallery
+      startIndex: currentGalleryIndex
+    });
   };
   
   const handleCloseArtifact = () => {
     // If there was a gallery underneath, return to it. Otherwise, close all.
-    if (modalState.images) {
+    if (modalState.images && modalState.images.length > 0) {
       openModal({ type: 'gallery', images: modalState.images, startIndex: modalState.startIndex });
     } else {
       closeModal();
     }
   };
+  
+  const handleOpenGallery = (images: ImagePlaceholder[], startIndex: number) => {
+    openModal({ type: 'gallery', images, startIndex });
+  };
+
 
   return (
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
@@ -215,7 +226,7 @@ export default function Home() {
         isOpen={modalState.type === 'grimoire'}
         onClose={closeModal}
         allArtifacts={allArtifacts}
-        onImageClick={(images, startIndex) => openModal({ type: 'gallery', images, startIndex })}
+        onImageClick={handleOpenGallery}
       />
       
       <GalleryModal
