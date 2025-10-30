@@ -32,9 +32,13 @@ export function GrimoireGallery({
     return allArtifacts;
   }, [allArtifacts, showOnlyAvailable]);
 
-  const findOriginalIndex = (artifact: ImagePlaceholder) => {
-    return allArtifacts.findIndex(a => a.id === artifact.id);
+  const handleImageClick = (artifact: ImagePlaceholder) => {
+    // We need to find the index within the *currently visible* list to pass to the gallery
+    const listForGallery = showOnlyAvailable ? filteredArtifacts : allArtifacts;
+    const startIndex = listForGallery.findIndex(a => a.id === artifact.id);
+    onImageClick(listForGallery, startIndex);
   };
+
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
@@ -55,7 +59,7 @@ export function GrimoireGallery({
                     <Card 
                       key={image.id} 
                       className="overflow-hidden cursor-pointer group" 
-                      onClick={() => onImageClick(showOnlyAvailable ? filteredArtifacts : allArtifacts, findOriginalIndex(image))}
+                      onClick={() => handleImageClick(image)}
                     >
                         <CardContent className="p-0 relative aspect-square">
                             <Image
@@ -64,7 +68,7 @@ export function GrimoireGallery({
                                 fill
                                 className={cn(
                                   "object-cover transition-transform duration-300 group-hover:scale-105",
-                                  !image.available && "filter sepia-[.5] grayscale-[.3]"
+                                  !image.available && "filter grayscale"
                                 )}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -76,7 +80,7 @@ export function GrimoireGallery({
                             <div className="absolute bottom-0 left-0 p-2 text-white">
                                 <h4 className="font-bold text-sm">{image.title}</h4>
                                 {!image.available && (
-                                  <p className="text-xs text-white/70">No disponible</p>
+                                  <p className="text-xs text-white/70">Resguardado</p>
                                 )}
                             </div>
                         </CardContent>

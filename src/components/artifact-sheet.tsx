@@ -10,9 +10,11 @@ import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { AlquimaLogo } from "@/components/icons/alquima-logo";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { cn } from '@/lib/utils';
 
 export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onClose: () => void }) {
   const whatsappInquiryUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, estoy interesado en: ${image.title}`)}`;
+  const whatsappHuntUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola Alquima Mizu, estoy interesado en iniciar una caza para el artefacto: ${image.title}. ¿Es posible encontrarlo nuevamente?`)}`;
   const categoryName = grimoireCategories.find(cat => cat.id === image.category)?.title.toUpperCase();
 
   React.useEffect(() => {
@@ -41,7 +43,10 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
           src={image.imageUrl}
           alt={image.description}
           fill
-          className="object-cover filter brightness-50"
+          className={cn(
+            "object-cover filter brightness-50",
+            !image.available && "grayscale"
+          )}
         />
         <div className="relative z-10 p-6 flex flex-col h-[80vh] max-h-[600px] justify-between text-white">
           <div className="text-right">
@@ -50,20 +55,32 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
           <div>
             <h3 className="text-3xl font-bold">{image.title}</h3>
             <Separator className="my-4 bg-white/50" />
-            <p className="text-sm leading-relaxed">{image.details}</p>
+            <p className="text-sm leading-relaxed">
+              {image.available ? image.details : "Este artefacto ya encontró a su portador."}
+            </p>
           </div>
           <div className="space-y-4">
-            {image.price && (
+            {image.available && image.price && (
                 <div className="text-center mb-2">
                     <p className="text-lg font-bold">{image.price}</p>
                 </div>
             )}
-            <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white font-bold h-12 text-base">
-              <Link href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
-                <WhatsappIcon className="mr-2 h-5 w-5"/>
-                Consultar
-              </Link>
-            </Button>
+            
+            {image.available ? (
+              <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white font-bold h-12 text-base">
+                <Link href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
+                  <WhatsappIcon className="mr-2 h-5 w-5"/>
+                  Consultar Artefacto
+                </Link>
+              </Button>
+            ) : (
+              <Button asChild className="w-full bg-primary hover:bg-primary/80 text-primary-foreground font-bold h-12 text-base">
+                <Link href={whatsappHuntUrl} target="_blank" rel="noopener noreferrer">
+                  Solicitar Caza
+                </Link>
+              </Button>
+            )}
+
             <div className="flex justify-between items-center">
                 <Button onClick={onClose} variant="ghost" className="z-20 text-white/80 hover:text-white px-2">
                     Ver menos
