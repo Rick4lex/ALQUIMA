@@ -71,7 +71,7 @@ export default function Home() {
   };
   
   const closeModal = () => {
-    setModalStack(stack => stack.slice(0, stack.length - 1));
+    setModalStack(stack => stack.slice(0, -1));
   };
   
   const handleOpenArtifact = (image: ImagePlaceholder) => {
@@ -117,39 +117,41 @@ export default function Home() {
               <p className="text-sm text-muted-foreground">Creatividad hecha colección.</p>
             </div>
           </div>
-
+        </div>
+        
+        <div className="w-full md:w-3/5 mx-auto px-4">
           <div className="space-y-4">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <h3
-                    className="text-xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity"
-                    onClick={() => openModal({ type: 'grimoire' })}
-                  >
-                    ▽△▽△▽△ GRIMORIO ▽△▽△▽△
-                  </h3>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Nexo Códice</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            
-            <MainCarousel onCategoryClick={(images) => openModal({ type: 'gallery', images, startIndex: 0 })} />
+              <TooltipProvider>
+                  <Tooltip>
+                      <TooltipTrigger asChild>
+                          <h3
+                              className="text-xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity text-center"
+                              onClick={() => openModal({ type: 'grimoire' })}
+                          >
+                              ▽△▽△▽△ GRIMORIO ▽△▽△▽△
+                          </h3>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                          <p>Nexo Códice</p>
+                      </TooltipContent>
+                  </Tooltip>
+              </TooltipProvider>
 
-            <h3 className="text-xl font-bold text-primary">▽△▽</h3>
-            
-            <Button asChild className="h-14 w-full text-base font-semibold shadow-md transition-transform duration-200 ease-in-out hover:scale-[1.03] focus:scale-[1.03]" size="lg" variant="outline">
-                <Link href="https://facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
-                    <Store className="mr-2 h-5 w-5"/>
-                    Marketplace
-                </Link>
-            </Button>
+              <MainCarousel onCategoryClick={(images) => openModal({ type: 'gallery', images, startIndex: 0 })} />
+
+              <h3 className="text-xl font-bold text-primary text-center">▽△▽</h3>
+
+              <Button asChild className="h-14 w-full text-base font-semibold shadow-md transition-transform duration-200 ease-in-out hover:scale-[1.03] focus:scale-[1.03]" size="lg" variant="outline">
+                  <Link href="https://facebook.com/marketplace/profile/100073179595930/" target="_blank" rel="noopener noreferrer">
+                      <Store className="mr-2 h-5 w-5"/>
+                      Marketplace
+                  </Link>
+              </Button>
           </div>
         </div>
       </main>
 
-      <footer className="p-8 space-y-8">
+      <footer className="p-8 space-y-8 mt-8">
         <div className="flex justify-center space-x-6">
           {socialLinks.map((link) => (
             <Link
