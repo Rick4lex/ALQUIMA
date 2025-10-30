@@ -29,8 +29,7 @@ export const socialLinks = [
       { id: "minifiguras", title: "Minifiguras" },
       { id: "dibujos", title: "Dibujos" },
       { id: "stickers", title: "Stickers" },
-      { id: "tatuajes", title: "Tatuajes" },
+      { id: "tatuajes-temporales", title: "Tatuajes Temporales" },
       { id: "accesorios", title: "Accesorios" },
   ];
   
-
