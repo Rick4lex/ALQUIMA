@@ -14,7 +14,7 @@ export const socialLinks = [
     },
     {
         name: "Youtube",
-        href: "https://youtube.com",
+        href: "https://www.youtube.com/@Alquima_Mizu",
         icon: <Youtube className="h-6 w-6" />
     }
   ];

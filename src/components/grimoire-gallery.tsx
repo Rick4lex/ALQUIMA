@@ -62,7 +62,7 @@ export function GrimoireGallery({
                     >
                         <CardContent className="p-0 relative aspect-square">
                             <Image
-                                src={image.imageUrl}
+                                src={image.imageUrls[0]}
                                 alt={image.description}
                                 fill
                                 className={cn(

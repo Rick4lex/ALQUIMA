@@ -41,7 +41,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
         onClick={(e) => e.stopPropagation()}
       >
         <Image
-          src={image.imageUrl}
+          src={image.imageUrls[0]}
           alt={image.description}
           fill
           className={cn(

@@ -61,7 +61,7 @@ export function MainCarousel({ onCategoryClick }: { onCategoryClick: (images: Im
                 >
                   <CardContent className="relative flex aspect-video items-center justify-center p-0">
                     <Image
-                      src={cardImage.imageUrl}
+                      src={cardImage.imageUrls[0]}
                       alt={cardImage.description}
                       fill
                       data-ai-hint={cardImage.imageHint}

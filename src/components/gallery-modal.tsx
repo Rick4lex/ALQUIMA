@@ -75,7 +75,7 @@ export function GalleryModal({
           <ScrollArea className="h-[90vh] w-full rounded-lg">
             <div className="flex items-center justify-center h-full min-h-[90vh] w-full">
               <Image
-                src={currentImage.imageUrl}
+                src={currentImage.imageUrls[0]}
                 alt={currentImage.description}
                 width={1920}
                 height={1080}

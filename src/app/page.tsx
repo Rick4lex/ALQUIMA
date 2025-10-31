@@ -100,7 +100,7 @@ export default function Home() {
         {bannerImage && (
           <div className="w-full">
             <Image 
-              src={bannerImage.imageUrl} 
+              src={bannerImage.imageUrls[0]} 
               alt={bannerImage.description}
               width={1920}
               height={640}
