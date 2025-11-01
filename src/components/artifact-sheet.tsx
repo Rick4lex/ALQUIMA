@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { cn } from '@/lib/utils';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onClose: () => void }) {
   const whatsappInquiryUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, estoy interesado en: ${image.title}`)}`;
@@ -30,6 +31,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
     };
   }, [onClose]);
 
+  const hasMultipleImages = image.imageUrls && image.imageUrls.length > 1;
 
   return (
     <div 
@@ -37,26 +39,50 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-sm rounded-lg overflow-hidden shadow-2xl animate-in zoom-in-95"
+        className="relative w-full max-w-sm rounded-lg overflow-hidden shadow-2xl animate-in zoom-in-95 bg-card"
         onClick={(e) => e.stopPropagation()}
       >
-        <Image
-          src={image.imageUrls[0]}
-          alt={image.description}
-          fill
-          className={cn(
-            "object-cover",
-            !image.available && "tint-green"
+        <div className='relative aspect-square'>
+          {hasMultipleImages ? (
+            <Carousel className="w-full h-full">
+              <CarouselContent>
+                {image.imageUrls.map((url, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative w-full h-full aspect-square">
+                      <Image
+                        src={url}
+                        alt={`${image.description} - view ${index + 1}`}
+                        fill
+                        className={cn("object-cover", !image.available && "tint-green")}
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              {hasMultipleImages && (
+                <>
+                  <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
+                  <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
+                </>
+              )}
+            </Carousel>
+          ) : (
+            <Image
+              src={image.imageUrls[0]}
+              alt={image.description}
+              fill
+              className={cn("object-cover", !image.available && "tint-green")}
+            />
           )}
-        />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 p-6 flex flex-col h-[80vh] max-h-[600px] justify-between text-white">
+        </div>
+        
+        <div className="p-6 flex flex-col justify-between text-card-foreground">
           <div className="text-right">
-            {categoryName && <p className="text-xs font-bold tracking-widest text-white/80 mb-4">{categoryName}</p>}
+            {categoryName && <p className="text-xs font-bold tracking-widest text-muted-foreground mb-4">{categoryName}</p>}
           </div>
           <div>
             <h3 className="text-3xl font-bold">{image.title}</h3>
-            <Separator className="my-4 bg-white/50" />
+            <Separator className="my-4" />
             
             {!image.available && (
                 <Badge variant="secondary" className="mb-4">
@@ -64,7 +90,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
                 </Badge>
             )}
 
-            <p className="text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed mb-4">
               {image.details}
             </p>
           </div>
@@ -90,11 +116,11 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
               </Button>
             )}
 
-            <div className="flex justify-between items-center">
-                <Button onClick={onClose} variant="ghost" className="z-20 text-white/80 hover:text-white px-2">
-                    Ver menos
+            <div className="flex justify-between items-center mt-4">
+                <Button onClick={onClose} variant="ghost" className="z-20 text-muted-foreground hover:text-foreground px-2">
+                    Cerrar
                 </Button>
-                <AlquimaLogo className="h-8 w-auto text-white/70" />
+                <AlquimaLogo className="h-8 w-auto text-muted-foreground" />
             </div>
           </div>
         </div>

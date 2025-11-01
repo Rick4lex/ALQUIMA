@@ -7,7 +7,8 @@ import { ChevronLeft, ChevronRight, X, Info } from "lucide-react";
 import type { ImagePlaceholder } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
 
 export function GalleryModal({ 
   isOpen, 
@@ -23,14 +24,15 @@ export function GalleryModal({
   onOpenArtifact: (image: ImagePlaceholder) => void;
 }) {
   const [currentIndex, setCurrentIndex] = React.useState(startIndex);
+  const [currentSubIndex, setCurrentSubIndex] = React.useState(0);
   
   React.useEffect(() => {
     if (isOpen) {
       setCurrentIndex(startIndex);
+      setCurrentSubIndex(0);
     }
   }, [isOpen, startIndex]);
   
-  // Add keydown listener for navigation
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
@@ -48,12 +50,12 @@ export function GalleryModal({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex, isOpen]);
 
-
   const goToPrevious = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     const isFirstImage = currentIndex === 0;
     const newIndex = isFirstImage ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
+    setCurrentSubIndex(0);
   };
 
   const goToNext = (e?: React.MouseEvent) => {
@@ -61,63 +63,84 @@ export function GalleryModal({
     const isLastImage = currentIndex === images.length - 1;
     const newIndex = isLastImage ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
+    setCurrentSubIndex(0);
   };
   
   if (!images.length) return null;
 
   const currentImage = images[currentIndex];
+  const imageUrls = currentImage.imageUrls || [];
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-5xl w-full p-0 bg-transparent border-0 flex items-center justify-center">
+      <DialogContent className="max-w-7xl w-full p-2 bg-transparent border-0 flex items-center justify-center h-full md:h-auto">
         <DialogTitle className="sr-only">Galería de Imágenes</DialogTitle>
-        <div className="relative w-full h-full">
-          <ScrollArea className="h-[90vh] w-full rounded-lg">
-            <div className="flex items-center justify-center h-full min-h-[90vh] w-full">
-              <Image
-                src={currentImage.imageUrls[0]}
-                alt={currentImage.description}
-                width={1920}
-                height={1080}
-                className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded-lg"
-              />
-            </div>
-            <ScrollBar orientation="horizontal" />
-            <ScrollBar orientation="vertical" />
-          </ScrollArea>
+        <div className="relative w-full h-full flex flex-col md:flex-row gap-2">
+            <ScrollArea className="md:w-32 flex-shrink-0">
+                <div className="flex md:flex-col gap-2 p-1">
+                    {imageUrls.map((url, index) => (
+                        <div
+                            key={index}
+                            className={cn(
+                                "relative aspect-square w-16 md:w-full flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
+                                index === currentSubIndex && "ring-primary"
+                            )}
+                            onClick={() => setCurrentSubIndex(index)}
+                        >
+                            <Image
+                                src={url}
+                                alt={`Thumbnail ${index + 1} for ${currentImage.title}`}
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </ScrollArea>
 
-          <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-20" onClick={onClose}>
-              <X className="h-6 w-6" />
-          </Button>
-          
-          {images.length > 1 && (
-              <>
-                  <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      onClick={goToPrevious}
-                      className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10"
-                      aria-label="Previous image"
-                  >
-                      <ChevronLeft className="h-6 w-6" />
-                  </Button>
-                  <Button 
-                      variant="ghost" 
-                      size="icon" 
-                      onClick={goToNext}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10"
-                      aria-label="Next image"
-                  >
-                      <ChevronRight className="h-6 w-6" />
-                  </Button>
-              </>
-          )}
-          <Button 
+            <div className="relative w-full h-full flex-1 flex items-center justify-center">
+                <div className="relative w-full h-full max-h-[90vh]">
+                    <Image
+                        src={imageUrls[currentSubIndex]}
+                        alt={currentImage.description}
+                        fill
+                        className="object-contain rounded-lg"
+                    />
+                </div>
+            </div>
+
+            <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-20" onClick={onClose}>
+                <X className="h-6 w-6" />
+            </Button>
+            
+            {images.length > 1 && (
+                <>
+                    <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        onClick={goToPrevious}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10 md:left-36"
+                        aria-label="Previous image"
+                    >
+                        <ChevronLeft className="h-6 w-6" />
+                    </Button>
+                    <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        onClick={goToNext}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10"
+                        aria-label="Next image"
+                    >
+                        <ChevronRight className="h-6 w-6" />
+                    </Button>
+                </>
+            )}
+            <Button 
                 variant="outline"
                 size="sm" 
                 onClick={(e) => {
-                  e.stopPropagation();
-                  onOpenArtifact(currentImage);
+                    e.stopPropagation();
+                    onOpenArtifact(currentImage);
                 }}
                 className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background/50 hover:bg-background/75 z-10"
             >
