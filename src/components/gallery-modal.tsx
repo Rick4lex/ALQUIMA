@@ -76,12 +76,13 @@ export function GalleryModal({
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-7xl w-full h-full p-0 bg-transparent border-0 flex items-center justify-center">
         <DialogTitle className="sr-only">Galería de Imágenes</DialogTitle>
-        <div className="relative w-full h-full flex flex-col md:flex-row items-center justify-center gap-2 p-2 md:p-4">
+        <div className="relative w-full h-full flex items-center justify-center">
             
             {/* Main Content Area */}
-            <div className="relative flex-1 w-full h-full flex flex-col items-center justify-center min-h-0">
+            <div className="w-full h-full flex flex-col md:flex-row items-center justify-center p-2 md:p-4 gap-2">
+                
                 {/* Main Image */}
-                <div className="relative w-full flex-1 min-h-0">
+                <div className="relative w-full md:flex-1 h-full min-h-0 flex-grow">
                     <Image
                         src={imageUrls[currentSubIndex]}
                         alt={currentImage.description}
@@ -90,29 +91,16 @@ export function GalleryModal({
                     />
                 </div>
                 
-                {/* Mobile: Details Button + Thumbnails */}
-                <div className="md:hidden w-full flex flex-col items-center mt-4 space-y-4">
-                    <Button 
-                        variant="outline"
-                        size="sm" 
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            onOpenArtifact(currentImage);
-                        }}
-                        className="bg-black/50 border-green-500/50 text-white hover:bg-green-500/20 hover:text-white hover:border-green-500 z-10"
-                    >
-                        <Info className="mr-2 h-4 w-4" />
-                        Ver Detalles
-                    </Button>
-
-                    {hasMultipleImages && (
-                        <ScrollArea className="w-full">
-                            <div className="flex flex-row gap-2 p-1 justify-center">
+                {/* Desktop: Thumbnails */}
+                {hasMultipleImages && (
+                    <div className="hidden md:flex flex-col w-32 flex-shrink-0">
+                        <ScrollArea>
+                            <div className="flex flex-col gap-2 p-1 max-h-[80vh]">
                                 {imageUrls.map((url, index) => (
                                     <div
                                         key={index}
                                         className={cn(
-                                            "relative w-16 h-16 flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
+                                            "relative aspect-square w-full flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
                                             index === currentSubIndex && "ring-primary"
                                         )}
                                         onClick={() => setCurrentSubIndex(index)}
@@ -127,20 +115,33 @@ export function GalleryModal({
                                 ))}
                             </div>
                         </ScrollArea>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
 
-            {/* Desktop: Thumbnails + Details Button */}
-            <div className="hidden md:flex flex-col w-36 flex-shrink-0 space-y-4">
+            {/* Mobile: Stacked content */}
+            <div className="md:hidden absolute bottom-4 left-4 right-4 flex flex-col items-center space-y-4">
+                 <Button 
+                    variant="outline"
+                    size="sm" 
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenArtifact(currentImage);
+                    }}
+                    className="w-fit bg-black/50 border-green-500/50 text-white hover:bg-green-500/20 hover:text-white hover:border-green-500 z-10"
+                >
+                    <Info className="mr-2 h-4 w-4" />
+                    Ver Detalles
+                </Button>
+
                 {hasMultipleImages && (
-                    <ScrollArea>
-                        <div className="flex flex-col gap-2 p-1 max-h-[80vh]">
+                    <ScrollArea className="w-full">
+                        <div className="flex flex-row gap-2 p-1 justify-center">
                             {imageUrls.map((url, index) => (
                                 <div
                                     key={index}
                                     className={cn(
-                                        "relative aspect-square w-full flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
+                                        "relative w-16 h-16 flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
                                         index === currentSubIndex && "ring-primary"
                                     )}
                                     onClick={() => setCurrentSubIndex(index)}
@@ -156,14 +157,18 @@ export function GalleryModal({
                         </div>
                     </ScrollArea>
                 )}
-                <Button 
+            </div>
+
+            {/* Desktop: Floating details button */}
+            <div className='hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2'>
+                 <Button 
                     variant="outline"
                     size="sm" 
                     onClick={(e) => {
                         e.stopPropagation();
                         onOpenArtifact(currentImage);
                     }}
-                    className="w-full bg-black/50 border-green-500/50 text-white hover:bg-green-500/20 hover:text-white hover:border-green-500 z-10"
+                    className="bg-black/50 border-green-500/50 text-white hover:bg-green-500/20 hover:text-white hover:border-green-500 z-10"
                 >
                     <Info className="mr-2 h-4 w-4" />
                     Ver Detalles
@@ -186,7 +191,7 @@ export function GalleryModal({
                         variant="ghost" 
                         size="icon" 
                         onClick={goToNext}
-                        className="absolute right-2 md:right-[10.5rem] top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-20"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-20"
                         aria-label="Next image"
                     >
                         <ChevronRight className="h-6 w-6" />
