@@ -70,17 +70,18 @@ export function GalleryModal({
 
   const currentImage = images[currentIndex];
   const imageUrls = currentImage.imageUrls || [];
+  const hasMultipleImages = imageUrls.length > 1;
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-7xl w-full p-2 bg-transparent border-0 flex items-center justify-center h-full">
+      <DialogContent className="max-w-7xl w-full h-full p-0 bg-transparent border-0 flex items-center justify-center">
         <DialogTitle className="sr-only">Galería de Imágenes</DialogTitle>
-        <div className="relative w-full h-full flex flex-col md:flex-row gap-2">
+        <div className="relative w-full h-full flex flex-col md:flex-row items-center justify-center gap-2 p-2 md:p-4">
             
             {/* Main Content Area */}
-            <div className="relative flex-1 flex flex-col items-center justify-center">
+            <div className="relative flex-1 w-full h-full flex flex-col items-center justify-center min-h-0">
                 {/* Main Image */}
-                <div className="relative w-full h-full min-h-0 flex-1">
+                <div className="relative w-full flex-1 min-h-0">
                     <Image
                         src={imageUrls[currentSubIndex]}
                         alt={currentImage.description}
@@ -89,65 +90,94 @@ export function GalleryModal({
                     />
                 </div>
                 
-                {/* Thumbnails on Mobile */}
-                <ScrollArea className="md:hidden w-full mt-2">
-                    <div className="flex flex-row gap-2 p-1 justify-center">
-                        {imageUrls.map((url, index) => (
-                            <div
-                                key={index}
-                                className={cn(
-                                    "relative w-16 h-16 flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
-                                    index === currentSubIndex && "ring-primary"
-                                )}
-                                onClick={() => setCurrentSubIndex(index)}
-                            >
-                                <Image
-                                    src={url}
-                                    alt={`Thumbnail ${index + 1} for ${currentImage.title}`}
-                                    fill
-                                    className="object-cover"
-                                />
+                {/* Mobile: Details Button + Thumbnails */}
+                <div className="md:hidden w-full flex flex-col items-center mt-4 space-y-4">
+                    <Button 
+                        variant="outline"
+                        size="sm" 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onOpenArtifact(currentImage);
+                        }}
+                        className="bg-black/50 border-green-500/50 text-white hover:bg-green-500/20 hover:text-white hover:border-green-500 z-10"
+                    >
+                        <Info className="mr-2 h-4 w-4" />
+                        Ver Detalles
+                    </Button>
+
+                    {hasMultipleImages && (
+                        <ScrollArea className="w-full">
+                            <div className="flex flex-row gap-2 p-1 justify-center">
+                                {imageUrls.map((url, index) => (
+                                    <div
+                                        key={index}
+                                        className={cn(
+                                            "relative w-16 h-16 flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
+                                            index === currentSubIndex && "ring-primary"
+                                        )}
+                                        onClick={() => setCurrentSubIndex(index)}
+                                    >
+                                        <Image
+                                            src={url}
+                                            alt={`Thumbnail ${index + 1} for ${currentImage.title}`}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                </ScrollArea>
+                        </ScrollArea>
+                    )}
+                </div>
             </div>
 
-            {/* Thumbnails on Desktop */}
-            <ScrollArea className="hidden md:block w-32 flex-shrink-0">
-                <div className="flex flex-col gap-2 p-1">
-                    {imageUrls.map((url, index) => (
-                        <div
-                            key={index}
-                            className={cn(
-                                "relative aspect-square w-full flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
-                                index === currentSubIndex && "ring-primary"
-                            )}
-                            onClick={() => setCurrentSubIndex(index)}
-                        >
-                            <Image
-                                src={url}
-                                alt={`Thumbnail ${index + 1} for ${currentImage.title}`}
-                                fill
-                                className="object-cover"
-                            />
+            {/* Desktop: Thumbnails + Details Button */}
+            <div className="hidden md:flex flex-col w-36 flex-shrink-0 space-y-4">
+                {hasMultipleImages && (
+                    <ScrollArea>
+                        <div className="flex flex-col gap-2 p-1 max-h-[80vh]">
+                            {imageUrls.map((url, index) => (
+                                <div
+                                    key={index}
+                                    className={cn(
+                                        "relative aspect-square w-full flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
+                                        index === currentSubIndex && "ring-primary"
+                                    )}
+                                    onClick={() => setCurrentSubIndex(index)}
+                                >
+                                    <Image
+                                        src={url}
+                                        alt={`Thumbnail ${index + 1} for ${currentImage.title}`}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-            </ScrollArea>
+                    </ScrollArea>
+                )}
+                <Button 
+                    variant="outline"
+                    size="sm" 
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenArtifact(currentImage);
+                    }}
+                    className="w-full bg-black/50 border-green-500/50 text-white hover:bg-green-500/20 hover:text-white hover:border-green-500 z-10"
+                >
+                    <Info className="mr-2 h-4 w-4" />
+                    Ver Detalles
+                </Button>
+            </div>
 
             {/* Controls */}
-            <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-20" onClick={onClose}>
-                <X className="h-6 w-6" />
-            </Button>
-            
             {images.length > 1 && (
                 <>
                     <Button 
                         variant="ghost" 
                         size="icon" 
                         onClick={goToPrevious}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-20"
                         aria-label="Previous image"
                     >
                         <ChevronLeft className="h-6 w-6" />
@@ -156,25 +186,13 @@ export function GalleryModal({
                         variant="ghost" 
                         size="icon" 
                         onClick={goToNext}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-10 md:right-36"
+                        className="absolute right-2 md:right-[10.5rem] top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/50 text-foreground hover:bg-background/75 z-20"
                         aria-label="Next image"
                     >
                         <ChevronRight className="h-6 w-6" />
                     </Button>
                 </>
             )}
-            <Button 
-                variant="outline"
-                size="sm" 
-                onClick={(e) => {
-                    e.stopPropagation();
-                    onOpenArtifact(currentImage);
-                }}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-background/50 hover:bg-background/75 z-10 md:bottom-4"
-            >
-                <Info className="mr-2 h-4 w-4" />
-                Ver Detalles
-            </Button>
         </div>
       </DialogContent>
     </Dialog>
