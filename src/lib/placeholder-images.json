@@ -56,7 +56,7 @@
       "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
       "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png"],
       "imageHint": "fantasy drawings",
-      "available": true
+      "available": false
     },
     {
       "id": "stickers",
@@ -64,7 +64,12 @@
       "title": "Pack de Stickers Anime",
       "description": "Preview for Stickers",
       "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
-      "imageUrls": ["https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080"],
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1613380165382-7eb595954b5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1620027582921-2e6b910b2a7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YW5pbWUlMjBzdGlja2Vyc3xlbnwwfHx8fDE3NjA3NjU4MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1611833939366-24c414619943?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080"
+      ],
       "imageHint": "anime stickers",
       "available": true
     },
