@@ -11,6 +11,13 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function GrimoireGallery({ 
   isOpen, 
@@ -24,16 +31,34 @@ export function GrimoireGallery({
   onImageClick: (images: ImagePlaceholder[], startIndex: number) => void;
 }) {
   const [showOnlyAvailable, setShowOnlyAvailable] = React.useState(false);
+  const [selectedSeries, setSelectedSeries] = React.useState("all");
+
+  const seriesOptions = React.useMemo(() => {
+    const series = new Set<string>();
+    allArtifacts.forEach(artifact => {
+      if (artifact.title?.includes('/') || artifact.imageHint === 'Dandadan') {
+        series.add(artifact.imageHint);
+      }
+    });
+    return ["all", ...Array.from(series)];
+  }, [allArtifacts]);
 
   const filteredArtifacts = React.useMemo(() => {
+    let artifacts = allArtifacts;
+
     if (showOnlyAvailable) {
-      return allArtifacts.filter(artifact => artifact.available);
+      artifacts = artifacts.filter(artifact => artifact.available);
     }
-    return allArtifacts;
-  }, [allArtifacts, showOnlyAvailable]);
+    
+    if (selectedSeries !== "all") {
+      artifacts = artifacts.filter(artifact => artifact.imageHint === selectedSeries);
+    }
+
+    return artifacts;
+  }, [allArtifacts, showOnlyAvailable, selectedSeries]);
 
   const handleImageClick = (artifact: ImagePlaceholder) => {
-    const listForGallery = showOnlyAvailable ? filteredArtifacts : allArtifacts;
+    const listForGallery = filteredArtifacts;
     const startIndex = listForGallery.findIndex(a => a.id === artifact.id);
     onImageClick(listForGallery, startIndex);
   };
@@ -44,15 +69,29 @@ export function GrimoireGallery({
       <DialogContent className="max-w-7xl w-full p-4">
         <DialogTitle className="sr-only">Códice Resguardado</DialogTitle>
         <h2 className="text-2xl font-bold text-center mb-2">Códice Resguardado</h2>
-        <div className="flex items-center justify-center space-x-2 mb-4">
-          <Switch 
-            id="available-filter" 
-            checked={showOnlyAvailable} 
-            onCheckedChange={setShowOnlyAvailable} 
-          />
-          <Label htmlFor="available-filter">Mostrar solo Artefactos Canjeables</Label>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+          <div className="flex items-center space-x-2">
+            <Switch 
+              id="available-filter" 
+              checked={showOnlyAvailable} 
+              onCheckedChange={setShowOnlyAvailable} 
+            />
+            <Label htmlFor="available-filter">Mostrar solo Canjeables</Label>
+          </div>
+          <Select value={selectedSeries} onValueChange={setSelectedSeries}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Filtrar por serie" />
+            </SelectTrigger>
+            <SelectContent>
+              {seriesOptions.map(series => (
+                <SelectItem key={series} value={series}>
+                  {series === 'all' ? 'Todas las series' : series}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
-        <ScrollArea className="h-[75vh]">
+        <ScrollArea className="h-[70vh]">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-1">
                 {filteredArtifacts.map((image) => (
                     <Card 

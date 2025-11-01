@@ -13,7 +13,7 @@
       "description": "Preview for Minifiguras 1",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png"],
-      "imageHint": "custom miniatures",
+      "imageHint": "Kaiju No. 8",
       "price": "12.000 und",
       "available": true
     },
@@ -34,7 +34,7 @@
       "description": "Custom minifigure 3",
       "details": "Este artefacto ya encontró a su portador.",
       "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg"],
-      "imageHint": "custom minifigure",
+      "imageHint": "Kimetsu No Yaiba",
       "price": "18.000 und",
       "available": true
     },
@@ -85,7 +85,7 @@
       "description": "Preview for Accesorios",
       "details": "regalo 🎁, Decoración Maletín 🎒.",
       "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"],
-      "imageHint": "mystical accessories",
+      "imageHint": "Dandadan",
       "price": "8.000 c/und",
       "available": true
     }
