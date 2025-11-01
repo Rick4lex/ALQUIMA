@@ -11,13 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Combobox } from "@/components/ui/combobox";
 
 export function GrimoireGallery({ 
   isOpen, 
@@ -36,11 +30,12 @@ export function GrimoireGallery({
   const seriesOptions = React.useMemo(() => {
     const series = new Set<string>();
     allArtifacts.forEach(artifact => {
-      if (artifact.title?.includes('/') || artifact.imageHint === 'Dandadan') {
+      if (artifact.imageHint) {
         series.add(artifact.imageHint);
       }
     });
-    return ["all", ...Array.from(series)];
+    const uniqueSeries = Array.from(series);
+    return [{ value: "all", label: "Todas las series" }, ...uniqueSeries.map(s => ({ value: s, label: s }))];
   }, [allArtifacts]);
 
   const filteredArtifacts = React.useMemo(() => {
@@ -78,18 +73,14 @@ export function GrimoireGallery({
             />
             <Label htmlFor="available-filter">Mostrar solo Canjeables</Label>
           </div>
-          <Select value={selectedSeries} onValueChange={setSelectedSeries}>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Filtrar por serie" />
-            </SelectTrigger>
-            <SelectContent>
-              {seriesOptions.map(series => (
-                <SelectItem key={series} value={series}>
-                  {series === 'all' ? 'Todas las series' : series}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <Combobox
+            options={seriesOptions}
+            selectedValue={selectedSeries}
+            onSelectValue={(value) => setSelectedSeries(value || 'all')}
+            placeholder="Filtrar por serie..."
+            searchPlaceholder="Buscar serie..."
+            notFoundMessage="No se encontró la serie."
+          />
         </div>
         <ScrollArea className="h-[70vh]">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-1">
