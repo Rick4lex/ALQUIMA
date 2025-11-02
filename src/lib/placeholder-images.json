@@ -79,9 +79,10 @@
       "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
       "imageUrls": [
         "https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1613380165382-7eb595954b5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1620027582921-2e6b910b2a7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YW5pbWUlMjBzdGlja2Vyc3xlbnwwfHx8fDE3NjA3NjU4MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://images.unsplash.com/photo-1611833939366-24c414619943?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1762103678/e59783f5-0484-4db2-ad7b-222d6c188110.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1762103735/bc0788e1-32a1-42ea-bf12-264bf416eae8.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103714/12c3a8fe-5c28-4d9d-8d36-0b013c3d5ec9.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103831/f08f298d-683e-49b7-bd27-604042ea9f77.png"
       ],
       "imageHint": ["anime stickers"],
       "available": true
