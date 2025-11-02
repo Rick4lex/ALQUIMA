@@ -17,7 +17,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onClose: () => void }) {
   const whatsappInquiryUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, estoy interesado en: ${image.title}`)}`;
-  const whatsappHuntUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola Alquima Mizu, estoy interesado en iniciar una caza para el artefacto: ${image.title}. ¿Es posible encontrarlo nuevamente?`)}`;
+  const whatsappHuntUrl = `https://wa.me/${contactInfo.whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(`Hola, estoy interesado en adquirir: ${image.title}. ¿Es posible encontrarlo nuevamente?`)}`;
   const categoryName = grimoireCategories.find(cat => cat.id === image.category)?.title.toUpperCase();
 
   React.useEffect(() => {
@@ -80,7 +80,7 @@ export function ArtifactSheet({ image, onClose }: { image: ImagePlaceholder; onC
                 <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white font-bold h-12 text-base">
                     <Link href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
                     <WhatsappIcon className="mr-2 h-5 w-5"/>
-                    Consultar Artefacto
+                    Consultar
                     </Link>
                 </Button>
                 ) : (

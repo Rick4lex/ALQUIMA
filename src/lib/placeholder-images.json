@@ -3,13 +3,15 @@
     {
       "id": "banner",
       "description": "Alquima Mizu banner",
-      "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"],
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"
+      ],
       "imageHint": "Alquima 水"
     },
     {
       "id": "minifiguras-1",
       "category": "minifiguras",
-      "title": "Kikoru Shinomiya / Kaiju No. 8",
+      "title": "Kikoru Shinomiya / BdC Kaiju No. 8",
       "description": "Preview for Minifiguras 1",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": [
@@ -26,19 +28,23 @@
       "title": "Mini Figuras Bloques De Construcción Para Colección",
       "description": "Custom minifigure 2",
       "details": "Bloques de construcción pequeños (compatible con Lego), Material: ABS",
-      "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg"],
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg"
+      ],
       "imageHint": "custom minifigure",
       "available": true
     },
     {
       "id": "minifiguras-3",
       "category": "minifiguras",
-      "title": "Tanjiro Kamado / Kimetsu No Yaiba",
+      "title": "Tanjiro Kamado / BdC Kimetsu No Yaiba",
       "description": "Custom minifigure 3",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
-      "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg"],
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg"
+      ],
       "imageHint": "Kimetsu No Yaiba",
-      "price": "18.000 und",
+      "price": "20.000 und",
       "available": true
     },
     {
@@ -47,8 +53,10 @@
       "title": "Anime Dibujos A Lapiz Y Madera",
       "description": "Preview for Dibujos",
       "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
-      "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1761019947/9e265f18-c4b5-40a4-84c0-c2a09d4f2df4.png"],
-      "imageHint": "fantasy drawings",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1761019947/9e265f18-c4b5-40a4-84c0-c2a09d4f2df4.png"
+      ],
+      "imageHint": ["Madera & Trazos", "Alquima 水"],
       "available": true
     },
     {
@@ -57,8 +65,10 @@
       "title": "Pinturas y Dibujos Anime",
       "description": "Preview for Dibujos",
       "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
-      "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png"],
-      "imageHint": "Sailor Moon",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png"
+      ],
+      "imageHint": ["Madera & Trazos", "Alquima 水"],
       "available": true
     },
     {
@@ -82,7 +92,9 @@
       "title": "Tatuajes Temporales",
       "description": "Preview for Tatuajes Temporales",
       "details": "Diseño de tatuaje temporal con tinta hipoalergénica.",
-      "imageUrls": ["https://images.unsplash.com/photo-1566878823917-b40eaa39f91d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YXR0b28lMjBkZXNpZ25zfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlibrb-4.1.0&q=80&w=1080"],
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1566878823917-b40eaa39f91d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YXR0b28lMjBkZXNpZ25zfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlibrb-4.1.0&q=80&w=1080"
+      ],
       "imageHint": "tattoo designs",
       "available": false
     },
@@ -92,8 +104,10 @@
       "title": "Llaveros Dandandan, Shingeki no kyojin",
       "description": "Preview for Accesorios",
       "details": "regalo 🎁, Decoración Maletín 🎒.",
-      "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"],
-      "imageHint": "Dandadan",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"
+      ],
+      "imageHint": ["Dandadan", "Shingeki no kyojin"],
       "price": "8.000 c/und",
       "available": true
     }
