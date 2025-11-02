@@ -7,7 +7,7 @@ export type ImagePlaceholder = {
   description: string;
   details?: string;
   imageUrls: string[];
-  imageHint: string;
+  imageHint: string | string[];
   price?: string;
   available?: boolean;
 };

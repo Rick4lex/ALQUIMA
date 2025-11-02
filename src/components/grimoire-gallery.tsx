@@ -31,7 +31,11 @@ export function GrimoireGallery({
     const series = new Set<string>();
     allArtifacts.forEach(artifact => {
       if (artifact.imageHint) {
-        series.add(artifact.imageHint);
+        if (Array.isArray(artifact.imageHint)) {
+          artifact.imageHint.forEach(hint => series.add(hint));
+        } else {
+          series.add(artifact.imageHint);
+        }
       }
     });
     const uniqueSeries = Array.from(series);
@@ -46,7 +50,12 @@ export function GrimoireGallery({
     }
     
     if (selectedSeries !== "all") {
-      artifacts = artifacts.filter(artifact => artifact.imageHint === selectedSeries);
+      artifacts = artifacts.filter(artifact => {
+        if (Array.isArray(artifact.imageHint)) {
+          return artifact.imageHint.includes(selectedSeries);
+        }
+        return artifact.imageHint === selectedSeries;
+      });
     }
 
     return artifacts;
