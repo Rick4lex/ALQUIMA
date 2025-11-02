@@ -4,7 +4,7 @@
       "id": "banner",
       "description": "Alquima Mizu banner",
       "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"],
-      "imageHint": "mystical banner"
+      "imageHint": "Alquima 水"
     },
     {
       "id": "minifiguras-1",
@@ -35,7 +35,7 @@
       "category": "minifiguras",
       "title": "Tanjiro Kamado / Kimetsu No Yaiba",
       "description": "Custom minifigure 3",
-      "details": "Este artefacto ya encontró a su portador.",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
       "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg"],
       "imageHint": "Kimetsu No Yaiba",
       "price": "18.000 und",
@@ -58,7 +58,7 @@
       "description": "Preview for Dibujos",
       "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
       "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png"],
-      "imageHint": "fantasy drawings",
+      "imageHint": "Sailor Moon",
       "available": true
     },
     {
