@@ -12,7 +12,10 @@
       "title": "Kikoru Shinomiya / Kaiju No. 8",
       "description": "Preview for Minifiguras 1",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
-      "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png"],
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762041548/00e6f6cf-d608-4893-82de-00b06f646b91.png"
+      ],
       "imageHint": "Kaiju No. 8",
       "price": "12.000 und",
       "available": true
@@ -56,7 +59,7 @@
       "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
       "imageUrls": ["https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png"],
       "imageHint": "fantasy drawings",
-      "available": false
+      "available": true
     },
     {
       "id": "stickers",

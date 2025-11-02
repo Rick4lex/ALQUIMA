@@ -78,50 +78,17 @@ export function GalleryModal({
         <DialogTitle className="sr-only">Galería de Imágenes</DialogTitle>
         <div className="relative w-full h-full flex items-center justify-center">
             
-            {/* Main Content Area */}
-            <div className="w-full h-full flex flex-col md:flex-row items-center justify-center p-2 md:p-4 gap-2">
-                
-                {/* Main Image */}
-                <div className="relative w-full md:flex-1 h-full min-h-0 flex-grow">
+            {/* --- MOBILE VIEW --- */}
+            <div className="md:hidden w-full h-full flex flex-col items-center justify-center p-2 gap-4">
+                <div className="relative w-full flex-1">
                     <Image
                         src={imageUrls[currentSubIndex]}
                         alt={currentImage.description}
                         fill
-                        className="object-contain rounded-lg"
+                        className="object-contain"
                     />
                 </div>
-                
-                {/* Desktop: Thumbnails */}
-                {hasMultipleImages && (
-                    <div className="hidden md:flex flex-col w-32 flex-shrink-0">
-                        <ScrollArea>
-                            <div className="flex flex-col gap-2 p-1 max-h-[80vh]">
-                                {imageUrls.map((url, index) => (
-                                    <div
-                                        key={index}
-                                        className={cn(
-                                            "relative aspect-square w-full flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
-                                            index === currentSubIndex && "ring-primary"
-                                        )}
-                                        onClick={() => setCurrentSubIndex(index)}
-                                    >
-                                        <Image
-                                            src={url}
-                                            alt={`Thumbnail ${index + 1} for ${currentImage.title}`}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </ScrollArea>
-                    </div>
-                )}
-            </div>
-
-            {/* Mobile: Stacked content */}
-            <div className="md:hidden absolute bottom-4 left-4 right-4 flex flex-col items-center space-y-4">
-                 <Button 
+                <Button 
                     variant="outline"
                     size="sm" 
                     onClick={(e) => {
@@ -133,7 +100,6 @@ export function GalleryModal({
                     <Info className="mr-2 h-4 w-4" />
                     Ver Detalles
                 </Button>
-
                 {hasMultipleImages && (
                     <ScrollArea className="w-full">
                         <div className="flex flex-row gap-2 p-1 justify-center">
@@ -159,6 +125,48 @@ export function GalleryModal({
                 )}
             </div>
 
+            {/* --- DESKTOP VIEW --- */}
+            <div className="hidden md:flex w-full h-full items-center justify-center p-4">
+                <div className="flex items-center justify-center flex-1 h-full">
+                    {/* Main Image */}
+                    <div className="relative flex-1 h-full">
+                        <Image
+                            src={imageUrls[currentSubIndex]}
+                            alt={currentImage.description}
+                            fill
+                            className="object-contain rounded-lg"
+                        />
+                    </div>
+                    
+                    {/* Desktop: Thumbnails */}
+                    {hasMultipleImages && (
+                        <div className="flex flex-col w-32 flex-shrink-0 ml-2">
+                            <ScrollArea>
+                                <div className="flex flex-col gap-2 p-1 max-h-[80vh]">
+                                    {imageUrls.map((url, index) => (
+                                        <div
+                                            key={index}
+                                            className={cn(
+                                                "relative aspect-square w-full flex-shrink-0 cursor-pointer rounded-md overflow-hidden ring-2 ring-transparent transition",
+                                                index === currentSubIndex && "ring-primary"
+                                            )}
+                                            onClick={() => setCurrentSubIndex(index)}
+                                        >
+                                            <Image
+                                                src={url}
+                                                alt={`Thumbnail ${index + 1} for ${currentImage.title}`}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </ScrollArea>
+                        </div>
+                    )}
+                </div>
+            </div>
+
             {/* Desktop: Floating details button */}
             <div className='hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2'>
                  <Button 
@@ -175,7 +183,7 @@ export function GalleryModal({
                 </Button>
             </div>
 
-            {/* Controls */}
+            {/* General Controls (Nav Arrows & Close) */}
             {images.length > 1 && (
                 <>
                     <Button 
