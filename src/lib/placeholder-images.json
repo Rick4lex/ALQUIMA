@@ -1,26 +1,20 @@
 {
   "placeholderImages": [
     {
-      "id": "banner",
-      "description": "Alquima Mizu banner",
+      "id": "dibujos",
+      "category": "dibujos",
+      "title": "Anime Dibujos A Lapiz Y Madera",
+      "description": "Preview for Dibujos",
+      "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1761019947/9e265f18-c4b5-40a4-84c0-c2a09d4f2df4.png"
       ],
-      "imageHint": "Alquima 水"
-    },
-    {
-      "id": "minifiguras-1",
-      "category": "minifiguras",
-      "title": "Kikoru Shinomiya / BdC Kaiju No. 8",
-      "description": "Preview for Minifiguras 1",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762041548/00e6f6cf-d608-4893-82de-00b06f646b91.png"
+      "imageHint": [
+        "Madera & Trazos",
+        "Alquima 水"
       ],
-      "imageHint": ["Kaiju No. 8"],
-      "price": "12.000 und",
-      "available": true
+      "available": true,
+      "price": ""
     },
     {
       "id": "minifiguras-2",
@@ -31,45 +25,11 @@
       "imageUrls": [
         "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg"
       ],
-      "imageHint": ["custom minifigure"],
-      "available": true
-    },
-    {
-      "id": "minifiguras-3",
-      "category": "minifiguras",
-      "title": "Tanjiro Kamado / BdC Kimetsu No Yaiba",
-      "description": "Custom minifigure 3",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg"
+      "imageHint": [
+        "custom minifigure"
       ],
-      "imageHint": ["Kimetsu No Yaiba"],
-      "price": "20.000 und",
-      "available": true
-    },
-    {
-      "id": "dibujos",
-      "category": "dibujos",
-      "title": "Anime Dibujos A Lapiz Y Madera",
-      "description": "Preview for Dibujos",
-      "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1761019947/9e265f18-c4b5-40a4-84c0-c2a09d4f2df4.png"
-      ],
-      "imageHint": ["Madera & Trazos", "Alquima 水"],
-      "available": true
-    },
-    {
-      "id": "dibujos-2",
-      "category": "dibujos",
-      "title": "Pinturas y Dibujos Anime",
-      "description": "Preview for Dibujos",
-      "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png"
-      ],
-      "imageHint": ["Madera & Trazos", "Alquima 水"],
-      "available": true
+      "available": true,
+      "price": ""
     },
     {
       "id": "stickers",
@@ -84,8 +44,27 @@
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103714/12c3a8fe-5c28-4d9d-8d36-0b013c3d5ec9.png",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103831/f08f298d-683e-49b7-bd27-604042ea9f77.png"
       ],
-      "imageHint": ["anime stickers"],
-      "available": true
+      "imageHint": [
+        "anime stickers"
+      ],
+      "available": true,
+      "price": ""
+    },
+    {
+      "id": "dibujos-2",
+      "category": "dibujos",
+      "title": "Pinturas y Dibujos Anime",
+      "description": "Preview for Dibujos",
+      "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png"
+      ],
+      "imageHint": [
+        "Madera & Trazos",
+        "Alquima 水"
+      ],
+      "available": true,
+      "price": ""
     },
     {
       "id": "tatuajes-temporales",
@@ -96,21 +75,202 @@
       "imageUrls": [
         "https://images.unsplash.com/photo-1566878823917-b40eaa39f91d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YXR0b28lMjBkZXNpZ25zfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlibrb-4.1.0&q=80&w=1080"
       ],
-      "imageHint": ["tattoo designs"],
-      "available": false
+      "imageHint": [
+        "tattoo designs"
+      ],
+      "available": false,
+      "price": ""
+    },
+    {
+      "id": "banner",
+      "description": "Alquima Mizu banner",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"
+      ],
+      "imageHint": "Alquima 水"
     },
     {
       "id": "accesorios",
       "category": "accesorios",
-      "title": "Llaveros Dandandan, Shingeki no kyojin",
+      "title": "Llaveros Acrilico Serie Dandandan & SNK",
       "description": "Preview for Accesorios",
-      "details": "regalo 🎁, Decoración Maletín 🎒.",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
       "imageUrls": [
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"
       ],
-      "imageHint": ["Dandadan", "Shingeki no kyojin"],
-      "price": "8.000 c/und",
+      "imageHint": [
+        "Dandadan",
+        "Shingeki no kyojin"
+      ],
+      "price": "8.000 und",
       "available": true
+    },
+    {
+      "title": "Maki Zenin Restricción Completa / BdC JJK",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762148882/5ea8b782-3666-40e1-a533-5ecd389c982b.png"
+      ],
+      "imageHint": [
+        "Jujutsu Kaisen"
+      ],
+      "id": "1762130883941-maki-zenin-restricción-completa-/-bdc-jujutsu-kaisen",
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "title": "Sasuke Uchiha con Rinnegan / BdC Naruto",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762147571/6023c78c-5d80-42f3-bf04-c2847b4a39b0.png"
+      ],
+      "imageHint": [
+        "Naruto"
+      ],
+      "id": "1762126304122-sasuke-uchiha-con-rinnegan-/-bdc-naruto",
+      "available": true,
+      "price": "10.000 und"
+    },
+    {
+      "title": "Tanjiro Kamado Vestido de Chica / BdC KNY",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762147394/c5787792-aaed-4a0f-a30c-488b6553cc89.png"
+      ],
+      "imageHint": [
+        "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "id": "1762127492475-tanjiro-kamado-vestido-de-chica-/-kimetsu-no-yaiba",
+      "available": true,
+      "price": "10.000 und"
+    },
+    {
+      "title": "Hashira Giyū Tomioka / BdC KNY",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762147213/ac6e95c4-64ec-4179-846f-d46971a505df.png"
+      ],
+      "imageHint": [
+        "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "id": "1762128860699-hashira-giyū-tomioka-/-kimetsu-no-yaiba",
+      "available": true,
+      "price": "10.000 und"
+    },
+    {
+      "id": "minifiguras-1",
+      "category": "minifiguras",
+      "title": "Kikoru Shinomiya / BdC KNo8",
+      "description": "Preview for Minifiguras 1",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762041548/00e6f6cf-d608-4893-82de-00b06f646b91.png"
+      ],
+      "imageHint": [
+        "Kaiju No. 8"
+      ],
+      "price": "12.000 und",
+      "available": true
+    },
+    {
+      "title": "Satoru Gojō Batalla Final/ BdC JJK",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762148877/238f1856-7e36-478a-bc16-7dde2c7af8b1.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1762148787/f6e406ac-9477-4899-a850-7deb9d5981d2.png"
+      ],
+      "imageHint": [
+        "Jujutsu Kaisen"
+      ],
+      "id": "1762129823068-satoru-gojō-batalla-final/-bdc-jujutsu-kaisen",
+      "available": true,
+      "price": "12.000 und"
+    },
+    {
+      "title": "Mina Ashiro / BdC KNo8",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762147841/5ee8481e-ee9c-4dfe-b83f-e00926b07f85.png"
+      ],
+      "imageHint": [
+        "Kaiju No. 8"
+      ],
+      "id": "1762149362801-mina-ashiro-/-bdc-kaiju-no.-8",
+      "available": true,
+      "price": "12.000 und"
+    },
+    {
+      "title": "Gogeta SSJB / BdC DBS",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS\n\n",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762147221/22114929-c584-4368-af02-a0bfe9476f1f.png"
+      ],
+      "imageHint": [
+        "Dragon Ball"
+      ],
+      "id": "1762149693112-gogeta-ssjb-/-bdc-dragon-ball-super",
+      "available": true,
+      "price": "12.000 und"
+    },
+    {
+      "title": "Son Goku SSJ3 / BdC DBZ",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762148589/b06f0aed-360c-4d0b-a39b-0642be8488ca.png"
+      ],
+      "imageHint": [
+        "Dragon Ball"
+      ],
+      "id": "1762134284875-son-goku-ssj3-/-bdc-dragon-ball-z",
+      "available": true,
+      "price": "15.000 und"
+    },
+    {
+      "id": "minifiguras-3",
+      "category": "minifiguras",
+      "title": "Tanjiro Kamado Respiración de Fuego / BdC KNY",
+      "description": "Custom minifigure 3",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg"
+      ],
+      "imageHint": [
+        "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "price": "20.000 und",
+      "available": true
+    },
+    {
+      "title": "Tanjiro Kamado Respiración de Agua / BdC KNY",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1762218262/IMG_20251103_195944_r1tbms.jpg"
+      ],
+      "imageHint": [
+        "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "id": "1762219076541-tanjiro-kamado-&-nezuko-pequeña-/-bdc-kny",
+      "available": true,
+      "price": "20.000 und"
     }
   ]
 }
