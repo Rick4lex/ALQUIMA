@@ -23,7 +23,8 @@
       "description": "Custom minifigure 2",
       "details": "Bloques de construcción pequeños (compatible con Lego), Material: ABS",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762316520/4f5e5be7-31dd-456c-bc8c-d4e7abf8569e.png"
       ],
       "imageHint": [
         "custom minifigure"
@@ -87,12 +88,29 @@
       "imageUrls": [
         "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"
       ],
-      "imageHint": "Alquima 水"
+      "imageHint": [
+        "Alquima 水"
+      ]
+    },
+    {
+      "title": "Saitama / BdC OPM",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762288750/IMG_20251104_153733_yqeumr.jpg"
+      ],
+      "imageHint": [
+        "One Punch Man"
+      ],
+      "id": "1762125047074-saitama-/-bdc-one-punch-man",
+      "available": true,
+      "price": "6.000 und"
     },
     {
       "id": "accesorios",
       "category": "accesorios",
-      "title": "Llaveros Acrilico Serie Dandandan & SNK",
+      "title": "Llaveros Acrilico Serie DDD & SNK",
       "description": "Preview for Accesorios",
       "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
       "imageUrls": [
@@ -121,7 +139,7 @@
       "price": "8.000 und"
     },
     {
-      "title": "Sasuke Uchiha con Rinnegan / BdC Naruto",
+      "title": "Sasuke Uchiha con Rinnegan / BdC N✿︎",
       "category": "minifiguras",
       "description": "",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
@@ -147,6 +165,21 @@
         "Demon Slayer: Kimetsu no Yaiba"
       ],
       "id": "1762127492475-tanjiro-kamado-vestido-de-chica-/-kimetsu-no-yaiba",
+      "available": true,
+      "price": "10.000 und"
+    },
+    {
+      "title": "Inosuke Hashibira / BdC KNY",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve,e_sharpen/v1762288784/IMG_20251104_151954_tpz9op.jpg"
+      ],
+      "imageHint": [
+        "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "id": "1762127912686-inosuke-hashibira-/-kimetsu-no-yaiba",
       "available": true,
       "price": "10.000 und"
     },
