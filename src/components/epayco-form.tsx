@@ -22,8 +22,8 @@ export type EpaycoData = {
 export function EpaycoForm({ data }: { data: EpaycoData }) {
     const formRef = React.useRef<HTMLFormElement>(null);
 
-    const pCustId = process.env.NEXT_PUBLIC_EPAYCO_CUST_ID;
-    const pKey = process.env.NEXT_PUBLIC_EPAYCO_PUBLIC_KEY;
+    const pCustId = process.env.NEXT_PUBLIC_P_CUST_ID_CLIENTE;
+    const pKey = process.env.NEXT_PUBLIC_P_KEY;
 
     React.useEffect(() => {
         // Da un ciclo de renderizado para asegurar que las variables de entorno se carguen
