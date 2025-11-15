@@ -26,12 +26,12 @@ export function EpaycoForm({ data }: { data: EpaycoData }) {
     const pKey = process.env.NEXT_PUBLIC_EPAYCO_PUBLIC_KEY;
 
     React.useEffect(() => {
-        if (pCustId && pKey && pCustId !== 'TU_P_CUST_ID' && pKey !== 'TU_PUBLIC_KEY') {
+        if (pCustId && pKey) {
             formRef.current?.submit();
         }
     }, [pCustId, pKey]);
 
-    if (!pCustId || !pKey || pCustId === 'TU_P_CUST_ID' || pKey === 'TU_PUBLIC_KEY') {
+    if (!pCustId || !pKey) {
         return (
             <div className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4">
                 <div className="bg-background p-8 rounded-lg text-center max-w-md">
