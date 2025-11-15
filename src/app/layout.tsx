@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from "@/components/ui/toaster"
+import { CartProvider } from '@/context/cart-context';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -22,8 +23,10 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <ThemeProvider storageKey="alquima-theme">
-          {children}
-          <Toaster />
+          <CartProvider>
+            {children}
+            <Toaster />
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -16,22 +16,28 @@ import { cn } from "@/lib/utils";
 import { grimoireCategories } from "@/lib/pagedata";
 import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-images";
 
-export function MainCarousel({ onCategoryClick }: { onCategoryClick: (images: ImagePlaceholder[]) => void }) {
+function CategoryCarousel({ 
+  onCategoryClick,
+  isModalOpen
+}: { 
+  onCategoryClick: (images: ImagePlaceholder[]) => void;
+  isModalOpen: boolean;
+}) {
   const [categoryCoverImages, setCategoryCoverImages] = React.useState<Record<string, ImagePlaceholder>>({});
   
   const autoplayPlugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true, active: !isModalOpen })
   );
 
   React.useEffect(() => {
     const covers: Record<string, ImagePlaceholder> = {};
-    const availableImages = PlaceHolderImages.filter(img => img.available);
+    const allImages = PlaceHolderImages.filter(img => img.category);
     
     grimoireCategories.forEach(category => {
-      const categoryImages = availableImages.filter(img => img.category === category.id);
+      const categoryImages = allImages.filter(img => img.category === category.id);
       if (categoryImages.length > 0) {
-        const randomIndex = Math.floor(Math.random() * categoryImages.length);
-        covers[category.id] = categoryImages[randomIndex];
+        // Use a deterministic way to pick an image to avoid layout shifts on re-render
+        covers[category.id] = categoryImages[0];
       }
     });
     setCategoryCoverImages(covers);
@@ -50,13 +56,13 @@ export function MainCarousel({ onCategoryClick }: { onCategoryClick: (images: Im
       <CarouselContent>
         {availableCategories.map((category) => {
           const cardImage = categoryCoverImages[category.id];
-          const categoryImages = PlaceHolderImages.filter(img => img.category === category.id && img.available);
+          const categoryImages = PlaceHolderImages.filter(img => img.category === category.id);
           if (!cardImage) return null;
 
           return (
             <CarouselItem key={category.id}>
                 <Card 
-                  className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20 cursor-pointer"
+                  className="overflow-hidden rounded-lg shadow-lg border-2 border-primary/20 cursor-pointer group"
                   onClick={() => onCategoryClick(categoryImages)}
                 >
                   <CardContent className="relative flex aspect-video items-center justify-center p-0">
@@ -82,5 +88,23 @@ export function MainCarousel({ onCategoryClick }: { onCategoryClick: (images: Im
         </>
       )}
     </Carousel>
+  );
+}
+
+
+export function MainCarousel({ 
+  onCategoryClick,
+  isModalOpen 
+}: { 
+  onCategoryClick: (images: ImagePlaceholder[]) => void;
+  isModalOpen: boolean;
+}) {
+
+  const autoplayPlugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true, active: !isModalOpen })
+  );
+
+  return (
+    <CategoryCarousel onCategoryClick={onCategoryClick} isModalOpen={isModalOpen} />
   );
 }

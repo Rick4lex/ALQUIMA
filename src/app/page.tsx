@@ -26,8 +26,10 @@ import { Copy } from 'lucide-react';
 
 import { GrimoireGallery } from "@/components/grimoire-gallery";
 import { MainCarousel } from "@/components/main-carousel";
-import { GalleryModal } from "@/components/gallery-modal";
 import { ArtifactSheet } from "@/components/artifact-sheet";
+import { GalleryModal } from "@/components/gallery-modal";
+import { Header } from "@/components/header";
+
 
 export type ModalState = {
   type: 'grimoire' | 'gallery' | 'artifact';
@@ -43,6 +45,7 @@ export default function Home() {
   const [modalStack, setModalStack] = React.useState<ModalState[]>([]);
 
   const currentModal = modalStack[modalStack.length - 1];
+  const isModalOpen = modalStack.length > 0;
 
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
   const allArtifacts = React.useMemo(() => PlaceHolderImages.filter(img => img.category), []);
@@ -84,21 +87,11 @@ export default function Home() {
 
   return (
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
-      <header className="sticky top-0 z-50 flex items-center justify-between p-4 bg-background/80 backdrop-blur-sm">
-        <Link href="/" className="flex items-center gap-2" aria-label="Home">
-          <div className="text-4xl font-black text-primary">水</div>
-          {mounted && logoUrl ? (
-            <Image src={logoUrl} alt="ALQUIMA" width={120} height={40} className="object-contain" priority />
-          ) : (
-            <div style={{ width: 120, height: 40 }} />
-          )}
-        </Link>
-        <ThemeToggle />
-      </header>
+      <Header />
       
       <main className="flex-1">
         {bannerImage && (
-          <div className="w-full">
+          <Link href="/arte-y-colecciones" className="block w-full">
             <Image 
               src={bannerImage.imageUrls[0]} 
               alt={bannerImage.description}
@@ -107,7 +100,7 @@ export default function Home() {
               data-ai-hint={bannerImage.imageHint}
               className="w-full aspect-[3/1] object-cover"
             />
-          </div>
+          </Link>
         )}
 
         <div className="container mx-auto max-w-md p-4 text-center">
@@ -137,7 +130,10 @@ export default function Home() {
                   </Tooltip>
               </TooltipProvider>
 
-              <MainCarousel onCategoryClick={(images) => openModal({ type: 'gallery', images, startIndex: 0 })} />
+              <MainCarousel 
+                onCategoryClick={(images) => openModal({ type: 'gallery', images, startIndex: 0 })}
+                isModalOpen={isModalOpen}
+              />
 
               <h3 className="text-xl font-bold text-primary text-center">▽△▽</h3>
 
