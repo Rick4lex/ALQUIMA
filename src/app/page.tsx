@@ -10,7 +10,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "next-themes";
 import {
   Tooltip,
   TooltipContent,
@@ -56,8 +56,8 @@ export default function Home() {
 
   const logoUrl = mounted
     ? theme === 'dark'
-      ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png'
-      : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png'
+      ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png' // White logo
+      : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png' // Black logo
     : '';
 
   const copyToClipboard = (text: string, type: string) => {

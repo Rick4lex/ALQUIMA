@@ -24,8 +24,8 @@ export function Header() {
 
     const logoUrl = mounted
     ? theme === 'dark'
-      ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png'
-      : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png'
+      ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png' // White logo for dark mode
+      : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png' // Black logo for light mode
     : '';
 
     return (
@@ -34,7 +34,15 @@ export function Header() {
                 <Link href="/" className="flex items-center gap-2" aria-label="Home">
                     <div className="text-4xl font-black text-primary">水</div>
                     {mounted && logoUrl ? (
-                        <Image src={logoUrl} alt="ALQUIMA" width={120} height={40} className="object-contain" priority />
+                        <Image 
+                            key={logoUrl} // Force re-render on theme change
+                            src={logoUrl} 
+                            alt="ALQUIMA" 
+                            width={120} 
+                            height={40} 
+                            className="object-contain" 
+                            priority 
+                        />
                     ) : (
                         <div style={{ width: 120, height: 40 }} />
                     )}
