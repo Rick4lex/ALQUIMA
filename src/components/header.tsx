@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
+import { useTheme } from '@/components/theme-provider';
 import { ShoppingCart } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
@@ -22,18 +22,16 @@ export function Header() {
         setMounted(true);
     }, []);
 
-    const logoUrl = mounted
-    ? theme === 'dark'
+    const logoUrl = theme === 'dark'
       ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png' // White logo for dark mode
-      : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png' // Black logo for light mode
-    : '';
+      : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png'; // Black logo for light mode
 
     return (
         <>
             <header className="sticky top-0 z-50 flex items-center justify-between p-4 bg-background/80 backdrop-blur-sm">
                 <Link href="/" className="flex items-center gap-2" aria-label="Home">
                     <div className="text-4xl font-black text-primary">水</div>
-                    {mounted && logoUrl ? (
+                    {mounted ? (
                         <Image 
                             key={logoUrl} // Force re-render on theme change
                             src={logoUrl} 
