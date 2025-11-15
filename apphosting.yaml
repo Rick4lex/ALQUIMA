@@ -5,3 +5,10 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+# By specifying an i18n configuration, we're implicitly telling App Hosting
+# that this is a dynamic application that requires a server. This ensures
+# that API routes (like POST requests for ePayco) are correctly handled.
+i18n:
+  # Specifying a default locale is required, but it won't change the
+  # behavior or language of your app unless you implement i18n routing.
+  locale: 'es'
