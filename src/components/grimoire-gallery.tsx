@@ -30,13 +30,8 @@ export function GrimoireGallery({
   const seriesOptions = React.useMemo(() => {
     const series = new Set<string>();
     allArtifacts.forEach(artifact => {
-      if (artifact.imageHint) {
-        if (Array.isArray(artifact.imageHint)) {
-          artifact.imageHint.forEach(hint => series.add(hint));
-        } else {
-          series.add(artifact.imageHint);
-        }
-      }
+      const hints = Array.isArray(artifact.imageHint) ? artifact.imageHint : [artifact.imageHint];
+      hints.forEach(hint => hint && series.add(hint));
     });
     const uniqueSeries = Array.from(series);
     return [{ value: "all", label: "Todas las series" }, ...uniqueSeries.map(s => ({ value: s, label: s }))];
@@ -51,10 +46,8 @@ export function GrimoireGallery({
     
     if (selectedSeries !== "all") {
       artifacts = artifacts.filter(artifact => {
-        if (Array.isArray(artifact.imageHint)) {
-          return artifact.imageHint.includes(selectedSeries);
-        }
-        return artifact.imageHint === selectedSeries;
+        const hints = Array.isArray(artifact.imageHint) ? artifact.imageHint : [artifact.imageHint];
+        return hints.includes(selectedSeries);
       });
     }
 

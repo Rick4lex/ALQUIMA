@@ -6,11 +6,9 @@ import Link from "next/link";
 import { Store, Mail, Contact } from "lucide-react";
 import * as React from "react";
 
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
-import { useTheme } from "next-themes";
 import {
   Tooltip,
   TooltipContent,
@@ -20,7 +18,6 @@ import {
 
 import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-images";
 import { socialLinks, contactInfo } from "@/lib/pagedata";
-import { AlquimaLogo } from "@/components/icons/alquima-logo";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { Copy } from 'lucide-react';
 
@@ -39,9 +36,7 @@ export type ModalState = {
 };
 
 export default function Home() {
-  const { theme } = useTheme();
   const { toast } = useToast();
-  const [mounted, setMounted] = React.useState(false);
   const [modalStack, setModalStack] = React.useState<ModalState[]>([]);
 
   const currentModal = modalStack[modalStack.length - 1];
@@ -49,16 +44,6 @@ export default function Home() {
 
   const bannerImage = PlaceHolderImages.find(img => img.id === 'banner');
   const allArtifacts = React.useMemo(() => PlaceHolderImages.filter(img => img.category), []);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const logoUrl = mounted
-    ? theme === 'dark'
-      ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png' // White logo
-      : 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760728308/ALQuiMA_ewawxs.png' // Black logo
-    : '';
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -84,6 +69,13 @@ export default function Home() {
   const handleOpenGallery = (images: ImagePlaceholder[], startIndex: number) => {
     openModal({ type: 'gallery', images, startIndex });
   };
+  
+  const handleOpenGrimoire = (images: ImagePlaceholder[], startIndex: number) => {
+      const allCategoryImages = allArtifacts.filter(p => p.category === images[startIndex].category);
+      const newStartIndex = allCategoryImages.findIndex(p => p.id === images[startIndex].id);
+      openModal({ type: 'gallery', images: allCategoryImages, startIndex: newStartIndex });
+  };
+
 
   return (
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
@@ -99,6 +91,7 @@ export default function Home() {
               height={640}
               data-ai-hint={bannerImage.imageHint}
               className="w-full aspect-[3/1] object-cover"
+              priority
             />
           </Link>
         )}
@@ -131,7 +124,7 @@ export default function Home() {
               </TooltipProvider>
 
               <MainCarousel 
-                onCategoryClick={(images) => openModal({ type: 'gallery', images, startIndex: 0 })}
+                onImageClick={handleOpenGrimoire}
                 isModalOpen={isModalOpen}
               />
 

@@ -32,6 +32,24 @@ export function GalleryModal({
       setCurrentSubIndex(0);
     }
   }, [isOpen, startIndex]);
+
+  const goToPrevious = React.useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentIndex(prevIndex => {
+        const isFirstImage = prevIndex === 0;
+        return isFirstImage ? images.length - 1 : prevIndex - 1;
+    });
+    setCurrentSubIndex(0);
+  }, [images.length]);
+
+  const goToNext = React.useCallback((e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentIndex(prevIndex => {
+        const isLastImage = prevIndex === images.length - 1;
+        return isLastImage ? 0 : prevIndex + 1;
+    });
+    setCurrentSubIndex(0);
+  }, [images.length]);
   
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -47,26 +65,9 @@ export function GalleryModal({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex, isOpen]);
+  }, [isOpen, goToPrevious, goToNext]);
 
-  const goToPrevious = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    const isFirstImage = currentIndex === 0;
-    const newIndex = isFirstImage ? images.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-    setCurrentSubIndex(0);
-  };
-
-  const goToNext = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    const isLastImage = currentIndex === images.length - 1;
-    const newIndex = isLastImage ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-    setCurrentSubIndex(0);
-  };
-  
-  if (!images.length) return null;
+  if (!images.length || currentIndex >= images.length) return null;
 
   const currentImage = images[currentIndex];
   const imageUrls = currentImage.imageUrls || [];
@@ -77,12 +78,13 @@ export function GalleryModal({
       <DialogContent className="max-w-none w-full h-full p-0 bg-black/80 backdrop-blur-sm border-0 flex items-center justify-center">
         <DialogTitle className="sr-only">Galería de Imágenes</DialogTitle>
         
-        <div className="relative w-full h-full flex items-center justify-center">
+        <div className="relative w-full h-full flex items-center justify-center" onClick={e => e.stopPropagation()}>
             
             {/* --- MOBILE VIEW --- */}
             <div className="md:hidden w-full h-full flex flex-col items-center justify-center p-2 gap-4">
                 <div className="relative w-full flex-1">
                     <Image
+                        key={imageUrls[currentSubIndex]}
                         src={imageUrls[currentSubIndex]}
                         alt={currentImage.description}
                         fill
@@ -134,6 +136,7 @@ export function GalleryModal({
                     {/* Main Image */}
                     <div className="relative h-full aspect-[4/3] max-w-[calc(100vh*4/3-128px)]">
                         <Image
+                            key={imageUrls[currentSubIndex]}
                             src={imageUrls[currentSubIndex]}
                             alt={currentImage.description}
                             fill

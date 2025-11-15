@@ -14,7 +14,7 @@ export function StoreProductCard({ product }: { product: ImagePlaceholder }) {
     const { addToCart } = useCart();
     const [isLiked, setIsLiked] = React.useState(false);
     
-    const series = (Array.isArray(product.imageHint) ? product.imageHint : [product.imageHint]).slice(0, 2);
+    const series = (Array.isArray(product.imageHint) ? product.imageHint : [product.imageHint || '']).filter(Boolean).slice(0, 2);
 
     return (
         <div className="group relative flex h-full flex-col overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm">
