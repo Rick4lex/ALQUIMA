@@ -26,10 +26,15 @@ export function EpaycoForm({ data }: { data: EpaycoData }) {
     const pKey = process.env.NEXT_PUBLIC_EPAYCO_PUBLIC_KEY;
 
     React.useEffect(() => {
-        if (pCustId && pKey) {
-            formRef.current?.submit();
-        }
-    }, [pCustId, pKey]);
+        // Da un ciclo de renderizado para asegurar que las variables de entorno se carguen
+        const timer = setTimeout(() => {
+            if (pCustId && pKey) {
+                formRef.current?.submit();
+            }
+        }, 100); // Un pequeño retraso es suficiente
+
+        return () => clearTimeout(timer);
+    }, [pCustId, pKey, data]);
 
     if (!pCustId || !pKey) {
         return (
@@ -37,7 +42,7 @@ export function EpaycoForm({ data }: { data: EpaycoData }) {
                 <div className="bg-background p-8 rounded-lg text-center max-w-md">
                     <h3 className="text-xl font-bold text-destructive">Error de Configuración</h3>
                     <p className="mt-4 text-muted-foreground">
-                        La pasarela de pago no ha sido configurada. Por favor, añade tus credenciales de ePayco en el archivo <code>.env.local</code> y reinicia el servidor de desarrollo.
+                        La pasarela de pago no ha sido configurada. Por favor, asegúrate de que tus credenciales de ePayco están correctamente añadidas en el archivo <code>.env.local</code> y que el servidor se ha reiniciado para aplicar los cambios.
                     </p>
                 </div>
             </div>
