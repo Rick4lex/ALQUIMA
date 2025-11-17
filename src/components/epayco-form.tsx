@@ -42,7 +42,7 @@ export function EpaycoForm({ data }: { data: EpaycoData }) {
                 <div className="bg-background p-8 rounded-lg text-center max-w-md">
                     <h3 className="text-xl font-bold text-destructive">Error de Configuración</h3>
                     <p className="mt-4 text-muted-foreground">
-                        La pasarela de pago no ha sido configurada. Por favor, asegúrate de que tus credenciales de ePayco están correctamente añadidas en el archivo <code>.env.local</code> y que el servidor se ha reiniciado para aplicar los cambios.
+                        La pasarela de pago no está configurada correctamente. Por favor, verifica que las credenciales de ePayco (variables de entorno) se hayan añadido correctamente en la configuración del proyecto.
                     </p>
                 </div>
             </div>
