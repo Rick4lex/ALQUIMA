@@ -1,8 +1,10 @@
+
 'use client';
 
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 import { useTheme } from '@/components/theme-provider';
 import { ShoppingCart } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -12,6 +14,8 @@ import { CartSheet } from '@/components/cart-sheet';
 
 export function Header() {
     const { theme } = useTheme();
+    const pathname = usePathname();
+    const router = useRouter();
     const [mounted, setMounted] = React.useState(false);
     const { cart } = useCart();
     const [isCartOpen, setCartOpen] = React.useState(false);
@@ -21,6 +25,14 @@ export function Header() {
     React.useEffect(() => {
         setMounted(true);
     }, []);
+
+    const handleCartClick = () => {
+        if (pathname === '/') {
+            router.push('/arte-y-colecciones');
+        } else {
+            setCartOpen(true);
+        }
+    };
 
     const logoUrl = theme === 'dark'
       ? 'https://res.cloudinary.com/dyeppbrfl/image/upload/v1760725595/ALQuiMA_jmd6ih.png' // White logo for dark mode
@@ -46,14 +58,14 @@ export function Header() {
                     )}
                 </Link>
                 <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="icon" onClick={() => setCartOpen(true)} className="relative">
+                    <Button variant="ghost" size="icon" onClick={handleCartClick} className="relative">
                         <ShoppingCart className="h-5 w-5" />
                         {totalItems > 0 && (
                             <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                                 {totalItems}
                             </span>
                         )}
-                        <span className="sr-only">Abrir carrito de compras</span>
+                        <span className="sr-only">Abrir carrito de compras o ir a la tienda</span>
                     </Button>
                     <ThemeToggle />
                 </div>

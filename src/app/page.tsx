@@ -83,17 +83,17 @@ export default function Home() {
       
       <main className="flex-1">
         {bannerImage && (
-          <Link href="/arte-y-colecciones" className="block w-full">
-            <Image 
-              src={bannerImage.imageUrls[0]} 
-              alt={bannerImage.description}
-              width={1920}
-              height={640}
-              data-ai-hint={bannerImage.imageHint}
-              className="w-full aspect-[3/1] object-cover"
-              priority
-            />
-          </Link>
+            <div className="block w-full">
+                <Image 
+                src={bannerImage.imageUrls[0]} 
+                alt={bannerImage.description}
+                width={1920}
+                height={640}
+                data-ai-hint={bannerImage.imageHint}
+                className="w-full aspect-[3/1] object-cover"
+                priority
+                />
+            </div>
         )}
 
         <div className="container mx-auto max-w-md p-4 text-center">
