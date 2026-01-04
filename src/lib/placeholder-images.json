@@ -86,7 +86,7 @@
       "id": "banner",
       "description": "Alquima Mizu banner",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1763942608/El_texto_del_p%C3%A1rrafo_cad4tf.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"
       ],
       "imageHint": [
         "Alquima 水"
@@ -105,7 +105,7 @@
       ],
       "id": "1762130933991-toji-zenin-/-bdc-jujutsu-kaisen",
       "available": true,
-      "price": "3.000 und"
+      "price": "12.000 und"
     },
     {
       "title": "Denji & Pochita Devil Hunter / BdC CSM",
@@ -121,7 +121,7 @@
       ],
       "id": "1762998710033-denji-&-pochita-devil-hunter-/-bdc-csm",
       "available": true,
-      "price": "3.000 und"
+      "price": "12.000 und"
     },
     {
       "title": "Saitama / BdC OPM",
@@ -137,21 +137,6 @@
       "id": "1762125047074-saitama-/-bdc-one-punch-man",
       "available": true,
       "price": "6.000 und"
-    },
-    {
-      "id": "accesorios",
-      "category": "accesorios",
-      "title": "Llaveros Acrilico Serie DDD & SNK",
-      "description": "Preview for Accesorios",
-      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"
-      ],
-      "imageHint": [
-        "Dandadan"
-      ],
-      "price": "8.000 und",
-      "available": true
     },
     {
       "title": "Maki Zenin Restricción Completa / BdC JJK",
@@ -182,6 +167,21 @@
       "id": "1762136554836-tsunade-senju-/-bdc-naruto",
       "available": true,
       "price": "8.000 und"
+    },
+    {
+      "id": "accesorios",
+      "category": "accesorios",
+      "title": "Llaveros Acrilico Serie DDD & SNK",
+      "description": "Preview for Accesorios",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"
+      ],
+      "imageHint": [
+        "Dandadan"
+      ],
+      "price": "8.000 und",
+      "available": true
     },
     {
       "title": "Kakashi Hatake Anbu / BdC NS",
@@ -319,22 +319,6 @@
       "price": "10.000 und"
     },
     {
-      "id": "minifiguras-1",
-      "category": "minifiguras",
-      "title": "Kikoru Shinomiya / BdC KNo8",
-      "description": "Preview for Minifiguras 1",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762041548/00e6f6cf-d608-4893-82de-00b06f646b91.png"
-      ],
-      "imageHint": [
-        "Kaiju No. 8"
-      ],
-      "price": "12.000 und",
-      "available": false
-    },
-    {
       "title": "Satoru Gojō Batalla Final/ BdC JJK",
       "category": "minifiguras",
       "description": "",
@@ -351,7 +335,7 @@
       "price": "12.000 und"
     },
     {
-      "title": "Ryōmen Sukuna / BdC JJK",
+      "title": "Ryōmen Sukuna Era Heian / BdC JJK",
       "category": "minifiguras",
       "description": "",
       "details": "",
@@ -397,6 +381,22 @@
       "price": "12.000 und"
     },
     {
+      "id": "minifiguras-1",
+      "category": "minifiguras",
+      "title": "Kikoru Shinomiya / BdC KNo8",
+      "description": "Preview for Minifiguras 1",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761018574/1333694e-f106-41ed-8eb2-8c551af1fd40.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762041548/00e6f6cf-d608-4893-82de-00b06f646b91.png"
+      ],
+      "imageHint": [
+        "Kaiju No. 8"
+      ],
+      "price": "12.000 und",
+      "available": false
+    },
+    {
       "title": "Son Goku SSJ3 / BdC DBZ",
       "category": "minifiguras",
       "description": "",
@@ -427,21 +427,6 @@
       "price": "15.000 und"
     },
     {
-      "id": "minifiguras-3",
-      "category": "minifiguras",
-      "title": "Tanjiro Kamado Respiración de Fuego / BdC KNY",
-      "description": "Custom minifigure 3",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg"
-      ],
-      "imageHint": [
-        "Demon Slayer: Kimetsu no Yaiba"
-      ],
-      "price": "20.000 und",
-      "available": false
-    },
-    {
       "title": "Tanjiro Kamado Respiración de Agua / BdC KNY",
       "category": "minifiguras",
       "description": "",
@@ -455,6 +440,21 @@
       "id": "1762219076541-tanjiro-kamado-&-nezuko-pequeña-/-bdc-kny",
       "available": true,
       "price": "20.000 und"
+    },
+    {
+      "id": "minifiguras-3",
+      "category": "minifiguras",
+      "title": "Tanjiro Kamado Respiración de Fuego / BdC KNY",
+      "description": "Custom minifigure 3",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999382/IMG_20250927_180340_or6otj.jpg"
+      ],
+      "imageHint": [
+        "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "price": "20.000 und",
+      "available": false
     }
   ]
 }
