@@ -1,25 +1,38 @@
 {
   "placeholderImages": [
     {
+      "id": "banner",
+      "title": "",
+      "category": "",
+      "description": "Alquima Mizu banner",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"
+      ],
+      "imageHint": [
+        "Alquima 水"
+      ],
+      "available": true
+    },
+    {
       "id": "dibujos",
-      "category": "dibujos",
       "title": "Anime Dibujos A Lapiz Y Madera",
+      "category": "dibujos",
       "description": "Preview for Dibujos",
       "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
       "imageUrls": [
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1761019947/9e265f18-c4b5-40a4-84c0-c2a09d4f2df4.png"
       ],
       "imageHint": [
-        "Madera & Trazos",
-        "Alquima 水"
+        "Madera & Trazos, Alquima 水"
       ],
       "available": true,
       "price": ""
     },
     {
       "id": "minifiguras-2",
-      "category": "minifiguras",
       "title": "Mini Figuras Bloques De Construcción Para Colección",
+      "category": "minifiguras",
       "description": "Custom minifigure 2",
       "details": "Bloques de construcción pequeños (compatible con Lego), Material: ABS",
       "imageUrls": [
@@ -33,16 +46,34 @@
       "price": ""
     },
     {
+      "id": "1772055849886-naruto-uzumaki-modo-kurama-/-bdc-ns",
+      "title": "Naruto Uzumaki Modo Barion / BdC NS",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772055957/01cbeaee-205d-4ce5-8d26-4dcec3d615c7.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772055965/012b7fbc-e3d1-40ab-9292-cf7acd07ecda.png"
+      ],
+      "imageHint": [
+        "Naruto"
+      ],
+      "available": true,
+      "price": ""
+    },
+    {
       "id": "stickers",
-      "category": "stickers",
       "title": "Pack de Stickers Anime",
+      "category": "stickers",
       "description": "Preview for Stickers",
       "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
       "imageUrls": [
-        "https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791600952/c02120c5-8ee8-4b01-957d-da440a999c58.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791600934/7f60aa41-7364-4c83-88ee-e7e7108a3846.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103714/12c3a8fe-5c28-4d9d-8d36-0b013c3d5ec9.png",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1762103678/e59783f5-0484-4db2-ad7b-222d6c188110.png",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/v1762103735/bc0788e1-32a1-42ea-bf12-264bf416eae8.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103714/12c3a8fe-5c28-4d9d-8d36-0b013c3d5ec9.png",
+        "https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103831/f08f298d-683e-49b7-bd27-604042ea9f77.png"
       ],
       "imageHint": [
@@ -53,46 +84,23 @@
     },
     {
       "id": "dibujos-2",
-      "category": "dibujos",
       "title": "Pinturas y Dibujos Anime",
+      "category": "dibujos",
       "description": "Preview for Dibujos",
       "details": "Dibujo sobre madera de series animadas, si estas interesad@ en algo en especifico distinto puedes hacer un pedido",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_sharpen/v1761020424/73cf5e4e-ca07-46cf-9d74-43a701094782.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791667064/5bec0f06-a825-49eb-a9d5-b8c2e6179720.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791667083/f6be1da7-e826-4a02-a4cc-1bf2a13647d5.png"
       ],
       "imageHint": [
-        "Madera & Trazos",
-        "Alquima 水"
+        "Madera & Trazos, Alquima 水"
       ],
       "available": true,
       "price": ""
     },
     {
-      "id": "tatuajes-temporales",
-      "category": "tatuajes-temporales",
-      "title": "Tatuajes Temporales",
-      "description": "Preview for Tatuajes Temporales",
-      "details": "Diseño de tatuaje temporal con tinta hipoalergénica.",
-      "imageUrls": [
-        "https://images.unsplash.com/photo-1566878823917-b40eaa39f91d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YXR0b28lMjBkZXNpZ25zfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlibrb-4.1.0&q=80&w=1080"
-      ],
-      "imageHint": [
-        "tattoo designs"
-      ],
-      "available": false,
-      "price": ""
-    },
-    {
-      "id": "banner",
-      "description": "Alquima Mizu banner",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"
-      ],
-      "imageHint": [
-        "Alquima 水"
-      ]
-    },
-    {
+      "id": "1762130933991-toji-zenin-/-bdc-jujutsu-kaisen",
       "title": "Toji zenin / BdC JJK",
       "category": "minifiguras",
       "description": "",
@@ -103,15 +111,15 @@
       "imageHint": [
         "Jujutsu Kaisen"
       ],
-      "id": "1762130933991-toji-zenin-/-bdc-jujutsu-kaisen",
       "available": true,
       "price": "12.000 und"
     },
     {
+      "id": "1762998710033-denji-&-pochita-devil-hunter-/-bdc-csm",
       "title": "Denji & Pochita Devil Hunter / BdC CSM",
       "category": "minifiguras",
       "description": "",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
       "imageUrls": [
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762996559/a4c60a9b-e17f-4567-b969-7365ed19635c.png",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762996839/25a4666b-a176-4e76-81c2-2cef5d362853.png"
@@ -119,11 +127,11 @@
       "imageHint": [
         "Chainsaw Man"
       ],
-      "id": "1762998710033-denji-&-pochita-devil-hunter-/-bdc-csm",
       "available": true,
       "price": "12.000 und"
     },
     {
+      "id": "1762125047074-saitama-/-bdc-one-punch-man",
       "title": "Saitama / BdC OPM",
       "category": "minifiguras",
       "description": "",
@@ -134,11 +142,11 @@
       "imageHint": [
         "One Punch Man"
       ],
-      "id": "1762125047074-saitama-/-bdc-one-punch-man",
       "available": true,
       "price": "6.000 und"
     },
     {
+      "id": "1762130883941-maki-zenin-restricción-completa-/-bdc-jujutsu-kaisen",
       "title": "Maki Zenin Restricción Completa / BdC JJK",
       "category": "minifiguras",
       "description": "",
@@ -149,11 +157,11 @@
       "imageHint": [
         "Jujutsu Kaisen"
       ],
-      "id": "1762130883941-maki-zenin-restricción-completa-/-bdc-jujutsu-kaisen",
       "available": true,
       "price": "8.000 und"
     },
     {
+      "id": "1762136554836-tsunade-senju-/-bdc-naruto",
       "title": "Tsunade Senju / BdC NS",
       "category": "minifiguras",
       "description": "",
@@ -164,26 +172,43 @@
       "imageHint": [
         "Naruto"
       ],
-      "id": "1762136554836-tsunade-senju-/-bdc-naruto",
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1762376277567-aretes-colgantes-de-gancho",
+      "title": "Aretes Colgantes de Gancho",
+      "category": "accesorios",
+      "description": "",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791607863/04de2b0e-2bf1-44ca-ae5f-653018ddd24c.png"
+      ],
+      "imageHint": [
+        "Dangle:Colgante"
+      ],
       "available": true,
       "price": "8.000 und"
     },
     {
       "id": "accesorios",
-      "category": "accesorios",
       "title": "Llaveros Acrilico Serie DDD & SNK",
+      "category": "accesorios",
       "description": "Preview for Accesorios",
       "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
       "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791601029/7cc230c7-6e9f-403b-85cc-f17244bc5147.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791601001/533f7ac0-a063-4824-935e-ff2c43717907.png",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"
       ],
       "imageHint": [
         "Dandadan"
       ],
-      "price": "8.000 und",
-      "available": true
+      "available": true,
+      "price": "8.000 und"
     },
     {
+      "id": "1762125686778-kakashi-hatake-anbu-/-bdc-naruto",
       "title": "Kakashi Hatake Anbu / BdC NS",
       "category": "minifiguras",
       "description": "",
@@ -194,11 +219,11 @@
       "imageHint": [
         "Naruto"
       ],
-      "id": "1762125686778-kakashi-hatake-anbu-/-bdc-naruto",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762125757075-itachi-uchiha-akatsuki-/-bdc-naruto",
       "title": "Itachi Uchiha Akatsuki / BdC NS",
       "category": "minifiguras",
       "description": "",
@@ -209,11 +234,11 @@
       "imageHint": [
         "Naruto"
       ],
-      "id": "1762125757075-itachi-uchiha-akatsuki-/-bdc-naruto",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762125950525-sasuke-uchiha-akatsuki-/-bdc-naruto",
       "title": "Sasuke Uchiha Akatsuki / BdC NS",
       "category": "minifiguras",
       "description": "",
@@ -224,11 +249,11 @@
       "imageHint": [
         "Naruto"
       ],
-      "id": "1762125950525-sasuke-uchiha-akatsuki-/-bdc-naruto",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762126304122-sasuke-uchiha-con-rinnegan-/-bdc-naruto",
       "title": "Sasuke Uchiha con Rinnegan / BdC NS",
       "category": "minifiguras",
       "description": "",
@@ -239,11 +264,11 @@
       "imageHint": [
         "Naruto"
       ],
-      "id": "1762126304122-sasuke-uchiha-con-rinnegan-/-bdc-naruto",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762126656375-naruto-uzumaki-modo-kurama-/-bdc-naruto",
       "title": "Naruto Uzumaki Modo Kurama / BdC NS",
       "category": "minifiguras",
       "description": "",
@@ -254,27 +279,26 @@
       "imageHint": [
         "Naruto"
       ],
-      "id": "1762126656375-naruto-uzumaki-modo-kurama-/-bdc-naruto",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762126970578-nezuko-kamado-/-kimetsu-no-yaiba",
       "title": "Nezuko Kamado Demonio / BdC KNY",
       "category": "minifiguras",
       "description": "",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772156036/dca3cc03-7068-452b-95e9-fb84d2684f59.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772156061/b8851e51-247b-4a51-b843-c7c0f93dbaa3.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772156036/dca3cc03-7068-452b-95e9-fb84d2684f59.png"
       ],
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1762126970578-nezuko-kamado-/-kimetsu-no-yaiba",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762127492475-tanjiro-kamado-vestido-de-chica-/-kimetsu-no-yaiba",
       "title": "Tanjiro Kamado Vestido de Chica / BdC KNY",
       "category": "minifiguras",
       "description": "",
@@ -285,11 +309,11 @@
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1762127492475-tanjiro-kamado-vestido-de-chica-/-kimetsu-no-yaiba",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762127912686-inosuke-hashibira-/-kimetsu-no-yaiba",
       "title": "Inosuke Hashibira / BdC KNY",
       "category": "minifiguras",
       "description": "",
@@ -300,11 +324,11 @@
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1762127912686-inosuke-hashibira-/-kimetsu-no-yaiba",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762128025571-zenitsu-agatsuma-/-kimetsu-no-yaiba",
       "title": "Zenitsu Agatsuma / BdC KNY",
       "category": "minifiguras",
       "description": "",
@@ -315,26 +339,26 @@
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1762128025571-zenitsu-agatsuma-/-kimetsu-no-yaiba",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762128356845-hashira-muichiro-tokito-/-kimetsu-no-yaiba",
       "title": "Hashira Muichiro Tokito / BdC KNY",
       "category": "minifiguras",
       "description": "",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772210792/0e068134-29c6-4d0c-bfb9-94b2ac2dcda9.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772210792/0e068134-29c6-4d0c-bfb9-94b2ac2dcda9.png"
       ],
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1762128356845-hashira-muichiro-tokito-/-kimetsu-no-yaiba",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762128860699-hashira-giyū-tomioka-/-kimetsu-no-yaiba",
       "title": "Hashira Giyū Tomioka / BdC KNY",
       "category": "minifiguras",
       "description": "",
@@ -345,63 +369,57 @@
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1762128860699-hashira-giyū-tomioka-/-kimetsu-no-yaiba",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1763135668469-hashira-mitsuri-kanroj-/-bdc-kny",
       "title": "Hashira Mitsuri Kanroji / BdC KNY",
       "category": "minifiguras",
       "description": "",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/c_crop,ar_3:4,e_improve,e_sharpen/v1772154456/7b16759b-ae2f-487f-93d4-fbf2150d0d5c.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772154478/c30069e1-0bbc-4692-b969-3ebd699127ef.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772154466/1205caf2-88c1-4854-9552-0a97f396f060.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791666841/52ef9d8f-1916-49b8-b439-21edf68894fd.png"
       ],
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1763135668469-hashira-mitsuri-kanroj-/-bdc-kny",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1763136940894-tanjiro-kamado-demonio-/-bdc-kny",
       "title": "Tanjiro Kamado Demonio / BdC KNY",
       "category": "minifiguras",
       "description": "",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772159411/8095f5d5-2937-4680-b728-b883f53121bc.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772159425/4619ff8d-a074-4565-b77a-b5afebffc54d.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772159447/b2438822-efaa-4e7c-8d82-25e5eac45ac8.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772159425/4619ff8d-a074-4565-b77a-b5afebffc54d.png"
       ],
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1763136940894-tanjiro-kamado-demonio-/-bdc-kny",
       "available": true,
       "price": "10.000 und"
     },
     {
-      "title": "Itachi Uchiha Anbu / BdC NS",
+      "id": "1791666350775-itachi-uchiha-anbu-/-bdc-ns",
+      "title": "Itachi Uchiha ANBU / BdC NS",
       "category": "minifiguras",
       "description": "",
-      "details": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772158875/8cfd2f72-38db-4705-9fb5-3a998095713e.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772158947/374c3e1d-4a04-4a31-9b7c-c6fbf1b4f42f.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772158902/18eae9b0-01db-44e9-ae4d-b6ba34f70e3c.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772158926/09603305-9fa8-4f1e-a996-d16558136115.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772158875/8cfd2f72-38db-4705-9fb5-3a998095713e.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772158902/18eae9b0-01db-44e9-ae4d-b6ba34f70e3c.png"
       ],
       "imageHint": [
         "Naruto"
       ],
-      "id": "1772159175986-itachi-uchiha-anbu-/-bdc-ns",
       "available": true,
       "price": "10.000 und"
     },
     {
+      "id": "1762129823068-satoru-gojō-batalla-final/-bdc-jujutsu-kaisen",
       "title": "Satoru Gojō Batalla Final/ BdC JJK",
       "category": "minifiguras",
       "description": "",
@@ -413,11 +431,11 @@
       "imageHint": [
         "Jujutsu Kaisen"
       ],
-      "id": "1762129823068-satoru-gojō-batalla-final/-bdc-jujutsu-kaisen",
       "available": true,
       "price": "12.000 und"
     },
     {
+      "id": "1762130527013-ryōmen-sukuna-/-bdc-jujutsu-kaisen",
       "title": "Ryōmen Sukuna Era Heian / BdC JJK",
       "category": "minifiguras",
       "description": "",
@@ -428,11 +446,11 @@
       "imageHint": [
         "Jujutsu Kaisen"
       ],
-      "id": "1762130527013-ryōmen-sukuna-/-bdc-jujutsu-kaisen",
       "available": true,
       "price": "12.000 und"
     },
     {
+      "id": "1762149362801-mina-ashiro-/-bdc-kaiju-no.-8",
       "title": "Mina Ashiro / BdC KNo8",
       "category": "minifiguras",
       "description": "",
@@ -443,15 +461,15 @@
       "imageHint": [
         "Kaiju No. 8"
       ],
-      "id": "1762149362801-mina-ashiro-/-bdc-kaiju-no.-8",
       "available": true,
       "price": "12.000 und"
     },
     {
+      "id": "1762149693112-gogeta-ssjb-/-bdc-dragon-ball-super",
       "title": "Gogeta SSJB / BdC DBS",
       "category": "minifiguras",
       "description": "",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS\n\n",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": [
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762147221/22114929-c584-4368-af02-a0bfe9476f1f.png",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762996863/c9b29cad-9e4a-4cbf-86ea-e23034d2fca4.png"
@@ -459,80 +477,73 @@
       "imageHint": [
         "Dragon Ball"
       ],
-      "id": "1762149693112-gogeta-ssjb-/-bdc-dragon-ball-super",
       "available": true,
       "price": "12.000 und"
     },
     {
+      "id": "1763136621384-muzan-kibutsuji-forma-definitiva-/-bdc-kny",
       "title": "Muzan Kibutsuji Forma Definitiva / BdC KNY",
       "category": "minifiguras",
       "description": "",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772159475/95647d8a-5c69-49d7-9fb9-c5ba008298dc.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772159493/a3fcdf4a-bb89-4c4b-b9bd-25f7e5d49cb8.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772159475/95647d8a-5c69-49d7-9fb9-c5ba008298dc.png"
       ],
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1763136621384-muzan-kibutsuji-forma-definitiva-/-bdc-kny",
       "available": true,
       "price": "12.000 und"
     },
     {
+      "id": "1763136836756-shikigami-mahoraga-/-bdc-jjk",
       "title": "Shikigami Mahoraga / BdC JJK",
       "category": "minifiguras",
       "description": "",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772155590/1dedbdee-0624-4a79-ab87-01f26b2a2101.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772155632/5d9ce724-2ab7-40be-b76f-179dfc6dad1e.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772155683/b5884169-1854-4fae-8268-dfe553f5b7c5.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772155590/1dedbdee-0624-4a79-ab87-01f26b2a2101.png"
       ],
       "imageHint": [
         "Jujutsu Kaisen"
       ],
-      "id": "1763136836756-shikigami-mahoraga-/-bdc-jjk",
       "available": true,
       "price": "12.000 und"
     },
     {
-      "title": "Sukuna Megumi / BdC JJK ",
-      "category": "minifiguras",
-      "description": "",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772211404/d21e3e02-c29f-432d-92aa-dc3a57a31cc1.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772211416/2316d25f-3102-4ff2-b35e-63ab51150cd7.png"
-      ],
-      "imageHint": [
-        "Jujutsu Kaisen"
-      ],
       "id": "1764556689352-sukuna-megumi-/-bdc-jjk-",
+      "title": "Sukuna Megumi / BdC JJK",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772211404/d21e3e02-c29f-432d-92aa-dc3a57a31cc1.png"
+      ],
+      "imageHint": [
+        "Jujutsu Kaisen"
+      ],
       "available": true,
       "price": "12.000 und"
     },
     {
-      "title": "Naruto Uzumaki Modo Barion / BdC NS",
+      "id": "1791665406524-hashira-shinobu-kochō-/-bdc-kny",
+      "title": "Hashira Shinobu Kochō / BdC KNY",
       "category": "minifiguras",
       "description": "",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1772055934/4919efd1-dfd7-4d2d-afd2-6678db352861.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772055957/01cbeaee-205d-4ce5-8d26-4dcec3d615c7.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772055965/012b7fbc-e3d1-40ab-9292-cf7acd07ecda.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772159361/690e39f2-ee21-4712-b67b-cd18ef547d44.png"
       ],
       "imageHint": [
-        "Naruto"
+        "Demon Slayer"
       ],
-      "id": "1772055849886-naruto-uzumaki-modo-kurama-/-bdc-ns",
       "available": true,
       "price": "12.000 und"
     },
     {
       "id": "minifiguras-1",
-      "category": "minifiguras",
       "title": "Kikoru Shinomiya / BdC KNo8",
+      "category": "minifiguras",
       "description": "Preview for Minifiguras 1",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": [
@@ -542,10 +553,11 @@
       "imageHint": [
         "Kaiju No. 8"
       ],
-      "price": "12.000 und",
-      "available": false
+      "available": false,
+      "price": "12.000 und"
     },
     {
+      "id": "1762134284875-son-goku-ssj3-/-bdc-dragon-ball-z",
       "title": "Son Goku SSJ3 / BdC DBZ",
       "category": "minifiguras",
       "description": "",
@@ -556,12 +568,12 @@
       "imageHint": [
         "Dragon Ball"
       ],
-      "id": "1762134284875-son-goku-ssj3-/-bdc-dragon-ball-z",
       "available": false,
       "price": "15.000 und"
     },
     {
-      "title": "Vegeta SSJ2 / BdC DBZ ",
+      "id": "1762134790980-majin-vegeta-ssj2-/-bdc-dragon-ball-z",
+      "title": "Vegeta SSJ2 / BdC DBZ",
       "category": "minifiguras",
       "description": "",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
@@ -571,11 +583,11 @@
       "imageHint": [
         "Dragon Ball"
       ],
-      "id": "1762134790980-majin-vegeta-ssj2-/-bdc-dragon-ball-z",
       "available": true,
       "price": "15.000 und"
     },
     {
+      "id": "1762219076541-tanjiro-kamado-&-nezuko-pequeña-/-bdc-kny",
       "title": "Tanjiro Kamado Respiración de Agua / BdC KNY",
       "category": "minifiguras",
       "description": "",
@@ -586,14 +598,13 @@
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "id": "1762219076541-tanjiro-kamado-&-nezuko-pequeña-/-bdc-kny",
       "available": true,
       "price": "20.000 und"
     },
     {
       "id": "minifiguras-3",
-      "category": "minifiguras",
       "title": "Tanjiro Kamado Respiración de Fuego / BdC KNY",
+      "category": "minifiguras",
       "description": "Custom minifigure 3",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
       "imageUrls": [
@@ -602,8 +613,8 @@
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
       ],
-      "price": "20.000 und",
-      "available": false
+      "available": false,
+      "price": "20.000 und"
     }
   ]
 }
