@@ -36,48 +36,12 @@
       "description": "Custom minifigure 2",
       "details": "Bloques de construcción pequeños (compatible con Lego), Material: ABS",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762316520/4f5e5be7-31dd-456c-bc8c-d4e7abf8569e.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791723701/52a3562b-777c-4f59-aa50-8038e9679026.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762316520/4f5e5be7-31dd-456c-bc8c-d4e7abf8569e.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1760999390/IMG_20250925_165114_ssvw0r.jpg"
       ],
       "imageHint": [
         "custom minifigure"
-      ],
-      "available": true,
-      "price": ""
-    },
-    {
-      "id": "1772055849886-naruto-uzumaki-modo-kurama-/-bdc-ns",
-      "title": "Naruto Uzumaki Modo Barion / BdC NS",
-      "category": "minifiguras",
-      "description": "",
-      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772055957/01cbeaee-205d-4ce5-8d26-4dcec3d615c7.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772055965/012b7fbc-e3d1-40ab-9292-cf7acd07ecda.png"
-      ],
-      "imageHint": [
-        "Naruto"
-      ],
-      "available": true,
-      "price": ""
-    },
-    {
-      "id": "stickers",
-      "title": "Pack de Stickers Anime",
-      "category": "stickers",
-      "description": "Preview for Stickers",
-      "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
-      "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791600952/c02120c5-8ee8-4b01-957d-da440a999c58.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791600934/7f60aa41-7364-4c83-88ee-e7e7108a3846.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103714/12c3a8fe-5c28-4d9d-8d36-0b013c3d5ec9.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1762103678/e59783f5-0484-4db2-ad7b-222d6c188110.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1762103735/bc0788e1-32a1-42ea-bf12-264bf416eae8.png",
-        "https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103831/f08f298d-683e-49b7-bd27-604042ea9f77.png"
-      ],
-      "imageHint": [
-        "anime stickers"
       ],
       "available": true,
       "price": ""
@@ -146,6 +110,74 @@
       "price": "6.000 und"
     },
     {
+      "id": "1791693612621-pack-de-stickers-serie-one-piece",
+      "title": "Pack 10 Stickers Serie One Piece",
+      "category": "stickers",
+      "description": "",
+      "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791600934/7f60aa41-7364-4c83-88ee-e7e7108a3846.png"
+      ],
+      "imageHint": [
+        "anime stickers",
+        "One Piece"
+      ],
+      "available": true,
+      "price": "6.000 und"
+    },
+    {
+      "id": "1791693798619-pack-de-stickers-serie-demon-slayer",
+      "title": "Pack 10 Stickers Serie Demon Slayer",
+      "category": "stickers",
+      "description": "",
+      "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103714/12c3a8fe-5c28-4d9d-8d36-0b013c3d5ec9.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1762103831/f08f298d-683e-49b7-bd27-604042ea9f77.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791724663/ded14f80-f129-451f-a648-cf39d0dfa4e3.png"
+      ],
+      "imageHint": [
+        "anime stickers",
+        "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "available": true,
+      "price": "6.000 und"
+    },
+    {
+      "id": "1791694196872-pack-de-stickers-serie-jujutsu-kaisen",
+      "title": "Pack 10 Stickers Serie Jujutsu Kaisen",
+      "category": "stickers",
+      "description": "",
+      "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/e_gen_restore/e_improve/v1762103678/e59783f5-0484-4db2-ad7b-222d6c188110.png"
+      ],
+      "imageHint": [
+        "anime stickers",
+        "Jujutsu Kaisen"
+      ],
+      "available": true,
+      "price": "6.000 und"
+    },
+    {
+      "id": "stickers",
+      "title": "Pack 10 Stickers Serie Naruto",
+      "category": "stickers",
+      "description": "Preview for Stickers",
+      "details": "Colección de stickers de vinilo resistentes al agua y al sol.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791600952/c02120c5-8ee8-4b01-957d-da440a999c58.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1762103735/bc0788e1-32a1-42ea-bf12-264bf416eae8.png",
+        "https://images.unsplash.com/photo-1703454968178-1cc40980f7a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbmltZSUyMHN0aWNrZXJzfGVufDB8fHx8MTc2MDc2NTgyMHww&ixlib=rb-4.1.0&q=80&w=1080"
+      ],
+      "imageHint": [
+        "anime stickers",
+        "Naruto"
+      ],
+      "available": true,
+      "price": "6.000 und"
+    },
+    {
       "id": "1762130883941-maki-zenin-restricción-completa-/-bdc-jujutsu-kaisen",
       "title": "Maki Zenin Restricción Completa / BdC JJK",
       "category": "minifiguras",
@@ -177,15 +209,151 @@
     },
     {
       "id": "1762376277567-aretes-colgantes-de-gancho",
-      "title": "Aretes Colgantes de Gancho",
+      "title": "Aretes Colgantes Personajes BT21",
       "category": "accesorios",
       "description": "",
-      "details": "",
+      "details": "Dijes de esmalte brillante, colores vibrantes y un borde metálico que resalta cada detalle del diseño. Son piezas ligeras, ideales para el uso diario, y cuentan con herrajes plateados terminados en prácticos topes de silicona transparente para garantizar un ajuste seguro y cómodo. Es el accesorio perfecto para cualquier fan de BTS (ARMY) o amante de la moda kawaii que busque darle un toque divertido, colorido y pop a su estilo.",
       "imageUrls": [
         "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791607863/04de2b0e-2bf1-44ca-ae5f-653018ddd24c.png"
       ],
       "imageHint": [
-        "Dangle:Colgante"
+        "Dangle:Colgante",
+        "BTS"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1791725072866-llaveros-acrilico-serie-jojo's-bizarre-adventure",
+      "title": "Llaveros Acrilico Serie JJBA",
+      "category": "accesorios",
+      "description": "",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791724757/c229f243-ef71-4de0-9cc1-8d272820751b.png"
+      ],
+      "imageHint": [
+        "Jojo's"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1792095113148-llavero-de-acrílico-serie-btr",
+      "title": "Llavero de Acrílico Serie BTR",
+      "category": "accesorios",
+      "description": "",
+      "details": "Integrantes de Kessoku Band. Colección de llaveros acrílicos estilo chibi de Bocchi the Rock!! Ideales para decorar tu mochila, estuche, bolso o llaves.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791601029/7cc230c7-6e9f-403b-85cc-f17244bc5147.png"
+      ],
+      "imageHint": [
+        "Bocchi the Rock!"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1792095828145-llavero-de-acrílico-serie-wha",
+      "title": "Llavero de Acrílico Serie WHA",
+      "category": "accesorios",
+      "description": "",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791601001/533f7ac0-a063-4824-935e-ff2c43717907.png"
+      ],
+      "imageHint": [
+        "Witch Hat Atelier"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1792097702678-llavero-de-acrílico-serie-dhd",
+      "title": "Llavero de Acrílico Serie DHD",
+      "category": "accesorios",
+      "description": "",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792097382/64fa7267-52af-40e4-91c3-1c2b01d8587c.png"
+      ],
+      "imageHint": [
+        "Dorohedoro"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1792098924039-llavero-silicona-serie-sanrio",
+      "title": "Llavero Silicona Serie Sanrio",
+      "category": "accesorios",
+      "description": "",
+      "details": "llaveros de figura 3D en versiones clásicas",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792098416/d68a2571-2a18-47a3-b5ba-a012d0284c2b.png"
+      ],
+      "imageHint": [
+        "Sanrio"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1792099565544-llavero-de-acrílico-serie-kgy",
+      "title": "Llavero de Acrílico Serie KGY",
+      "category": "accesorios",
+      "description": "",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792099245/5d831e09-72f6-48b2-bcd3-f86eb597571c.png"
+      ],
+      "imageHint": [
+        "Kaguya-sama: Love Is War"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1792100249205-llavero-de-acrílico-serie-op",
+      "title": "Llavero Chibi de Acrílico Serie OP",
+      "category": "accesorios",
+      "description": "",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒\nNota importante: Cada pieza cuenta con una película protectora transparente para evitar rayones durante el envío; recuerda retirarla para descubrir el brillo total del acrílico.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792099191/e544fc9d-249b-4fc2-a29e-c714cd13c303.png"
+      ],
+      "imageHint": [
+        "One Piece"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1792100894931-llaveros-acrílicos-bt21-baby",
+      "title": "Llaveros Acrílicos BT21 Baby",
+      "category": "accesorios",
+      "description": "",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792099220/34455d8b-2a51-40ab-8872-9dfe2cec237d.png"
+      ],
+      "imageHint": [
+        "BTS"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
+      "id": "1792102307397-llaveros-acrílicos-pkm",
+      "title": "Llaveros Acrílicos PKM",
+      "category": "accesorios",
+      "description": "",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792101728/3a61efb9-0156-4b07-b44f-56b3d5be39f3.jpg"
+      ],
+      "imageHint": [
+        "Pokémon"
       ],
       "available": true,
       "price": "8.000 und"
@@ -197,12 +365,10 @@
       "description": "Preview for Accesorios",
       "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒.",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791601029/7cc230c7-6e9f-403b-85cc-f17244bc5147.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791601001/533f7ac0-a063-4824-935e-ff2c43717907.png",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"
       ],
       "imageHint": [
-        "Dandadan"
+        "DanDaDan"
       ],
       "available": true,
       "price": "8.000 und"
@@ -419,6 +585,36 @@
       "price": "10.000 und"
     },
     {
+      "id": "1792105448659-llavero-de-metal-esmaltado-videojuego-hk",
+      "title": "Llavero de Metal Esmaltado Videojuego HK",
+      "category": "accesorios",
+      "description": "",
+      "details": "Llaveros de acrílico con protección plástica para regalo 🎁, Decoración Maletín 🎒",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792104963/5aae3a47-9f71-4a01-bf5e-cfb31768571e.png"
+      ],
+      "imageHint": [
+        "Hollow Knight"
+      ],
+      "available": true,
+      "price": "10.000 und"
+    },
+    {
+      "id": "1792111518522-aretes-acrílico-hanafuda-kny-con-gancho-plateado",
+      "title": "Aretes Acrílico Hanafuda KNY con Gancho Plateado",
+      "category": "accesorios",
+      "description": "",
+      "details": "Diseño ligero y fiel al anime los hace perfectos tanto para completar tu cosplay como para lucirlos en tu día a día.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792111219/1b3cd690-c8e8-4eda-86ad-860a2d952b60.png"
+      ],
+      "imageHint": [
+        "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "available": true,
+      "price": "10.000 und"
+    },
+    {
       "id": "1762129823068-satoru-gojō-batalla-final/-bdc-jujutsu-kaisen",
       "title": "Satoru Gojō Batalla Final/ BdC JJK",
       "category": "minifiguras",
@@ -511,6 +707,21 @@
       "price": "12.000 und"
     },
     {
+      "id": "1764553157595-ulquiorra-cifer-espada-4-/-bdc",
+      "title": "Ulquiorra Cifer Espada 4 / BdC",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791722970/268e2011-3414-4f38-835e-4a8f33df8d59.png"
+      ],
+      "imageHint": [
+        "Bleach"
+      ],
+      "available": true,
+      "price": "12.000 und"
+    },
+    {
       "id": "1764556689352-sukuna-megumi-/-bdc-jjk-",
       "title": "Sukuna Megumi / BdC JJK",
       "category": "minifiguras",
@@ -526,16 +737,33 @@
       "price": "12.000 und"
     },
     {
+      "id": "1772055849886-naruto-uzumaki-modo-kurama-/-bdc-ns",
+      "title": "Naruto Uzumaki Modo Barion / BdC NS",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS.",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772055957/01cbeaee-205d-4ce5-8d26-4dcec3d615c7.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772055965/012b7fbc-e3d1-40ab-9292-cf7acd07ecda.png"
+      ],
+      "imageHint": [
+        "Naruto"
+      ],
+      "available": true,
+      "price": "12.000 und"
+    },
+    {
       "id": "1791665406524-hashira-shinobu-kochō-/-bdc-kny",
       "title": "Hashira Shinobu Kochō / BdC KNY",
       "category": "minifiguras",
       "description": "",
       "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772159361/690e39f2-ee21-4712-b67b-cd18ef547d44.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1772159361/690e39f2-ee21-4712-b67b-cd18ef547d44.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791722841/c0d6ec07-bfe8-4f67-b041-ed22fa86c71b.png"
       ],
       "imageHint": [
-        "Demon Slayer"
+        "Demon Slayer: Kimetsu no Yaiba"
       ],
       "available": true,
       "price": "12.000 und"
@@ -587,6 +815,51 @@
       "price": "15.000 und"
     },
     {
+      "id": "1762135017601-gotenks-ssj3-/-bdc-dragon-ball-z",
+      "title": "Gotenks SSJ3 / BdC DBZ",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791722918/8654d14c-1a15-4cc0-b560-22108b9bb476.png"
+      ],
+      "imageHint": [
+        "Dragon Ball"
+      ],
+      "available": true,
+      "price": "15.000 und"
+    },
+    {
+      "id": "1762135169055-son-gohan-ssj-traje-piccolo-/-bdc-dragon-ball-z",
+      "title": "Son Gohan SSJ Traje Piccolo / BdC DBZ",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791690239/2d7921b7-58c4-4f59-9f56-1e7bf75b73de.png"
+      ],
+      "imageHint": [
+        "Dragon Ball"
+      ],
+      "available": true,
+      "price": "15.000 und"
+    },
+    {
+      "id": "1762135744729-cell-/-bdc-dragon-ball-z",
+      "title": "Cell / BdC DBZ",
+      "category": "minifiguras",
+      "description": "",
+      "details": "Bloque De Construcción de 4,5 cm. Plastico ABS",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791722668/832feb06-9eb7-483b-a636-fa9aeec14f09.png"
+      ],
+      "imageHint": [
+        "Dragon Ball"
+      ],
+      "available": true,
+      "price": "15.000 und"
+    },
+    {
       "id": "1762219076541-tanjiro-kamado-&-nezuko-pequeña-/-bdc-kny",
       "title": "Tanjiro Kamado Respiración de Agua / BdC KNY",
       "category": "minifiguras",
@@ -615,6 +888,55 @@
       ],
       "available": false,
       "price": "20.000 und"
+    },
+    {
+      "id": "1792112394853-figura-coleccionable-chika-fujiwara-orejas-de-gato",
+      "title": "Figura Coleccionable Chika Fujiwara Orejas de Gato",
+      "category": "figuras de colección",
+      "description": "",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792112165/42105200-7f64-43b5-af97-ffe88528e450.png"
+      ],
+      "imageHint": [
+        "Kaguya-sama: Love Is War"
+      ],
+      "available": true,
+      "price": "42.000 und"
+    },
+    {
+      "id": "1791724226739-figura-momo-ayase",
+      "title": "Figura Coleccionable Momo Ayase",
+      "category": "figuras de colección",
+      "description": "",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1791689772/9740c21a-54c6-4afa-b501-c214b518cd1c.png"
+      ],
+      "imageHint": [
+        "DanDaDan"
+      ],
+      "available": true,
+      "price": "45.000 und"
+    },
+    {
+      "id": "1792109597530-figura-coleccionable-monkey-d.-luffy-gear-5",
+      "title": "Figura Coleccionable Monkey D. Luffy Gear 5",
+      "category": "figuras de colección",
+      "description": "",
+      "details": "Luffy Quinta Marcha Dios del Sol Nika,.\n\nMaterial: PVC / ABS de alta calidad, resistente y con gran nivel de detalle en el esculpido.   \nBase y soporte: Incluye base circular negra de exhibición con soporte vertical que mantiene a la figura suspendida en el aire de forma estable.   \nTamaño aproximado: 14 cm a 16 cm de alto (incluyendo la base).   ",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109210/78cccbe2-80dd-4455-bfb4-09cd1ffe0e2b.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109193/123064d3-637e-4e68-bf0d-092082177225.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109225/c4c9b3f1-47dc-4099-84d3-5c6703ea7583.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109772/52ca9f6e-73c5-45b0-b5c9-1d54070575d2.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792110994/d6cca2ca-e9e1-43df-b2b9-6eb95d6cc88e.png"
+      ],
+      "imageHint": [
+        "One Piece"
+      ],
+      "available": true,
+      "price": "55.000 und"
     }
   ]
 }
