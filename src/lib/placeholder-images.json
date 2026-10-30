@@ -7,7 +7,7 @@
       "description": "Alquima Mizu banner",
       "details": "",
       "imageUrls": [
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1761848239/El_texto_del_p%C3%A1rrafo_cad4tf.jpg"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1793332267/b834315d-1ce9-4219-8b12-7ef8ca88514c.png"
       ],
       "imageHint": [
         "Alquima 水"
@@ -359,6 +359,21 @@
       "price": "8.000 und"
     },
     {
+      "id": "1792215421104-llaveros-de-acrílico-rym",
+      "title": "Llaveros de Acrílico RYM",
+      "category": "accesorios",
+      "description": "",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792215010/ef07c17a-fda3-4da3-b6ed-b3ae253922e4.png"
+      ],
+      "imageHint": [
+        "Rick y Morty"
+      ],
+      "available": true,
+      "price": "8.000 und"
+    },
+    {
       "id": "accesorios",
       "title": "Llaveros Acrilico Serie DDD & SNK",
       "category": "accesorios",
@@ -368,7 +383,8 @@
         "https://res.cloudinary.com/dyeppbrfl/image/upload/e_improve,e_sharpen/v1761020994/747bcdd1-1a53-441d-8038-681d532f8046.png"
       ],
       "imageHint": [
-        "DanDaDan"
+        "Dandadan",
+        "Shingeki no kyojin"
       ],
       "available": true,
       "price": "8.000 und"
@@ -601,7 +617,7 @@
     },
     {
       "id": "1792111518522-aretes-acrílico-hanafuda-kny-con-gancho-plateado",
-      "title": "Aretes Acrílico Hanafuda KNY con Gancho Plateado",
+      "title": "Aretes Acrílico Hanafuda KNY con Gancho",
       "category": "accesorios",
       "description": "",
       "details": "Diseño ligero y fiel al anime los hace perfectos tanto para completar tu cosplay como para lucirlos en tu día a día.",
@@ -610,6 +626,21 @@
       ],
       "imageHint": [
         "Demon Slayer: Kimetsu no Yaiba"
+      ],
+      "available": true,
+      "price": "10.000 und"
+    },
+    {
+      "id": "1792213217011-mini-peluches-llaveros",
+      "title": "Mini Peluches Llaveros",
+      "category": "accesorios",
+      "description": "",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792212922/6f3e8275-f4fc-4501-936a-ca0788048a95.png"
+      ],
+      "imageHint": [
+        "Peluche"
       ],
       "available": true,
       "price": "10.000 und"
