@@ -1,0 +1,7 @@
+{
+  "name": "ALQUIMA 水",
+  "description": "Art & Collectibles inspired by mysticism.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

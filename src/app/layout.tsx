@@ -6,6 +6,10 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'ALQUIMA 水',
   description: 'Art & Collectibles inspired by mysticism.',
+  openGraph: {
+    title: 'ALQUIMA 水',
+    description: 'Art & Collectibles inspired by mysticism.',
+  },
 };
 
 export default function RootLayout({
