@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from "next/image";
@@ -20,7 +19,6 @@ import {
 
 import { PlaceHolderImages, type ImagePlaceholder } from "@/lib/placeholder-images";
 import { socialLinks, contactInfo } from "@/lib/pagedata";
-import { AlquimaLogo } from "@/components/icons/alquima-logo";
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { Copy } from 'lucide-react';
 
@@ -28,12 +26,14 @@ import { GrimoireGallery } from "@/components/grimoire-gallery";
 import { MainCarousel } from "@/components/main-carousel";
 import { GalleryModal } from "@/components/gallery-modal";
 import { ArtifactSheet } from "@/components/artifact-sheet";
+import { PredictiveSearchBar } from "@/components/predictive-search-bar";
 
 export type ModalState = {
   type: 'grimoire' | 'gallery' | 'artifact';
   images?: ImagePlaceholder[];
   startIndex?: number;
   image?: ImagePlaceholder;
+  initialSearchQuery?: string;
 };
 
 export default function Home() {
@@ -111,12 +111,21 @@ export default function Home() {
         )}
 
         <div className="container mx-auto max-w-md p-4 text-center">
-          <div className="flex flex-col items-center space-y-4 mb-8">
+          <div className="flex flex-col items-center space-y-3 mb-4">
             <div className="flex flex-col">
-              <h2 className="text-2xl font-bold">@alquima.mizu</h2>
+              <h2 className="text-2xl font-bold tracking-tight">@alquima.mizu</h2>
               <p className="text-sm text-muted-foreground">Creatividad hecha colección.</p>
             </div>
           </div>
+        </div>
+
+        {/* Global Predictive Search Bar */}
+        <div className="container mx-auto px-4 mb-8">
+          <PredictiveSearchBar
+            allArtifacts={allArtifacts}
+            onSelectArtifact={handleOpenArtifact}
+            onOpenGrimoireWithQuery={(query) => openModal({ type: 'grimoire', initialSearchQuery: query })}
+          />
         </div>
         
         <div className="w-full md:w-3/5 mx-auto px-4">
@@ -125,14 +134,14 @@ export default function Home() {
                   <Tooltip>
                       <TooltipTrigger asChild>
                           <h3
-                              className="text-xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity text-center"
+                              className="text-xl font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity text-center flex items-center justify-center gap-2"
                               onClick={() => openModal({ type: 'grimoire' })}
                           >
                               ▽△▽△▽△ GRIMORIO ▽△▽△▽△
                           </h3>
                       </TooltipTrigger>
                       <TooltipContent>
-                          <p>Nexo Códice</p>
+                          <p>Nexo Códice - Explorar todos los artefactos</p>
                       </TooltipContent>
                   </Tooltip>
               </TooltipProvider>
@@ -219,6 +228,7 @@ export default function Home() {
           onClose={closeModal}
           allArtifacts={allArtifacts}
           onImageClick={handleOpenGallery}
+          initialSearchQuery={currentModal.initialSearchQuery}
         />
       )}
       
