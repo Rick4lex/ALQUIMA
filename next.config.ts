@@ -1,7 +1,9 @@
 import type {NextConfig} from 'next';
 
+const isExport = process.env.GITHUB_ACTIONS === 'true' || process.env.NEXT_EXPORT === 'true';
+
 const nextConfig: NextConfig = {
-  output: 'standalone',
+  output: isExport ? 'export' : 'standalone',
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -10,6 +12,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: isExport,
     remotePatterns: [
       {
         protocol: 'https',
