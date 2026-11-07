@@ -91,4 +91,21 @@ body {
   .tint-green {
     filter: grayscale(1) sepia(1) hue-rotate(65deg) saturate(3);
   }
+
+  /* Custom scrollbar styling for a polished mystic aesthetic */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.4);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.75);
+  }
 }
+

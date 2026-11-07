@@ -30,7 +30,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
-import { Combobox } from '@/components/ui/combobox';
+import { grimoireCategories } from '@/lib/pagedata';
+import { SeriesMultiSelect, type SeriesOption } from '@/components/series-multi-select';
 import { PredictiveSearchBar } from '@/components/predictive-search-bar';
 import { ArtifactSheet } from '@/components/artifact-sheet';
 
@@ -82,7 +83,8 @@ export function GrimoireGallery({
 }) {
   const [searchQuery, setSearchQuery] = React.useState(initialSearchQuery || '');
   const [showOnlyAvailable, setShowOnlyAvailable] = React.useState(false);
-  const [selectedSeries, setSelectedSeries] = React.useState('all');
+  const [selectedCategories, setSelectedCategories] = React.useState<string[]>([]);
+  const [selectedSeries, setSelectedSeries] = React.useState<string[]>([]);
   const [priceRange, setPriceRange] = React.useState<PriceRangeType>('all');
   const [sortBy, setSortBy] = React.useState<SortOptionType>('default');
 
@@ -97,23 +99,30 @@ export function GrimoireGallery({
 
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
-  // Build series options from artifacts' imageHint
-  const seriesOptions = React.useMemo(() => {
-    const seriesSet = new Set<string>();
+  // Build series options with product counts from artifacts' imageHint
+  const seriesOptions: SeriesOption[] = React.useMemo(() => {
+    const seriesCountMap = new Map<string, number>();
     allArtifacts.forEach((artifact) => {
       if (artifact.imageHint) {
         if (Array.isArray(artifact.imageHint)) {
-          artifact.imageHint.forEach((hint) => seriesSet.add(hint));
-        } else {
-          seriesSet.add(artifact.imageHint);
+          artifact.imageHint.forEach((hint) => {
+            if (hint) {
+              seriesCountMap.set(hint, (seriesCountMap.get(hint) || 0) + 1);
+            }
+          });
+        } else if (typeof artifact.imageHint === 'string' && artifact.imageHint) {
+          seriesCountMap.set(artifact.imageHint, (seriesCountMap.get(artifact.imageHint) || 0) + 1);
         }
       }
     });
-    const uniqueSeries = Array.from(seriesSet).sort((a, b) => a.localeCompare(b));
-    return [
-      { value: 'all', label: 'Todas las series' },
-      ...uniqueSeries.map((s) => ({ value: s, label: s })),
-    ];
+
+    return Array.from(seriesCountMap.entries())
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([series, count]) => ({
+        value: series,
+        label: series,
+        count,
+      }));
   }, [allArtifacts]);
 
   // Combined real-time filtering & sorting
@@ -125,13 +134,22 @@ export function GrimoireGallery({
       artifacts = artifacts.filter((artifact) => artifact.available);
     }
 
-    // 2. Series / Anime filter
-    if (selectedSeries !== 'all') {
+    // 2. Category filter (from quick pills!)
+    if (selectedCategories.length > 0) {
+      artifacts = artifacts.filter(
+        (artifact) => artifact.category && selectedCategories.includes(artifact.category)
+      );
+    }
+
+    // 3. Series / Anime filter (supports multi-selection!)
+    if (selectedSeries.length > 0) {
       artifacts = artifacts.filter((artifact) => {
-        if (Array.isArray(artifact.imageHint)) {
-          return artifact.imageHint.includes(selectedSeries);
-        }
-        return artifact.imageHint === selectedSeries;
+        const hints = Array.isArray(artifact.imageHint)
+          ? artifact.imageHint
+          : typeof artifact.imageHint === 'string'
+          ? [artifact.imageHint]
+          : [];
+        return hints.some((hint) => selectedSeries.includes(hint));
       });
     }
 
@@ -195,7 +213,7 @@ export function GrimoireGallery({
     }
 
     return artifacts;
-  }, [allArtifacts, showOnlyAvailable, selectedSeries, searchQuery, priceRange, sortBy]);
+  }, [allArtifacts, showOnlyAvailable, selectedSeries, selectedCategories, searchQuery, priceRange, sortBy]);
 
   // Click on a grid card opens full gallery mode
   const handleGridCardClick = (artifact: ImagePlaceholder) => {
@@ -204,20 +222,34 @@ export function GrimoireGallery({
     onImageClick(listForGallery, startIndex >= 0 ? startIndex : 0);
   };
 
-  // Quick franchise toggle
+  // Quick category toggle (adds or removes from selectedCategories array)
+  const handleCategorySelect = (categoryId: string) => {
+    setSelectedCategories((prev) => {
+      if (prev.includes(categoryId)) {
+        return prev.filter((c) => c !== categoryId);
+      } else {
+        return [...prev, categoryId];
+      }
+    });
+  };
+
+  // Quick franchise toggle (adds or removes from selectedSeries array)
   const handleFranchiseSelect = (franchise: string) => {
-    if (selectedSeries === franchise) {
-      setSelectedSeries('all');
-    } else {
-      setSelectedSeries(franchise);
-    }
+    setSelectedSeries((prev) => {
+      if (prev.includes(franchise)) {
+        return prev.filter((s) => s !== franchise);
+      } else {
+        return [...prev, franchise];
+      }
+    });
   };
 
   // Reset all filters to default
   const clearAllFilters = () => {
     setSearchQuery('');
     setShowOnlyAvailable(false);
-    setSelectedSeries('all');
+    setSelectedCategories([]);
+    setSelectedSeries([]);
     setPriceRange('all');
     setSortBy('default');
   };
@@ -255,7 +287,8 @@ export function GrimoireGallery({
   const activeFiltersCount =
     (searchQuery.trim().length > 0 ? 1 : 0) +
     (showOnlyAvailable ? 1 : 0) +
-    (selectedSeries !== 'all' ? 1 : 0) +
+    selectedCategories.length +
+    selectedSeries.length +
     (priceRange !== 'all' ? 1 : 0) +
     (sortBy !== 'default' ? 1 : 0);
 
@@ -299,15 +332,15 @@ export function GrimoireGallery({
               </div>
             </div>
 
-            {/* Predictive Search Bar with Franchise Chips */}
+            {/* Predictive Search Bar with Category Pills */}
             <PredictiveSearchBar
               value={searchQuery}
               onChange={setSearchQuery}
               onClear={() => setSearchQuery('')}
               allArtifacts={allArtifacts}
               onSelectArtifact={(artifact) => setActiveArtifactForSheet(artifact)}
-              onSelectFranchise={handleFranchiseSelect}
-              selectedFranchise={selectedSeries}
+              onSelectCategory={handleCategorySelect}
+              selectedCategories={selectedCategories}
             />
 
             {/* Controls Bar: Responsive Toggle on Mobile, Full Grid on Desktop */}
@@ -358,18 +391,16 @@ export function GrimoireGallery({
                   showMobileFilters ? 'grid pt-1 pb-1 border-t border-border/30' : 'hidden sm:grid'
                 )}
               >
-                {/* Series / Anime Dropdown */}
+                {/* Series / Anime Dropdown with Multi-Selection */}
                 <div className="space-y-1">
                   <Label className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider flex items-center gap-1">
                     <Sparkles className="h-3 w-3 text-primary" /> Serie / Anime
                   </Label>
-                  <Combobox
+                  <SeriesMultiSelect
                     options={seriesOptions}
-                    selectedValue={selectedSeries}
-                    onSelectValue={(value) => setSelectedSeries(value || 'all')}
+                    selectedValues={selectedSeries}
+                    onChange={setSelectedSeries}
                     placeholder="Todas las series..."
-                    searchPlaceholder="Buscar serie..."
-                    notFoundMessage="No se encontró la serie."
                     className="w-full h-8 text-xs bg-background/80"
                   />
                 </div>
@@ -459,19 +490,44 @@ export function GrimoireGallery({
                   </Badge>
                 )}
 
-                {selectedSeries !== 'all' && (
-                  <Badge variant="secondary" className="gap-1 text-[11px] pl-2 pr-1 py-0.5">
-                    Serie: {selectedSeries}
+                {selectedCategories.map((catId) => {
+                  const catTitle = grimoireCategories.find((c) => c.id === catId)?.title || catId;
+                  return (
+                    <Badge
+                      key={catId}
+                      variant="secondary"
+                      className="gap-1 text-[11px] pl-2 pr-1 py-0.5 border border-primary/40 bg-primary/10 text-primary capitalize"
+                    >
+                      Categoría: {catTitle}
+                      <button
+                        type="button"
+                        onClick={() => setSelectedCategories((prev) => prev.filter((c) => c !== catId))}
+                        className="hover:bg-primary/20 rounded-full p-0.5 transition"
+                        aria-label={`Eliminar filtro de categoría ${catTitle}`}
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </Badge>
+                  );
+                })}
+
+                {selectedSeries.map((series) => (
+                  <Badge
+                    key={series}
+                    variant="secondary"
+                    className="gap-1 text-[11px] pl-2 pr-1 py-0.5 border border-primary/40 bg-primary/10 text-primary"
+                  >
+                    Serie: {series}
                     <button
                       type="button"
-                      onClick={() => setSelectedSeries('all')}
-                      className="hover:bg-muted rounded-full p-0.5 transition"
-                      aria-label="Eliminar filtro de serie"
+                      onClick={() => setSelectedSeries((prev) => prev.filter((s) => s !== series))}
+                      className="hover:bg-primary/20 rounded-full p-0.5 transition"
+                      aria-label={`Eliminar filtro ${series}`}
                     >
                       <X className="h-3 w-3" />
                     </button>
                   </Badge>
-                )}
+                ))}
 
                 {priceRange !== 'all' && (
                   <Badge variant="secondary" className="gap-1 text-[11px] pl-2 pr-1 py-0.5">
@@ -567,11 +623,11 @@ export function GrimoireGallery({
                               {/* Top Bar: Price / Status Badge & Franchise Pill */}
                               <div className="absolute top-2 left-2 right-2 flex items-center justify-between gap-1 pointer-events-none z-10">
                                 {image.available && image.price ? (
-                                  <Badge className="bg-black/75 backdrop-blur-md text-primary font-bold text-[11px] px-2 py-0.5 border border-primary/40 shadow-md">
+                                  <Badge className="bg-black/75 backdrop-blur-md text-primary font-bold text-[11px] px-2 py-0.5 border border-primary/40 shadow-md whitespace-nowrap shrink-0">
                                     {image.price}
                                   </Badge>
                                 ) : !image.available ? (
-                                  <Badge variant="secondary" className="bg-emerald-950/80 backdrop-blur-md text-emerald-300 font-medium text-[10px] px-2 py-0.5 border border-emerald-500/40 shadow-md">
+                                  <Badge variant="secondary" className="bg-emerald-950/80 backdrop-blur-md text-emerald-300 font-medium text-[10px] px-2 py-0.5 border border-emerald-500/40 shadow-md whitespace-nowrap shrink-0">
                                     Resguardado
                                   </Badge>
                                 ) : (
@@ -579,7 +635,7 @@ export function GrimoireGallery({
                                 )}
 
                                 {franchise && (
-                                  <span className="text-[10px] font-semibold text-white/90 bg-black/70 backdrop-blur-md px-1.5 py-0.5 rounded-md border border-white/20 truncate max-w-[110px] shadow">
+                                  <span className="hidden sm:inline-flex text-[10px] font-semibold text-white/90 bg-black/70 backdrop-blur-md px-1.5 py-0.5 rounded-md border border-white/20 truncate max-w-[110px] shadow">
                                     {franchise}
                                   </span>
                                 )}

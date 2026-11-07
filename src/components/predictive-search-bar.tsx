@@ -4,6 +4,7 @@ import * as React from 'react';
 import Image from 'next/image';
 import { Search, X, Sparkles, ChevronRight, Tag, BookOpen } from 'lucide-react';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
+import { grimoireCategories } from '@/lib/pagedata';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -37,8 +38,10 @@ interface PredictiveSearchBarProps {
   allArtifacts: ImagePlaceholder[];
   onSelectArtifact: (artifact: ImagePlaceholder) => void;
   onOpenGrimoireWithQuery?: (query: string) => void;
+  onSelectCategory?: (categoryId: string) => void;
+  selectedCategories?: string[];
   onSelectFranchise?: (franchise: string) => void;
-  selectedFranchise?: string;
+  selectedFranchise?: string | string[];
   className?: string;
 }
 
@@ -49,8 +52,10 @@ export function PredictiveSearchBar({
   allArtifacts = [],
   onSelectArtifact,
   onOpenGrimoireWithQuery,
+  onSelectCategory,
+  selectedCategories = [],
   onSelectFranchise,
-  selectedFranchise = 'all',
+  selectedFranchise = [],
   className,
 }: PredictiveSearchBarProps) {
   // Support both controlled mode (via value prop) and uncontrolled mode
@@ -171,14 +176,40 @@ export function PredictiveSearchBar({
         )}
       </div>
 
-      {/* Quick Action Franchise Buttons (if onSelectFranchise is provided) */}
-      {onSelectFranchise && (
+      {/* Quick Action Category Pills */}
+      {onSelectCategory ? (
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 no-scrollbar touch-pan-x text-xs">
+          <span className="flex items-center gap-1 text-[11px] font-semibold text-primary/90 uppercase tracking-wider shrink-0 pr-1 select-none">
+            <Sparkles className="h-3 w-3" /> Categorías:
+          </span>
+          {grimoireCategories.map((cat) => {
+            const isSelected = selectedCategories.includes(cat.id);
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => onSelectCategory(cat.id)}
+                className={cn(
+                  'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border transition-all whitespace-nowrap shrink-0 shadow-sm',
+                  isSelected
+                    ? 'bg-primary text-primary-foreground border-primary shadow-sm shadow-primary/30 scale-[1.02]'
+                    : 'bg-secondary/40 hover:bg-secondary/90 text-secondary-foreground border-border/50 hover:border-primary/40'
+                )}
+              >
+                {cat.title}
+              </button>
+            );
+          })}
+        </div>
+      ) : onSelectFranchise ? (
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 no-scrollbar touch-pan-x text-xs">
           <span className="flex items-center gap-1 text-[11px] font-semibold text-primary/90 uppercase tracking-wider shrink-0 pr-1 select-none">
             <Sparkles className="h-3 w-3" /> Series:
           </span>
           {FEATURED_FRANCHISES.map((franchise) => {
-            const isSelected = selectedFranchise === franchise;
+            const isSelected = Array.isArray(selectedFranchise)
+              ? selectedFranchise.includes(franchise)
+              : selectedFranchise === franchise;
             const shortName = franchise.replace(': Kimetsu no Yaiba', '');
             return (
               <button
@@ -197,7 +228,7 @@ export function PredictiveSearchBar({
             );
           })}
         </div>
-      )}
+      ) : null}
 
       {/* Floating Predictive Results Panel */}
       {showPredictivePanel && (
