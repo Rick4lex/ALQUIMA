@@ -30,10 +30,12 @@ export function formatCurrency(amount: number): string {
 
 export type SortOption =
   | "default"
+  | "featured"
   | "price-asc"
   | "price-desc"
   | "name-asc"
-  | "name-desc";
+  | "name-desc"
+  | "available-first";
 
 export type PriceRangePreset = "all" | "under-10k" | "10k-20k" | "over-20k" | "custom";
 
@@ -46,6 +48,27 @@ export interface FilterOptions {
   showOnlyAvailable?: boolean;
   sortBy?: SortOption;
 }
+
+export interface FilterState {
+  searchQuery: string;
+  category: string;
+  series: string;
+  onlyAvailable: boolean;
+  priceRange: PriceRangePreset;
+  sortBy: SortOption;
+  customMinPrice?: number;
+  customMaxPrice?: number;
+}
+
+export function getSeriesList(artifact: ImagePlaceholder): string[] {
+  if (!artifact.imageHint) return [];
+  if (Array.isArray(artifact.imageHint)) {
+    return artifact.imageHint.filter(Boolean);
+  }
+  return [artifact.imageHint];
+}
+
+export const matchesSearchQuery = matchesQuery;
 
 /**
  * Checks if an artifact matches a search query against title, hints/franchise, description, and details

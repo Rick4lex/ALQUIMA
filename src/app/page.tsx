@@ -104,7 +104,11 @@ export default function Home() {
               alt={bannerImage.description}
               width={1920}
               height={640}
-              data-ai-hint={bannerImage.imageHint}
+              data-ai-hint={
+                Array.isArray(bannerImage.imageHint)
+                  ? bannerImage.imageHint.join(' ')
+                  : bannerImage.imageHint
+              }
               className="w-full aspect-[3/1] object-cover"
             />
           </div>

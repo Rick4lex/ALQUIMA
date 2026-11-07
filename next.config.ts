@@ -1,9 +1,11 @@
 import type {NextConfig} from 'next';
 
 const isExport = process.env.GITHUB_ACTIONS === 'true' || process.env.NEXT_EXPORT === 'true';
+const basePath = process.env.PAGES_BASE_PATH || '';
 
 const nextConfig: NextConfig = {
   output: isExport ? 'export' : 'standalone',
+  ...(basePath ? { basePath } : {}),
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -36,7 +38,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
         port: '',
-        pathname: '/**',
+        pathname: '/dyeppbrfl/**',
       }
     ],
   },

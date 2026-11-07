@@ -146,7 +146,11 @@ export function MainCarousel({
                     fill
                     sizes="(max-width: 768px) 100vw, 80vw"
                     priority
-                    data-ai-hint={cardImage.imageHint}
+                    data-ai-hint={
+                      Array.isArray(cardImage.imageHint)
+                        ? cardImage.imageHint.join(' ')
+                        : cardImage.imageHint
+                    }
                     className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
                   />
 

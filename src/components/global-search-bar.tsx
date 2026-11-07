@@ -165,6 +165,7 @@ export function GlobalSearchBar({
     filters.sortBy !== 'featured';
 
   const sortLabels: Record<SortOption, string> = {
+    default: 'Destacados',
     featured: 'Destacados',
     'price-asc': 'Precio: Menor a Mayor',
     'price-desc': 'Precio: Mayor a Menor',
