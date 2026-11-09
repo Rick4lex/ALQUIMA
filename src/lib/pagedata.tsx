@@ -26,10 +26,11 @@ export const socialLinks = [
   };
   
   export const grimoireCategories = [
-      { id: "minifiguras", title: "Minifiguras" },
-      { id: "dibujos", title: "Dibujos" },
-      { id: "stickers", title: "Stickers" },
-      { id: "tatuajes-temporales", title: "Tatuajes Temporales" },
-      { id: "accesorios", title: "Accesorios" },
-  ];
+  { id: "accesorios", title: "Accesorios" },
+  { id: "dibujos", title: "Dibujos" },
+  { id: "figuras de colección", title: "Figuras de colección" },
+  { id: "minifiguras", title: "Minifiguras" },
+  { id: "pines", title: "Pines" },
+  { id: "stickers", title: "Stickers" }
+];
   
