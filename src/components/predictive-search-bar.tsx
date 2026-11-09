@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Search, X, Sparkles, ChevronRight, Tag, BookOpen } from 'lucide-react';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { grimoireCategories } from '@/lib/pagedata';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -253,16 +252,16 @@ export function PredictiveSearchBar({
                     }}
                     className="flex items-center gap-3 p-2.5 hover:bg-primary/10 cursor-pointer transition group"
                   >
-                    {/* Thumbnail */}
-                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-muted shrink-0 border border-border/50 shadow-sm">
+                    {/* Thumbnail with Enhanced Zoom */}
+                    <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-black/50 shrink-0 border border-border/70 shadow-sm">
                       {artifact.imageUrls && artifact.imageUrls[0] ? (
                         <Image
                           src={artifact.imageUrls[0]}
                           alt={artifact.title || artifact.description || 'Artefacto'}
                           fill
-                          sizes="48px"
+                          sizes="300px"
                           className={cn(
-                            'object-cover transition-transform duration-300 group-hover:scale-105',
+                            'object-cover object-center origin-center transition-transform duration-300 scale-[1.75] group-hover:scale-[1.9]',
                             !artifact.available && 'tint-green'
                           )}
                         />
@@ -274,11 +273,11 @@ export function PredictiveSearchBar({
                     </div>
 
                     {/* Metadata & Title */}
-                    <div className="flex-1 min-w-0">
+                    <div className="flex-1 min-w-0 pr-1">
                       <h5 className="text-sm font-semibold text-foreground truncate group-hover:text-primary transition-colors">
                         {artifact.title || artifact.description}
                       </h5>
-                      <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
+                      <div className="flex items-center gap-1.5 mt-1 flex-wrap">
                         {franchise && (
                           <span className="text-[11px] font-medium text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">
                             {franchise}
@@ -292,22 +291,22 @@ export function PredictiveSearchBar({
                       </div>
                     </div>
 
-                    {/* Price or Resguardado Status */}
-                    <div className="text-right shrink-0 flex flex-col items-end gap-1">
+                    {/* Price / Status filling row height with larger text */}
+                    <div className="shrink-0 flex items-center gap-1.5 self-stretch my-0.5">
                       {artifact.available && artifact.price ? (
-                        <Badge variant="outline" className="border-primary/50 text-primary font-bold text-xs bg-primary/5">
+                        <div className="h-full min-h-[48px] px-4 py-2 rounded-xl border border-primary/60 bg-primary/20 text-primary font-black text-base sm:text-lg shadow-md flex items-center justify-center whitespace-nowrap tracking-tight group-hover:bg-primary/30 group-hover:border-primary transition-colors">
                           {artifact.price}
-                        </Badge>
+                        </div>
                       ) : !artifact.available ? (
-                        <Badge variant="secondary" className="text-[10px] bg-emerald-950/40 text-emerald-300 border border-emerald-500/30">
+                        <div className="h-full min-h-[48px] px-3.5 py-2 rounded-xl border border-emerald-500/50 bg-emerald-950/80 text-emerald-300 font-bold text-xs sm:text-sm shadow-md flex items-center justify-center whitespace-nowrap tracking-tight group-hover:bg-emerald-900/80 transition-colors">
                           Resguardado
-                        </Badge>
+                        </div>
                       ) : (
-                        <Badge variant="outline" className="text-[10px]">
+                        <div className="h-full min-h-[48px] px-3 py-2 rounded-xl border border-border/50 bg-muted/40 text-muted-foreground font-semibold text-xs sm:text-sm flex items-center justify-center whitespace-nowrap">
                           Canjeable
-                        </Badge>
+                        </div>
                       )}
-                      <ChevronRight className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-0.5" />
+                      <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-0.5 shrink-0" />
                     </div>
                   </div>
                 );
