@@ -997,6 +997,36 @@
       "price": "45.000 und"
     },
     {
+      "id": "1794282385547-figura-coleccionable-monkey-d.-luffy-gear-5",
+      "title": "Figura Coleccionable Monkey D. Luffy Gear 5",
+      "category": "figuras de colección",
+      "description": "",
+      "details": "Luffy Quinta Marcha Dios del Sol Nika,.\n\nMaterial: PVC / ABS de alta calidad, resistente y con gran nivel de detalle en el esculpido.   \nBase y soporte: Incluye base circular negra de exhibición con soporte vertical que mantiene a la figura suspendida en el aire de forma estable.   \nTamaño aproximado: 14 cm a 16 cm de alto (incluyendo la base).   ",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109772/52ca9f6e-73c5-45b0-b5c9-1d54070575d2.png"
+      ],
+      "imageHint": [
+        "One Piece"
+      ],
+      "available": true,
+      "price": "50.000 und"
+    },
+    {
+      "id": "1794283686504-figura-coleccionable-momo-ayase",
+      "title": "Figura Coleccionable Momo Ayase",
+      "category": "figuras de colección",
+      "description": "",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1794283422/0cc56e40-9e5c-486f-bcdb-65180fd99876.png"
+      ],
+      "imageHint": [
+        "DanDaDan"
+      ],
+      "available": true,
+      "price": "50.000 und"
+    },
+    {
       "id": "1792109597530-figura-coleccionable-monkey-d.-luffy-gear-5",
       "title": "Figura Coleccionable Monkey D. Luffy Gear 5",
       "category": "figuras de colección",
@@ -1005,15 +1035,47 @@
       "imageUrls": [
         "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109210/78cccbe2-80dd-4455-bfb4-09cd1ffe0e2b.png",
         "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109193/123064d3-637e-4e68-bf0d-092082177225.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109225/c4c9b3f1-47dc-4099-84d3-5c6703ea7583.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109772/52ca9f6e-73c5-45b0-b5c9-1d54070575d2.png",
-        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792110994/d6cca2ca-e9e1-43df-b2b9-6eb95d6cc88e.png"
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792109225/c4c9b3f1-47dc-4099-84d3-5c6703ea7583.png"
       ],
       "imageHint": [
         "One Piece"
       ],
       "available": true,
       "price": "55.000 und"
+    },
+    {
+      "id": "1794282520323-figura-coleccionable-monkey-d.-luffy-gear-5",
+      "title": "Figura Coleccionable Monkey D. Luffy Gear 5",
+      "category": "figuras de colección",
+      "description": "",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792110994/d6cca2ca-e9e1-43df-b2b9-6eb95d6cc88e.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1792110633/7005b2d9-6cbc-404f-b00d-7d612cc0e2c9.png"
+      ],
+      "imageHint": [
+        "One Piece"
+      ],
+      "available": true,
+      "price": "55.000 und"
+    },
+    {
+      "id": "1794284489903-figura-coleccionable-bandai-goku-ssj",
+      "title": "Figura Coleccionable BANDAI Goku SSJ",
+      "category": "figuras de colección",
+      "description": "",
+      "details": "",
+      "imageUrls": [
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1794283885/2d478f7e-0bad-4a1a-be3d-50c2b039161d.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1794283870/3e39277a-db41-48b1-a77f-c885cafcf118.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1794283897/b28101fb-13d0-453b-ab17-a7eb875388c5.png",
+        "https://res.cloudinary.com/dyeppbrfl/image/upload/v1794283969/0b509f99-edd1-48f2-a91f-3147438f8ab0.png"
+      ],
+      "imageHint": [
+        "Dragon Ball"
+      ],
+      "available": true,
+      "price": "180.000 und"
     }
   ]
 }
